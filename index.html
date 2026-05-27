@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Miracle Apps</title>
+  <meta name="description" content="Miracle Apps builds focused mobile tools that help people organize, protect, and simplify their everyday digital life.">
+  <meta name="theme-color" content="#09111f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09111f;
+      --bg-soft: #0f1b33;
+      --surface: rgba(12, 20, 37, 0.94);
+      --surface-2: rgba(18, 31, 54, 0.98);
+      --border: rgba(96, 165, 250, 0.16);
+      --text: #f8fafc;
+      --body: #d6e1f0;
+      --muted: #8fa3be;
+      --primary: #3b82f6;
+      --accent: #5eead4;
+      --shadow: 0 24px 70px rgba(2, 6, 23, 0.45);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(94, 234, 212, 0.10), transparent 26%),
+        linear-gradient(180deg, #07101d 0%, #09111f 48%, #08111d 100%);
+    }
+
+    .shell {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 28px 22px;
+      background: linear-gradient(135deg, rgba(18, 41, 86, 0.95), rgba(9, 17, 31, 0.98));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -110px;
+      top: -90px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.28), transparent 68%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #dbeafe;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      box-shadow: 0 0 14px rgba(94, 234, 212, 0.8);
+    }
+
+    h1 {
+      margin: 18px 0 12px;
+      font-size: clamp(2.3rem, 8vw, 4.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--body);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 22px 20px;
+      background: linear-gradient(180deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1.24rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--body);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .link-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 16px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.32);
+    }
+
+    .link-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: none;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    @media (min-width: 860px) {
+      .shell {
+        padding: 34px 24px 48px;
+      }
+
+      .hero {
+        padding: 42px 34px;
+      }
+
+      .grid {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <span class="badge">Miracle Apps</span>
+      <h1>Simple products for cleaner, calmer digital spaces.</h1>
+      <p>
+        Miracle Apps creates focused mobile experiences that help people review,
+        organize, and protect the data that matters to them. Cleanup AI is one
+        of those tools, built to help users clean up their media and review
+        selected Gmail inbox items with clear user control.
+      </p>
+      <div class="links">
+        <a class="link-pill" href="/cleanupai/">Open Cleanup AI</a>
+        <a class="link-pill link-secondary" href="/cleanupai/privacy/">Privacy Policy</a>
+        <a class="link-pill link-secondary" href="/cleanupai/terms/">Terms of Service</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>About Cleanup AI</h2>
+        <p>
+          Cleanup AI helps users review duplicate photos, similar media,
+          screenshots, large videos, and selected Gmail inbox items in a clean,
+          guided flow. Features are designed to give users visibility before
+          they take action, including review-first deletion flows and explicit
+          sign-in for Gmail-based cleanup tools.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Support</h2>
+        <p>
+          For support, privacy questions, or account-related concerns, contact
+          us at <a href="mailto:keturahruth9@gmail.com">keturahruth9@gmail.com</a>.
+        </p>
+      </article>
+    </section>
+
+    <div class="footer">© Miracle Apps</div>
+  </div>
+</body>
+</html>

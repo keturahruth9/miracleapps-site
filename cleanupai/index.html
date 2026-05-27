@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cleanup AI</title>
+  <meta name="description" content="Cleanup AI helps users review media clutter and selected Gmail inbox items with clear, user-controlled cleanup flows.">
+  <meta name="theme-color" content="#0a1020">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a1020;
+      --bg-soft: #0f1830;
+      --surface: rgba(18, 28, 48, 0.96);
+      --surface-2: rgba(24, 37, 62, 0.98);
+      --border: rgba(96, 165, 250, 0.16);
+      --text: #f8fafc;
+      --body: #d8e2f0;
+      --muted: #92a4bb;
+      --primary: #2563eb;
+      --accent: #60a5fa;
+      --shadow: 0 24px 68px rgba(2, 6, 23, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 30%),
+        radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.10), transparent 24%),
+        linear-gradient(180deg, #09101f 0%, #0a1020 42%, #080e19 100%);
+    }
+
+    .shell {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 24px 16px 42px;
+    }
+
+    .hero, .card {
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 30px 22px;
+      background: linear-gradient(135deg, rgba(18, 39, 84, 0.96), rgba(10, 16, 32, 0.98));
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -100px;
+      bottom: -120px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(96, 165, 250, 0.22), transparent 68%);
+      pointer-events: none;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #dbeafe;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .pill::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #38bdf8);
+      box-shadow: 0 0 14px rgba(96, 165, 250, 0.9);
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(2.2rem, 8vw, 4rem);
+      line-height: 0.97;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 720px;
+      color: var(--body);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .stack {
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 22px 20px;
+      background: linear-gradient(180deg, var(--surface), var(--surface-2));
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.16rem;
+      letter-spacing: -0.03em;
+    }
+
+    p, li {
+      margin: 0;
+      color: var(--body);
+      font-size: 15px;
+      line-height: 1.78;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.32);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: none;
+    }
+
+    .footer {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    @media (min-width: 768px) {
+      .shell {
+        padding: 34px 22px 50px;
+      }
+
+      .hero {
+        padding: 42px 34px;
+      }
+
+      .stack {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <span class="pill">Cleanup AI</span>
+      <h1>Smarter cleanup for media and selected Gmail clutter.</h1>
+      <p class="lead">
+        Cleanup AI helps users review duplicate photos, similar media,
+        screenshots, large videos, and selected Gmail inbox items in a clean,
+        guided workflow. Users stay in control of sign-in, review, and deletion
+        actions at every step.
+      </p>
+      <div class="links">
+        <a class="button" href="/cleanupai/privacy/">Privacy Policy</a>
+        <a class="button secondary" href="/cleanupai/terms/">Terms of Service</a>
+      </div>
+    </section>
+
+    <section class="stack">
+      <article class="card">
+        <h2>What Cleanup AI currently supports</h2>
+        <ul>
+          <li>On-device media review flows for duplicate and similar photos, screenshots, and large videos.</li>
+          <li>Optional Google sign-in to review selected Gmail inbox items.</li>
+          <li>Inbox grouping by sender, category, age, and attachment filters.</li>
+          <li>User-triggered Gmail trash actions for selected messages.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Contact</h2>
+        <p>
+          If you have questions about Cleanup AI, email us at
+          <a href="mailto:keturahruth9@gmail.com">keturahruth9@gmail.com</a>.
+        </p>
+      </article>
+    </section>
+
+    <div class="footer">© Cleanup AI</div>
+  </div>
+</body>
+</html>

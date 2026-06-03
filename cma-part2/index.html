@@ -16,10 +16,10 @@
     content="A distraction-free, privacy-first study companion built for consistent CMA Part 2 practice."
   >
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://www.miracleapps.in/miracle_logo.png">
+  <meta property="og:image" content="https://www.miracleapps.in/cma-part2/scanner_app_icon.png">
   <link rel="canonical" href="https://www.miracleapps.in/cma-part2/">
-  <link rel="icon" type="image/png" href="../miracle_logo.png">
-  <link rel="apple-touch-icon" href="../miracle_logo.png">
+  <link rel="icon" type="image/png" href="scanner_app_icon.png">
+  <link rel="apple-touch-icon" href="scanner_app_icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -113,16 +113,18 @@
       width: 38px;
       height: 38px;
       border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      color: #081221;
-      background: linear-gradient(135deg, #dce9ff, #9bbcff);
+      display: block;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.06);
       box-shadow: 0 10px 24px rgba(79, 140, 255, 0.28);
       flex-shrink: 0;
+    }
+
+    .nav-mark img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
     }
 
     .nav-title {
@@ -746,7 +748,7 @@
     <nav>
       <div class="shell nav-inner">
         <a class="nav-brand" href="/cma-part2/">
-          <span class="nav-mark">C2</span>
+          <span class="nav-mark"><img src="/cma-part2/scanner_app_icon.png" alt="CMA Part 2 icon"></span>
           <span class="nav-title">CMA Part 2 Exam Preparation</span>
         </a>
 
@@ -1056,7 +1058,7 @@
     <footer>
       <div class="shell footer-inner">
         <div class="footer-brand">
-          <span class="nav-mark">C2</span>
+          <span class="nav-mark"><img src="/cma-part2/scanner_app_icon.png" alt="CMA Part 2 icon"></span>
           <div class="footer-copy">
             CMA Part 2 Exam Preparation<br>
             Effective website update: June 3, 2026

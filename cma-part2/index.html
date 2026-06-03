@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CMA Part 2 Exam Preparation - Focused Practice for Exam Day</title>
+  <meta
+    name="description"
+    content="CMA Part 2 Exam Preparation is a focused study companion for strategic financial management, decision analysis, risk management, investment decisions, and ethics."
+  >
+  <meta name="theme-color" content="#07101f">
+  <meta name="author" content="Miracle Apps">
+  <meta property="og:title" content="CMA Part 2 Exam Preparation">
+  <meta
+    property="og:description"
+    content="A distraction-free, privacy-first study companion built for consistent CMA Part 2 practice."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.miracleapps.in/miracle_logo.png">
+  <link rel="canonical" href="https://www.miracleapps.in/cma-part2/">
+  <link rel="icon" type="image/png" href="../miracle_logo.png">
+  <link rel="apple-touch-icon" href="../miracle_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --bg: #07101f;
+      --bg2: #0b1730;
+      --surface: rgba(15, 24, 48, 0.94);
+      --surface2: rgba(12, 19, 38, 0.98);
+      --border: rgba(107, 147, 255, 0.12);
+      --border2: rgba(148, 179, 255, 0.22);
+      --text: #f4f7ff;
+      --muted: #7286ab;
+      --subtle: #a5b4d0;
+      --blue: #4f8cff;
+      --blue2: #80b3ff;
+      --teal: #38d0b7;
+      --gold: #f5c15e;
+      --purple: #8b7bff;
+      --grad-blue: linear-gradient(135deg, #4f8cff, #80b3ff);
+      --grad-teal: linear-gradient(135deg, #38d0b7, #59e3d4);
+      --grad-gold: linear-gradient(135deg, #f5c15e, #ffe18e);
+      --grad-dark: linear-gradient(145deg, rgba(16, 26, 52, 0.96), rgba(9, 14, 29, 0.99));
+      --radius-card: 28px;
+      --radius-sm: 16px;
+      --shadow-card: 0 28px 80px rgba(0, 0, 0, 0.52), 0 0 0 1px var(--border);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 960px 620px at 18% 0%, rgba(79, 140, 255, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 720px 520px at 85% 12%, rgba(56, 208, 183, 0.08) 0%, transparent 55%),
+        radial-gradient(ellipse 560px 380px at 52% 88%, rgba(245, 193, 94, 0.08) 0%, transparent 52%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page { position: relative; z-index: 1; }
+
+    .shell {
+      width: min(100%, 1140px);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px) saturate(1.35);
+      -webkit-backdrop-filter: blur(18px) saturate(1.35);
+      background: rgba(7, 16, 31, 0.78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 64px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: #081221;
+      background: linear-gradient(135deg, #dce9ff, #9bbcff);
+      box-shadow: 0 10px 24px rgba(79, 140, 255, 0.28);
+      flex-shrink: 0;
+    }
+
+    .nav-title {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      padding: 7px 12px;
+      border-radius: 10px;
+      color: var(--subtle);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color .2s, background .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-links .nav-cta {
+      color: #081221;
+      background: var(--grad-gold);
+      box-shadow: 0 10px 24px rgba(245, 193, 94, 0.18);
+    }
+
+    .hero {
+      padding: 96px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: rgba(79, 140, 255, 0.12);
+      border: 1px solid rgba(79, 140, 255, 0.26);
+      color: var(--blue2);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--blue2);
+      box-shadow: 0 0 12px rgba(128, 179, 255, 0.9);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+      margin-bottom: 24px;
+      max-width: 720px;
+    }
+
+    .hero h1 .accent-blue {
+      background: var(--grad-blue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero h1 .accent-gold {
+      background: var(--grad-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      max-width: 620px;
+      color: var(--subtle);
+      font-size: clamp(1rem, 2vw, 1.16rem);
+      line-height: 1.74;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 26px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      transition: transform .16s, box-shadow .16s;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #fff;
+      background: var(--grad-blue);
+      box-shadow: 0 14px 36px rgba(79, 140, 255, 0.34);
+    }
+
+    .btn-ghost {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border2);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .meta-pill {
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--subtle);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .hero-preview {
+      background: linear-gradient(155deg, rgba(14, 24, 51, 0.98), rgba(8, 14, 28, 0.98));
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 26px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-preview::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -100px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(79, 140, 255, 0.22), transparent 64%);
+      pointer-events: none;
+    }
+
+    .preview-chip {
+      display: inline-flex;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(56, 208, 183, 0.1);
+      border: 1px solid rgba(56, 208, 183, 0.18);
+      color: #86f2e3;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .preview-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .preview-sub {
+      color: var(--subtle);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .preview-list {
+      display: grid;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .preview-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+    }
+
+    .preview-index {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: #081221;
+      background: linear-gradient(135deg, #dce9ff, #9bbcff);
+    }
+
+    .preview-topic {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .preview-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .preview-score {
+      font-size: 12px;
+      font-weight: 700;
+      color: #9fe9dd;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(56, 208, 183, 0.12);
+      border: 1px solid rgba(56, 208, 183, 0.15);
+    }
+
+    .stats-strip {
+      padding: 18px 0 62px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .stat-card {
+      padding: 22px 20px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: clamp(1.9rem, 5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 8px;
+      background: var(--grad-blue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 84px 0;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      font-weight: 800;
+      margin-bottom: 14px;
+      max-width: 700px;
+    }
+
+    .section-sub {
+      max-width: 620px;
+      color: var(--subtle);
+      font-size: 16px;
+      line-height: 1.72;
+      margin-bottom: 46px;
+    }
+
+    .feature-grid,
+    .module-grid,
+    .trust-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .feature-card,
+    .module-card,
+    .trust-card {
+      background: var(--grad-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+    }
+
+    .feature-card {
+      transition: transform .2s, border-color .2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border2);
+    }
+
+    .card-kicker {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      color: #081221;
+      background: linear-gradient(135deg, #cfe0ff, #98bbff);
+    }
+
+    .card-title {
+      font-size: 1.16rem;
+      line-height: 1.3;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
+      color: var(--subtle);
+      font-size: 14px;
+      line-height: 1.72;
+    }
+
+    .module-card {
+      padding: 24px;
+    }
+
+    .module-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .module-id {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue2);
+    }
+
+    .module-badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(245, 193, 94, 0.1);
+      border: 1px solid rgba(245, 193, 94, 0.16);
+      color: #ffe49c;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .module-card h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .module-card p {
+      color: var(--subtle);
+      font-size: 14px;
+      line-height: 1.68;
+    }
+
+    .trust-wrap {
+      background: linear-gradient(145deg, rgba(11, 19, 38, 0.98), rgba(7, 12, 24, 0.98));
+      border: 1px solid rgba(79, 140, 255, 0.14);
+      border-radius: 34px;
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .trust-wrap::before {
+      content: '';
+      position: absolute;
+      left: -80px;
+      bottom: -80px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(56, 208, 183, 0.14), transparent 62%);
+      pointer-events: none;
+    }
+
+    .trust-card {
+      background: rgba(255, 255, 255, 0.04);
+      position: relative;
+      z-index: 1;
+    }
+
+    .trust-card .card-kicker {
+      background: linear-gradient(135deg, #c7fff4, #8feadb);
+    }
+
+    .cta-section {
+      padding: 0 0 84px;
+    }
+
+    .cta-card {
+      border-radius: 36px;
+      padding: 56px 34px;
+      text-align: center;
+      border: 1px solid rgba(79, 140, 255, 0.18);
+      background: linear-gradient(145deg, #10234b, #09122b);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-card::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(79, 140, 255, 0.18), transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-card::after {
+      content: '';
+      position: absolute;
+      left: -50px;
+      bottom: -50px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(245, 193, 94, 0.14), transparent 62%);
+      pointer-events: none;
+    }
+
+    .cta-card h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      font-weight: 900;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-card p {
+      max-width: 620px;
+      margin: 0 auto 28px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.72;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 34px 0 42px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links a {
+      color: var(--subtle);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    @media (min-width: 920px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+      }
+
+      .feature-grid,
+      .module-grid,
+      .trust-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 640px) and (max-width: 919px) {
+      .feature-grid,
+      .module-grid,
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        padding: 74px 0 58px;
+      }
+
+      nav {
+        position: static;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero-preview,
+      .trust-wrap,
+      .cta-card {
+        padding: 24px;
+        border-radius: 28px;
+      }
+
+      .feature-card,
+      .module-card,
+      .trust-card {
+        padding: 24px;
+        border-radius: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav>
+      <div class="shell nav-inner">
+        <a class="nav-brand" href="/cma-part2/">
+          <span class="nav-mark">C2</span>
+          <span class="nav-title">CMA Part 2 Exam Preparation</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#topics">Topics</a>
+          <a href="/cma-part2/privacy/">Privacy</a>
+          <a href="/cma-part2/terms/">Terms</a>
+          <a class="nav-cta" href="mailto:Keturahruth9@gmail.com">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div>
+            <span class="hero-badge">Offline Study Companion</span>
+            <h1>
+              Practice smarter for
+              <span class="accent-blue">CMA Part 2</span>
+              with a
+              <span class="accent-gold">calm, focused</span>
+              study flow.
+            </h1>
+            <p class="hero-sub">
+              CMA Part 2 Exam Preparation is built for serious review sessions.
+              Stay locked in on strategic financial management, decision
+              analysis, risk, investment choices, and ethics without the noise
+              of logins, ads, or distracting clutter.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#features">Explore Features</a>
+              <a class="btn btn-ghost" href="/cma-part2/privacy/">Read Privacy Policy</a>
+            </div>
+
+            <div class="hero-meta">
+              <span class="meta-pill">No login required</span>
+              <span class="meta-pill">Works offline</span>
+              <span class="meta-pill">Privacy-first design</span>
+            </div>
+          </div>
+
+          <aside class="hero-preview" aria-label="Study preview">
+            <span class="preview-chip">Session Snapshot</span>
+            <div class="preview-title">Study the areas that matter most next.</div>
+            <p class="preview-sub">
+              Move from formulas to scenario-based review with a structure that
+              feels clear, lightweight, and easy to return to every day.
+            </p>
+
+            <div class="preview-list">
+              <div class="preview-row">
+                <div class="preview-index">01</div>
+                <div>
+                  <div class="preview-topic">Decision Analysis</div>
+                  <div class="preview-note">Case-style reasoning and performance checks</div>
+                </div>
+                <div class="preview-score">Focus</div>
+              </div>
+
+              <div class="preview-row">
+                <div class="preview-index">02</div>
+                <div>
+                  <div class="preview-topic">Investment Decisions</div>
+                  <div class="preview-note">Capital budgeting and return comparisons</div>
+                </div>
+                <div class="preview-score">Ready</div>
+              </div>
+
+              <div class="preview-row">
+                <div class="preview-index">03</div>
+                <div>
+                  <div class="preview-topic">Professional Ethics</div>
+                  <div class="preview-note">Quick review before a timed practice block</div>
+                </div>
+                <div class="preview-score">Review</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="stats-strip">
+        <div class="shell">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Offline-first study access</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">0</div>
+              <div class="stat-label">Personal-data collection flows inside the app</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">6</div>
+              <div class="stat-label">Core Part 2 focus areas to keep revision targeted</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">1</div>
+              <div class="stat-label">Purpose: help you practice with less friction</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features">
+        <div class="shell">
+          <div class="section-eyebrow" style="background:rgba(79,140,255,0.12);border:1px solid rgba(79,140,255,0.2);color:var(--blue2);">
+            Exam Workflow
+          </div>
+          <h2 class="section-title">Built for repetition, clarity, and exam-day confidence.</h2>
+          <p class="section-sub">
+            Everything in the experience is meant to reduce friction so you can
+            spend more energy on thinking through questions and less energy on
+            managing the app itself.
+          </p>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="card-kicker">01</div>
+              <h3 class="card-title">Focused practice sessions</h3>
+              <p class="card-desc">
+                Review one topic at a time without bouncing between unrelated
+                screens, making it easier to stay in a productive study rhythm.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="card-kicker">02</div>
+              <h3 class="card-title">Scenario-driven revision</h3>
+              <p class="card-desc">
+                Stay closer to real exam thinking with question flow that
+                supports analysis, comparison, and decision-making habits.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="card-kicker">03</div>
+              <h3 class="card-title">Offline, anytime access</h3>
+              <p class="card-desc">
+                Open the app during commute time, break time, or a late-night
+                revision block without relying on a live internet connection.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="card-kicker">04</div>
+              <h3 class="card-title">Clean and distraction-light interface</h3>
+              <p class="card-desc">
+                The layout stays simple on purpose so your attention remains on
+                the content instead of on extra visual noise.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="card-kicker">05</div>
+              <h3 class="card-title">Quick concept refreshers</h3>
+              <p class="card-desc">
+                Revisit key formulas, concepts, and logic patterns before
+                jumping into another round of timed question review.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="card-kicker">06</div>
+              <h3 class="card-title">Privacy-first by default</h3>
+              <p class="card-desc">
+                No account setup, no analytics prompts, and no invasive device
+                permissions standing between you and your study session.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="topics">
+        <div class="shell">
+          <div class="section-eyebrow" style="background:rgba(245,193,94,0.12);border:1px solid rgba(245,193,94,0.22);color:#ffe49c;">
+            Part 2 Coverage
+          </div>
+          <h2 class="section-title">A study structure that stays aligned with core CMA Part 2 themes.</h2>
+          <p class="section-sub">
+            The product experience is designed around the kind of review blocks
+            candidates actually need when preparing for high-stakes, applied
+            exam questions.
+          </p>
+
+          <div class="module-grid">
+            <article class="module-card">
+              <div class="module-top">
+                <span class="module-id">Topic 01</span>
+                <span class="module-badge">Core</span>
+              </div>
+              <h3>Financial Statement Analysis</h3>
+              <p>Strengthen ratio interpretation, trend reading, and decision support thinking.</p>
+            </article>
+
+            <article class="module-card">
+              <div class="module-top">
+                <span class="module-id">Topic 02</span>
+                <span class="module-badge">Core</span>
+              </div>
+              <h3>Corporate Finance</h3>
+              <p>Review financing choices, capital structure ideas, and cost-of-capital reasoning.</p>
+            </article>
+
+            <article class="module-card">
+              <div class="module-top">
+                <span class="module-id">Topic 03</span>
+                <span class="module-badge">Applied</span>
+              </div>
+              <h3>Decision Analysis</h3>
+              <p>Practice problem-solving logic around constraints, alternatives, and operating choices.</p>
+            </article>
+
+            <article class="module-card">
+              <div class="module-top">
+                <span class="module-id">Topic 04</span>
+                <span class="module-badge">Applied</span>
+              </div>
+              <h3>Risk Management</h3>
+              <p>Study control awareness, enterprise risk thinking, and practical response planning.</p>
+            </article>
+
+            <article class="module-card">
+              <div class="module-top">
+                <span class="module-id">Topic 05</span>
+                <span class="module-badge">High Value</span>
+              </div>
+              <h3>Investment Decisions</h3>
+              <p>Work through evaluation methods, project selection logic, and return-based comparisons.</p>
+            </article>
+
+            <article class="module-card">
+              <div class="module-top">
+                <span class="module-id">Topic 06</span>
+                <span class="module-badge">Essential</span>
+              </div>
+              <h3>Professional Ethics</h3>
+              <p>Keep ethical judgment sharp with short, repeatable review built around responsibility and conduct.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="shell trust-wrap">
+          <div class="section-eyebrow" style="background:rgba(56,208,183,0.1);border:1px solid rgba(56,208,183,0.18);color:#9fe9dd;">
+            Study With Confidence
+          </div>
+          <h2 class="section-title">Simple app choices that respect your time and your privacy.</h2>
+          <p class="section-sub">
+            The legal pages mirror the product philosophy: keep everything clear,
+            honest, and easy to review.
+          </p>
+
+          <div class="trust-grid">
+            <article class="trust-card">
+              <div class="card-kicker">P1</div>
+              <h3 class="card-title">No personal-data signup flow</h3>
+              <p class="card-desc">
+                You can use the app without creating an account or handing over
+                personal profile information.
+              </p>
+            </article>
+
+            <article class="trust-card">
+              <div class="card-kicker">P2</div>
+              <h3 class="card-title">No special device permissions</h3>
+              <p class="card-desc">
+                The app does not need access to your camera, contacts, location,
+                or storage permissions to deliver its core study experience.
+              </p>
+            </article>
+
+            <article class="trust-card">
+              <div class="card-kicker">P3</div>
+              <h3 class="card-title">Clear legal pages</h3>
+              <p class="card-desc">
+                Privacy Policy and Terms &amp; Conditions are published in a
+                format that is easy to read on desktop or mobile.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="shell">
+          <div class="cta-card">
+            <h2>Review the app details before you publish or share it.</h2>
+            <p>
+              Need the legal pages for store listing, website linking, or user
+              support? Everything is now grouped into one tidy CMA Part 2 site.
+            </p>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="/cma-part2/privacy/">Privacy Policy</a>
+              <a class="btn btn-ghost" href="/cma-part2/terms/">Terms &amp; Conditions</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell footer-inner">
+        <div class="footer-brand">
+          <span class="nav-mark">C2</span>
+          <div class="footer-copy">
+            CMA Part 2 Exam Preparation<br>
+            Effective website update: June 3, 2026
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="/cma-part2/">Home</a>
+          <a href="/cma-part2/privacy/">Privacy Policy</a>
+          <a href="/cma-part2/terms/">Terms &amp; Conditions</a>
+          <a href="mailto:Keturahruth9@gmail.com">Keturahruth9@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

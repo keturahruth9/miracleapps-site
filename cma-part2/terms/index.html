@@ -3,12 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Terms &amp; Conditions – CMA Part 2 Exam Preparation</title>
-  <meta name="description" content="Terms &amp; Conditions for CMA Part 2 Exam Preparation. Review the terms that govern your use of the app and related website.">
+  <title>Terms &amp; Conditions - CMA Part 2 Exam Preparation</title>
+  <meta
+    name="description"
+    content="Terms &amp; Conditions for CMA Part 2 Exam Preparation."
+  >
   <meta name="author" content="Miracle Apps">
-  <meta name="theme-color" content="#060d1a">
-  <meta property="og:title" content="Terms &amp; Conditions – CMA Part 2 Exam Preparation">
-  <meta property="og:description" content="Review the terms that govern use of CMA Part 2 Exam Preparation app and website.">
+  <meta name="theme-color" content="#0b1220">
+  <meta property="og:title" content="Terms &amp; Conditions - CMA Part 2 Exam Preparation">
+  <meta property="og:description" content="Review the terms that govern use of CMA Part 2 Exam Preparation.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.miracleapps.in/cma-part2/CMA_Appicon.png">
   <link rel="canonical" href="https://www.miracleapps.in/cma-part2/terms/">
@@ -16,516 +19,296 @@
   <link rel="apple-touch-icon" href="../CMA_Appicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet"
+  >
   <style>
     :root {
-      --bg:      #060d1a;
-      --bg2:     #0a1526;
-      --border:  rgba(79,140,255,0.14);
-      --border2: rgba(120,170,255,0.26);
-      --text:    #eef3ff;
-      --muted:   #617099;
-      --subtle:  #99aed0;
-      --blue:    #4f8cff;
-      --blue2:   #82b4ff;
-      --gold:    #f5c145;
-      --gold2:   #fde68a;
-      --purple:  #8b7bff;
-      --grad-blue:   linear-gradient(135deg,#4f8cff,#82b4ff);
-      --grad-gold:   linear-gradient(135deg,#f5c145,#fde68a);
-      --grad-purple: linear-gradient(135deg,#8b7bff,#b5a8ff);
-      --radius:    22px;
-      --radius-sm: 14px;
+      --bg: #0b1220;
+      --surface: rgba(19, 27, 43, 0.98);
+      --surface-2: rgba(24, 35, 56, 0.98);
+      --border: rgba(96, 165, 250, 0.14);
+      --divider: rgba(148, 163, 184, 0.12);
+      --text: #f8fafc;
+      --body: #d7e0ee;
+      --muted: #94a3b8;
+      --primary-soft: #60a5fa;
+      --accent: #38bdf8;
+      --shadow: 0 24px 60px rgba(2, 6, 23, 0.35);
+      --radius-card: 16px;
+      --radius-inner: 12px;
     }
 
-    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-    html { scroll-behavior:smooth; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family:'Inter',system-ui,sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      margin: 0;
       min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* ambient glow */
-    body::before {
-      content:'';
-      position:fixed; inset:0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
       background:
-        radial-gradient(ellipse 800px 600px at 10% -10%, rgba(79,140,255,.12) 0%,transparent 60%),
-        radial-gradient(ellipse 600px 400px at 90% 20%, rgba(245,193,69,.06) 0%,transparent 55%);
-      pointer-events:none; z-index:0;
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.22), transparent 34%),
+        radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 24%),
+        linear-gradient(180deg, #0a1020 0%, #0b1220 44%, #08101d 100%);
     }
 
-    .page { position:relative; z-index:1; }
-    .shell { width:min(100%,960px); margin:0 auto; padding:0 24px; }
-
-    /* ── NAV ── */
-    nav {
-      position:sticky; top:0; z-index:200;
-      backdrop-filter:blur(22px) saturate(1.5);
-      -webkit-backdrop-filter:blur(22px) saturate(1.5);
-      background:rgba(6,13,26,0.78);
-      border-bottom:1px solid var(--border);
-    }
-    .nav-inner {
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; min-height:66px;
-    }
-    .nav-brand {
-      display:flex; align-items:center; gap:12px;
-      text-decoration:none; color:var(--text); flex-shrink:0;
-    }
-    .nav-icon {
-      width:36px; height:36px; border-radius:12px;
-      overflow:hidden; flex-shrink:0;
-      box-shadow:0 6px 18px rgba(79,140,255,.28);
-    }
-    .nav-icon img { width:100%; height:100%; display:block; object-fit:cover; }
-    .nav-title { font-size:14px; font-weight:800; letter-spacing:-.02em; }
-    .nav-back {
-      display:flex; align-items:center; gap:6px;
-      padding:7px 14px; border-radius:10px;
-      background:rgba(255,255,255,.06); border:1px solid var(--border2);
-      color:var(--subtle); text-decoration:none; font-size:13px; font-weight:600;
-      transition:color .18s,background .18s;
-    }
-    .nav-back:hover { color:var(--text); background:rgba(255,255,255,.1); }
-
-    /* ── HERO ── */
     .hero {
-      padding:80px 0 64px;
-      border-bottom:1px solid var(--border);
-      position:relative; overflow:hidden;
-    }
-    .hero::after {
-      content:'';
-      position:absolute; top:-80px; right:-80px;
-      width:300px; height:300px;
-      background:radial-gradient(circle,rgba(245,193,69,.09),transparent 65%);
-      pointer-events:none;
+      padding: 28px 16px 22px;
+      background: linear-gradient(135deg, rgba(17, 42, 99, 0.95), rgba(11, 18, 32, 0.98));
+      border-bottom: 1px solid rgba(96, 165, 250, 0.14);
     }
 
-    .hero-eyebrow {
-      display:inline-flex; align-items:center; gap:10px;
-      padding:8px 16px 8px 10px;
-      border-radius:999px;
-      background:rgba(245,193,69,.1); border:1px solid rgba(245,193,69,.24);
-      color:var(--gold2); font-size:12px; font-weight:700;
-      letter-spacing:.05em; text-transform:uppercase; margin-bottom:26px;
-    }
-    .eyebrow-icon {
-      width:28px; height:28px; border-radius:9px;
-      overflow:hidden; flex-shrink:0;
-      box-shadow:0 4px 12px rgba(0,0,0,.4);
-    }
-    .eyebrow-icon img { width:100%; height:100%; display:block; object-fit:cover; }
-
-    .hero h1 {
-      font-family:'Space Grotesk',sans-serif;
-      font-size:clamp(2.2rem,6vw,3.8rem);
-      line-height:.97; letter-spacing:-.05em; font-weight:700;
-      margin-bottom:20px;
-    }
-    .h1-accent {
-      background: var(--grad-gold);
-      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-      background-clip:text;
-    }
-    .hero-date {
-      display:inline-flex; align-items:center; gap:7px;
-      padding:5px 13px; border-radius:999px;
-      background:rgba(245,193,69,.1); border:1px solid rgba(245,193,69,.2);
-      color:var(--gold2); font-size:12px; font-weight:700;
-      letter-spacing:.03em; margin-bottom:22px;
-    }
-    .hero p {
-      max-width:680px; color:var(--subtle);
-      font-size:clamp(.98rem,1.8vw,1.08rem); line-height:1.76;
+    .hero-inner, .content-inner, .footer-inner {
+      width: min(100%, 920px);
+      margin: 0 auto;
     }
 
-    /* ── CONTENT ── */
-    .content { padding:56px 0 80px; }
-
-    .toc {
-      padding:24px 22px; border-radius:var(--radius);
-      background:rgba(255,255,255,.03); border:1px solid var(--border);
-      margin-bottom:40px;
-    }
-    .toc-title {
-      font-size:11px; font-weight:700; letter-spacing:.07em;
-      text-transform:uppercase; color:var(--muted); margin-bottom:14px;
-    }
-    .toc-links { display:flex; flex-wrap:wrap; gap:8px; }
-    .toc-link {
-      padding:5px 12px; border-radius:999px;
-      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08);
-      color:var(--subtle); text-decoration:none; font-size:12px; font-weight:600;
-      transition:color .18s,border-color .18s,background .18s;
-    }
-    .toc-link:hover {
-      color:var(--text); border-color:var(--border2);
-      background:rgba(245,193,69,.08);
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+      padding: 0 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #dbeafe;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      border-radius: 999px;
     }
 
-    .sections { display:flex; flex-direction:column; gap:14px; }
+    .badge::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      border-radius: 8px;
+      background: url("../CMA_Appicon.png") center / cover no-repeat;
+      box-shadow: 0 6px 16px rgba(2, 6, 23, 0.35);
+    }
 
-    .sec {
-      padding:28px 26px; border-radius:var(--radius);
-      background:linear-gradient(155deg,rgba(13,24,50,0.96),rgba(8,13,27,0.99));
-      border:1px solid var(--border);
-      transition:border-color .2s;
+    h1 {
+      margin: 16px 0 8px;
+      font-size: clamp(2rem, 8vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      color: #fff;
     }
-    .sec:hover { border-color:var(--border2); }
 
-    .sec-num {
-      font-size:10px; font-weight:700; letter-spacing:.08em;
-      text-transform:uppercase; color:var(--muted); margin-bottom:10px;
+    .effective-date {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--primary-soft);
+      font-size: 13px;
+      font-weight: 700;
     }
-    .sec h2 {
-      font-family:'Space Grotesk',sans-serif;
-      font-size:1.18rem; font-weight:700; letter-spacing:-.025em;
-      color:var(--text); margin-bottom:14px;
-      display:flex; align-items:center; gap:10px;
-    }
-    .sec-icon {
-      width:32px; height:32px; border-radius:10px; flex-shrink:0;
-      display:flex; align-items:center; justify-content:center; font-size:15px;
-    }
-    .sec p {
-      color:var(--subtle); font-size:14.5px; line-height:1.78; margin-bottom:12px;
-    }
-    .sec p:last-child { margin-bottom:0; }
-    .sec ul {
-      padding-left:0; list-style:none;
-      display:flex; flex-direction:column; gap:9px; margin-top:4px;
-    }
-    .sec li {
-      color:var(--subtle); font-size:14.5px; line-height:1.7;
-      display:flex; align-items:flex-start; gap:10px;
-    }
-    .sec li::before {
-      content:''; flex-shrink:0;
-      width:6px; height:6px; border-radius:50%;
-      background:var(--gold); margin-top:8px;
-    }
-    strong { color:var(--text); font-weight:700; }
-    a { color:var(--blue2); text-decoration:none; font-weight:600; }
-    a:hover { text-decoration:underline; }
 
-    .highlight-box {
-      margin-top:18px; padding:18px 20px; border-radius:var(--radius-sm);
-      background:linear-gradient(135deg,rgba(245,193,69,.1),rgba(79,140,255,.07));
-      border:1px solid rgba(245,193,69,.2);
+    .intro {
+      margin: 0;
+      max-width: 740px;
+      color: var(--body);
+      font-size: 15px;
+      line-height: 1.78;
     }
-    .highlight-box p { color:var(--subtle); margin:0; }
-    .highlight-box strong { color:var(--gold); }
 
-    .privacy-link-card {
-      display:flex; align-items:center; gap:14px;
-      padding:16px 20px; border-radius:var(--radius-sm);
-      background:rgba(79,140,255,.08); border:1px solid rgba(79,140,255,.18);
-      margin-top:14px; text-decoration:none;
-      transition:background .2s,border-color .2s;
+    .content {
+      padding: 14px 12px 24px;
     }
-    .privacy-link-card:hover {
-      background:rgba(79,140,255,.14); border-color:rgba(79,140,255,.3);
-      text-decoration:none;
-    }
-    .plc-icon {
-      width:36px; height:36px; border-radius:10px; flex-shrink:0;
-      display:flex; align-items:center; justify-content:center; font-size:16px;
-      background:rgba(79,140,255,.14);
-    }
-    .plc-label { font-size:12px; color:var(--muted); margin-bottom:2px; }
-    .plc-title { font-size:14px; font-weight:700; color:var(--blue2); }
 
-    .contact-card {
-      display:flex; align-items:center; gap:14px;
-      padding:18px 20px; border-radius:var(--radius-sm);
-      background:rgba(79,140,255,.08); border:1px solid rgba(79,140,255,.18);
-      margin-top:16px; text-decoration:none;
-      transition:background .2s,border-color .2s;
+    .section {
+      margin-bottom: 12px;
+      padding: 18px 16px;
+      background: linear-gradient(180deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-card);
     }
-    .contact-card:hover {
-      background:rgba(79,140,255,.14); border-color:rgba(79,140,255,.3);
-      text-decoration:none;
-    }
-    .contact-card-icon {
-      width:38px; height:38px; border-radius:11px; flex-shrink:0;
-      display:flex; align-items:center; justify-content:center; font-size:17px;
-      background:rgba(79,140,255,.14);
-    }
-    .contact-card-label { font-size:13px; color:var(--muted); margin-bottom:2px; }
-    .contact-card-email { font-size:15px; font-weight:700; color:var(--blue2); }
 
-    /* ── FOOTER ── */
-    footer {
-      border-top:1px solid var(--border);
-      padding:36px 0 48px;
+    h2 {
+      margin: 0 0 10px;
+      color: #eff6ff;
+      font-size: 1.05rem;
+      line-height: 1.32;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--body);
+      font-size: 14px;
+      line-height: 1.78;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--body);
+    }
+
+    li {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .highlight {
+      margin-top: 14px;
+      padding: 14px 14px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.16), rgba(56, 189, 248, 0.08));
+      border: 1px solid rgba(96, 165, 250, 0.16);
+      border-radius: var(--radius-inner);
+      overflow: hidden;
+    }
+
+    .footer {
+      border-top: 1px solid var(--divider);
+      padding: 20px 16px 28px;
+    }
+
     .footer-inner {
-      display:flex; flex-wrap:wrap; align-items:center;
-      justify-content:space-between; gap:18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.7;
     }
-    .footer-brand { display:flex; align-items:center; gap:12px; }
-    .footer-icon {
-      width:36px; height:36px; border-radius:12px;
-      overflow:hidden; box-shadow:0 6px 18px rgba(79,140,255,.24);
-    }
-    .footer-icon img { width:100%; height:100%; display:block; object-fit:cover; }
-    .footer-copy { color:var(--muted); font-size:13px; line-height:1.6; }
-    .footer-links { display:flex; flex-wrap:wrap; gap:16px; }
-    .footer-links a {
-      color:var(--subtle); text-decoration:none;
-      font-size:13px; font-weight:600; transition:color .2s;
-    }
-    .footer-links a:hover { color:var(--text); }
 
-    @media(max-width:640px) {
-      .hero { padding:60px 0 50px; }
-      .sec { padding:22px 18px; }
-      nav { position:static; }
-      .nav-inner { flex-direction:column; align-items:flex-start; padding:14px 0; }
+    @media (min-width: 768px) {
+      .hero { padding: 40px 24px 30px; }
+      .content { padding: 18px 20px 32px; }
+      .section {
+        padding: 24px 22px;
+        margin-bottom: 14px;
+      }
+
+      h2 { font-size: 1.18rem; }
+      p, li { font-size: 15px; }
     }
   </style>
 </head>
 <body>
-<div class="page">
-
-  <!-- NAV -->
-  <nav>
-    <div class="shell nav-inner">
-      <a class="nav-brand" href="/cma-part2/">
-        <span class="nav-icon"><img src="../CMA_Appicon.png" alt="CMA Part 2 icon"></span>
-        <span class="nav-title">CMA Part 2 Exam Prep</span>
-      </a>
-      <a class="nav-back" href="/cma-part2/">← Back to Home</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
   <header class="hero">
-    <div class="shell">
-      <div class="hero-eyebrow">
-        <span class="eyebrow-icon"><img src="../CMA_Appicon.png" alt="App icon"></span>
-        CMA Part 2 · Legal
-      </div>
-      <h1>Terms &amp; <span class="h1-accent">Conditions</span></h1>
-      <div class="hero-date">📅 Effective Date: June 3, 2026</div>
-      <p>
-        These Terms &amp; Conditions govern your use of <strong>CMA Part 2 Exam Preparation</strong>.
-        By downloading, opening, or using the app or its related website, you agree to these terms.
-        Please read them carefully before use.
+    <div class="hero-inner">
+      <span class="badge">CMA Part 2 Terms</span>
+      <h1>Terms &amp; Conditions</h1>
+      <span class="effective-date">Effective Date: June 3, 2026</span>
+      <p class="intro">
+        These Terms &amp; Conditions govern your use of
+        <strong>CMA Part 2 Exam Preparation</strong>. By downloading, opening,
+        or using the app or its related website, you agree to these terms.
       </p>
     </div>
   </header>
 
-  <!-- CONTENT -->
   <main class="content">
-    <div class="shell">
+    <div class="content-inner">
+      <section class="section">
+        <h2>1. Educational Use</h2>
+        <p>
+          CMA Part 2 Exam Preparation is provided as an educational study
+          companion. It is intended to support review and practice for the CMA
+          Part 2 exam.
+        </p>
+        <p>
+          The app does not replace official CMA materials, instructor guidance,
+          or your own study judgment.
+        </p>
+      </section>
 
-      <!-- Table of Contents -->
-      <nav class="toc" aria-label="Table of contents">
-        <div class="toc-title">Contents</div>
-        <div class="toc-links">
-          <a class="toc-link" href="#educational">1. Educational Use</a>
-          <a class="toc-link" href="#responsibility">2. User Responsibility</a>
-          <a class="toc-link" href="#ip">3. Intellectual Property</a>
-          <a class="toc-link" href="#purchases">4. In-App Purchases</a>
-          <a class="toc-link" href="#availability">5. Availability &amp; Updates</a>
-          <a class="toc-link" href="#privacy">6. Privacy</a>
-          <a class="toc-link" href="#liability">7. Limitation of Liability</a>
-          <a class="toc-link" href="#contact">8. Contact</a>
-        </div>
-      </nav>
+      <section class="section">
+        <h2>2. User Responsibility</h2>
+        <p>
+          You are responsible for how you use the app, review materials, and
+          apply any concepts while studying. Please use the app only for lawful
+          and personal educational purposes.
+        </p>
+      </section>
 
-      <div class="sections">
+      <section class="section">
+        <h2>3. Content and Intellectual Property</h2>
+        <p>
+          The app design, layout, branding, and related website materials
+          remain the property of their respective owner unless stated
+          otherwise.
+        </p>
+        <p>
+          You may use the app for your own study purposes, but you may not copy,
+          redistribute, resell, or republish the app or website content in a
+          way that violates applicable law or our rights.
+        </p>
+      </section>
 
-        <section class="sec" id="educational">
-          <div class="sec-num">Section 01</div>
-          <h2>
-            <span class="sec-icon" style="background:rgba(79,140,255,.14);">📚</span>
-            Educational Use
-          </h2>
-          <p>
-            <strong>CMA Part 2 Exam Preparation</strong> is provided as an educational study companion.
-            It is intended to support review and practice for the CMA Part 2 examination —
-            Strategic Financial Management.
-          </p>
-          <p>
-            The app does not replace official CMA materials, IMA resources, instructor guidance,
-            or your own study judgment. All practice questions are for preparation purposes only
-            and are not affiliated with or endorsed by the IMA.
-          </p>
-          <div class="highlight-box">
-            <p>
-              <strong>Disclaimer:</strong> Passing scores in the app do not guarantee a pass on
-              the real CMA exam. Use this tool as one part of a broader preparation strategy.
-            </p>
-          </div>
-        </section>
+      <section class="section">
+        <h2>4. App Availability and Updates</h2>
+        <p>
+          We may improve, update, modify, or discontinue parts of the app or
+          website at any time. We may also update these Terms &amp; Conditions
+          when needed.
+        </p>
+        <p>
+          Continued use of the app after updates are published means you accept
+          the revised terms.
+        </p>
+      </section>
 
-        <section class="sec" id="responsibility">
-          <div class="sec-num">Section 02</div>
-          <h2>
-            <span class="sec-icon" style="background:rgba(52,211,153,.14);">👤</span>
-            User Responsibility
-          </h2>
-          <p>
-            You are responsible for how you use the app, review materials, and apply any concepts
-            while studying. Please use the app only for lawful and personal educational purposes.
-          </p>
-          <p>
-            You agree not to reverse-engineer, decompile, copy, redistribute, or attempt to extract
-            the question bank or any content from the app for purposes other than your own personal study.
-          </p>
-        </section>
+      <section class="section">
+        <h2>5. Privacy</h2>
+        <p>
+          Your use of the app is also subject to the
+          <a href="/cma-part2/privacy/">Privacy Policy</a>, which explains how
+          the app is designed to avoid collecting personal information during
+          normal use.
+        </p>
+      </section>
 
-        <section class="sec" id="ip">
-          <div class="sec-num">Section 03</div>
-          <h2>
-            <span class="sec-icon" style="background:rgba(245,193,69,.14);">©️</span>
-            Content and Intellectual Property
-          </h2>
-          <p>
-            The app design, layout, branding, question bank, explanations, and related website
-            materials remain the intellectual property of Miracle Apps unless stated otherwise.
-          </p>
-          <p>
-            You may use the app for your own study purposes, but you may not:
-          </p>
-          <ul>
-            <li>Copy, redistribute, or resell the app's content in any form</li>
-            <li>Publish or share question text, options, or explanations from the app publicly</li>
-            <li>Use the app's name, branding, or icon for any commercial purpose</li>
-          </ul>
-        </section>
+      <section class="section">
+        <h2>6. Limitation of Liability</h2>
+        <p>
+          To the extent permitted by law, we are not liable for indirect,
+          incidental, or consequential damages arising from your use of, or
+          inability to use, the app or website.
+        </p>
+        <p>
+          This includes losses related to study interruptions, device issues,
+          or reliance on the app as your only preparation resource.
+        </p>
+      </section>
 
-        <section class="sec" id="purchases">
-          <div class="sec-num">Section 04</div>
-          <h2>
-            <span class="sec-icon" style="background:rgba(139,123,255,.14);">💳</span>
-            In-App Purchases
-          </h2>
-          <p>
-            The app offers an optional Pro upgrade via an in-app purchase that unlocks additional
-            quiz modes (Final Test, Random Set Quiz, Missed Questions, Saved Questions) and removes
-            all advertising.
-          </p>
-          <p>
-            All purchases are processed through the Apple App Store. Pricing, billing, and refund
-            policies for in-app purchases are subject to Apple's standard terms. We do not handle
-            payment information directly.
-          </p>
-          <p>
-            If you experience issues with a purchase, please contact us at
-            <a href="mailto:support@miracleapps.in">support@miracleapps.in</a> or reach out
-            through Apple's support channels.
-          </p>
-        </section>
-
-        <section class="sec" id="availability">
-          <div class="sec-num">Section 05</div>
-          <h2>
-            <span class="sec-icon" style="background:rgba(244,114,182,.14);">🔄</span>
-            App Availability and Updates
-          </h2>
-          <p>
-            We may improve, update, modify, or discontinue parts of the app or website at any time
-            without prior notice. We may also update these Terms &amp; Conditions when needed.
-          </p>
-          <p>
-            Continued use of the app after updates are published means you accept the revised terms.
-            We encourage you to review this page periodically for any changes.
-          </p>
-        </section>
-
-        <section class="sec" id="privacy">
-          <div class="sec-num">Section 06</div>
-          <h2>
-            <span class="sec-icon" style="background:rgba(45,212,191,.14);">🔒</span>
-            Privacy
-          </h2>
-          <p>
-            Your use of the app is also subject to our Privacy Policy, which explains how
-            the app is designed to avoid collecting personal information during normal use —
-            including fully offline operation and encrypted local storage.
-          </p>
-          <a class="privacy-link-card" href="/cma-part2/privacy/">
-            <div class="plc-icon">🛡️</div>
-            <div>
-              <div class="plc-label">Read the full document</div>
-              <div class="plc-title">Privacy Policy →</div>
-            </div>
-          </a>
-        </section>
-
-        <section class="sec" id="liability">
-          <div class="sec-num">Section 07</div>
-          <h2>
-            <span class="sec-icon" style="background:rgba(248,113,113,.14);">⚖️</span>
-            Limitation of Liability
-          </h2>
-          <p>
-            To the extent permitted by applicable law, we are not liable for indirect, incidental,
-            or consequential damages arising from your use of, or inability to use, the app or website.
-          </p>
-          <p>
-            This includes losses related to:
-          </p>
-          <ul>
-            <li>Study interruptions or device issues affecting app access</li>
-            <li>Reliance on the app as your sole preparation resource</li>
-            <li>Exam outcomes based on app usage</li>
-            <li>Data loss resulting from clearing device storage</li>
-          </ul>
-        </section>
-
-        <section class="sec" id="contact">
-          <div class="sec-num">Section 08</div>
-          <h2>
-            <span class="sec-icon" style="background:rgba(52,211,153,.14);">💬</span>
-            Contact Information
-          </h2>
-          <p>
-            If you have questions about these Terms &amp; Conditions, found an error, or need
-            support, please reach out:
-          </p>
-          <a class="contact-card" href="mailto:support@miracleapps.in">
-            <div class="contact-card-icon">✉️</div>
-            <div>
-              <div class="contact-card-label">Send us an email</div>
-              <div class="contact-card-email">support@miracleapps.in</div>
-            </div>
-          </a>
-        </section>
-
-      </div>
+      <section class="section">
+        <h2>7. Contact Information</h2>
+        <p>
+          If you have questions about these Terms &amp; Conditions, contact:
+          <a href="mailto:support@miracleapps.in">support@miracleapps.in</a>
+        </p>
+      </section>
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="shell footer-inner">
-      <div class="footer-brand">
-        <span class="footer-icon"><img src="../CMA_Appicon.png" alt="CMA Part 2 icon"></span>
-        <div class="footer-copy">
-          CMA Part 2 Exam Preparation<br>
-          <span style="font-size:12px;">Terms &amp; Conditions · Effective June 3, 2026</span>
-        </div>
-      </div>
-      <div class="footer-links">
-        <a href="/cma-part2/">Home</a>
-        <a href="/cma-part2/privacy/">Privacy Policy</a>
-        <a href="mailto:support@miracleapps.in">Contact</a>
-      </div>
+  <footer class="footer">
+    <div class="footer-inner">
+      CMA Part 2 Exam Preparation<br>
+      Terms &amp; Conditions effective June 3, 2026
     </div>
   </footer>
-
-</div>
 </body>
 </html>

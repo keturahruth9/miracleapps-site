@@ -3,18 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Privacy Policy - CMA Part 2 Exam Preparation</title>
-  <meta
-    name="description"
-    content="Privacy Policy for CMA Part 2 Exam Preparation. The app is designed to work without collecting personal information or requiring special device permissions."
-  >
+  <title>Privacy Policy – CMA Part 2 Exam Preparation</title>
+  <meta name="description" content="Privacy Policy for CMA Part 2 Exam Preparation. The app is designed to work without collecting personal information or requiring special device permissions.">
   <meta name="author" content="Miracle Apps">
-  <meta name="theme-color" content="#0b1220">
-  <meta property="og:title" content="Privacy Policy - CMA Part 2 Exam Preparation">
-  <meta
-    property="og:description"
-    content="Read how CMA Part 2 Exam Preparation handles data, permissions, offline use, and contact requests."
-  >
+  <meta name="theme-color" content="#060d1a">
+  <meta property="og:title" content="Privacy Policy – CMA Part 2 Exam Preparation">
+  <meta property="og:description" content="Read how CMA Part 2 Exam Preparation handles data, permissions, offline use, and contact requests.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.miracleapps.in/cma-part2/CMA_Appicon.png">
   <link rel="canonical" href="https://www.miracleapps.in/cma-part2/privacy/">
@@ -22,347 +16,489 @@
   <link rel="apple-touch-icon" href="../CMA_Appicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #0b1220;
-      --bg-soft: #111a2b;
-      --surface: rgba(19, 27, 43, 0.98);
-      --surface-2: rgba(24, 35, 56, 0.98);
-      --border: rgba(96, 165, 250, 0.14);
-      --divider: rgba(148, 163, 184, 0.12);
-      --text: #f8fafc;
-      --body: #d7e0ee;
-      --muted: #94a3b8;
-      --primary: #2563eb;
-      --primary-soft: #60a5fa;
-      --accent: #38bdf8;
-      --shadow: 0 24px 60px rgba(2, 6, 23, 0.35);
-      --radius-card: 16px;
-      --radius-inner: 12px;
+      --bg:      #060d1a;
+      --bg2:     #0a1526;
+      --border:  rgba(79,140,255,0.14);
+      --border2: rgba(120,170,255,0.26);
+      --text:    #eef3ff;
+      --muted:   #617099;
+      --subtle:  #99aed0;
+      --blue:    #4f8cff;
+      --blue2:   #82b4ff;
+      --teal:    #2dd4bf;
+      --gold:    #f5c145;
+      --green:   #34d399;
+      --grad-blue: linear-gradient(135deg,#4f8cff,#82b4ff);
+      --grad-teal: linear-gradient(135deg,#2dd4bf,#67e8d0);
+      --radius:  22px;
+      --radius-sm: 14px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
 
     body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family:'Inter',system-ui,sans-serif;
+      background: var(--bg);
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.22), transparent 34%),
-        radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 24%),
-        linear-gradient(180deg, #0a1020 0%, #0b1220 44%, #08101d 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
+    /* ambient glow */
+    body::before {
+      content:'';
+      position:fixed; inset:0;
+      background:
+        radial-gradient(ellipse 800px 600px at 10% -10%, rgba(79,140,255,.12) 0%,transparent 60%),
+        radial-gradient(ellipse 600px 400px at 90% 20%, rgba(45,212,191,.07) 0%,transparent 55%);
+      pointer-events:none; z-index:0;
+    }
+
+    .page { position:relative; z-index:1; }
+    .shell { width:min(100%,960px); margin:0 auto; padding:0 24px; }
+
+    /* ── NAV ── */
+    nav {
+      position:sticky; top:0; z-index:200;
+      backdrop-filter:blur(22px) saturate(1.5);
+      -webkit-backdrop-filter:blur(22px) saturate(1.5);
+      background:rgba(6,13,26,0.78);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner {
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; min-height:66px;
+    }
+    .nav-brand {
+      display:flex; align-items:center; gap:12px;
+      text-decoration:none; color:var(--text); flex-shrink:0;
+    }
+    .nav-icon {
+      width:36px; height:36px; border-radius:12px;
+      overflow:hidden; flex-shrink:0;
+      box-shadow:0 6px 18px rgba(79,140,255,.28);
+    }
+    .nav-icon img { width:100%; height:100%; display:block; object-fit:cover; }
+    .nav-title { font-size:14px; font-weight:800; letter-spacing:-.02em; }
+    .nav-back {
+      display:flex; align-items:center; gap:6px;
+      padding:7px 14px; border-radius:10px;
+      background:rgba(255,255,255,.06); border:1px solid var(--border2);
+      color:var(--subtle); text-decoration:none; font-size:13px; font-weight:600;
+      transition:color .18s,background .18s;
+    }
+    .nav-back:hover { color:var(--text); background:rgba(255,255,255,.1); }
+
+    /* ── HERO ── */
     .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 28px 16px 22px;
-      background:
-        linear-gradient(135deg, rgba(17, 42, 99, 0.95), rgba(11, 18, 32, 0.98)),
-        linear-gradient(180deg, rgba(56, 189, 248, 0.08), transparent);
-      border-bottom: 1px solid rgba(96, 165, 250, 0.14);
+      padding:80px 0 64px;
+      border-bottom:1px solid var(--border);
+      position:relative; overflow:hidden;
     }
-
     .hero::after {
-      content: "";
-      position: absolute;
-      right: -70px;
-      bottom: -80px;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, rgba(37, 99, 235, 0.25), transparent 68%);
-      pointer-events: none;
+      content:'';
+      position:absolute; bottom:-100px; right:-80px;
+      width:320px; height:320px;
+      background:radial-gradient(circle,rgba(45,212,191,.1),transparent 65%);
+      pointer-events:none;
     }
 
-    .hero-inner, .content-inner, .footer-inner {
-      width: min(100%, 920px);
-      margin: 0 auto;
+    .hero-eyebrow {
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 16px 8px 10px;
+      border-radius:999px;
+      background:rgba(45,212,191,.1); border:1px solid rgba(45,212,191,.22);
+      color:var(--teal); font-size:12px; font-weight:700;
+      letter-spacing:.05em; text-transform:uppercase; margin-bottom:26px;
+    }
+    .eyebrow-icon {
+      width:28px; height:28px; border-radius:9px;
+      overflow:hidden; flex-shrink:0;
+      box-shadow:0 4px 12px rgba(0,0,0,.4);
+    }
+    .eyebrow-icon img { width:100%; height:100%; display:block; object-fit:cover; }
+
+    .hero h1 {
+      font-family:'Space Grotesk',sans-serif;
+      font-size:clamp(2.4rem,6vw,3.8rem);
+      line-height:.97; letter-spacing:-.05em; font-weight:700;
+      margin-bottom:20px;
+    }
+    .h1-accent {
+      background: var(--grad-teal);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .hero-date {
+      display:inline-flex; align-items:center; gap:7px;
+      padding:5px 13px; border-radius:999px;
+      background:rgba(79,140,255,.1); border:1px solid rgba(79,140,255,.2);
+      color:var(--blue2); font-size:12px; font-weight:700;
+      letter-spacing:.03em; margin-bottom:22px;
+    }
+    .hero p {
+      max-width:680px; color:var(--subtle);
+      font-size:clamp(.98rem,1.8vw,1.08rem); line-height:1.76;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      min-height: 34px;
-      padding: 0 12px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #dbeafe;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      border-radius: 999px;
+    /* ── SECTIONS ── */
+    .content { padding:56px 0 80px; }
+
+    .toc {
+      padding:24px 22px; border-radius:var(--radius);
+      background:rgba(255,255,255,.03); border:1px solid var(--border);
+      margin-bottom:40px;
+    }
+    .toc-title {
+      font-size:11px; font-weight:700; letter-spacing:.07em;
+      text-transform:uppercase; color:var(--muted); margin-bottom:14px;
+    }
+    .toc-links {
+      display:flex; flex-wrap:wrap; gap:8px;
+    }
+    .toc-link {
+      padding:5px 12px; border-radius:999px;
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08);
+      color:var(--subtle); text-decoration:none; font-size:12px; font-weight:600;
+      transition:color .18s,border-color .18s,background .18s;
+    }
+    .toc-link:hover {
+      color:var(--text); border-color:var(--border2);
+      background:rgba(79,140,255,.08);
     }
 
-    .badge::before {
-      content: "";
-      width: 18px;
-      height: 18px;
-      border-radius: 8px;
-      background: url("../CMA_Appicon.png") center / cover no-repeat;
-      box-shadow: 0 6px 16px rgba(2, 6, 23, 0.35);
-      flex: 0 0 auto;
+    .sections { display:flex; flex-direction:column; gap:14px; }
+
+    .sec {
+      padding:28px 26px; border-radius:var(--radius);
+      background:linear-gradient(155deg,rgba(13,24,50,0.96),rgba(8,13,27,0.99));
+      border:1px solid var(--border);
+      transition:border-color .2s;
     }
+    .sec:hover { border-color:var(--border2); }
 
-    h1 {
-      margin: 16px 0 8px;
-      font-size: clamp(2rem, 8vw, 3rem);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-      font-weight: 800;
-      color: #fff;
+    .sec-num {
+      font-size:10px; font-weight:700; letter-spacing:.08em;
+      text-transform:uppercase; color:var(--muted); margin-bottom:10px;
     }
-
-    .effective-date {
-      display: inline-block;
-      margin-bottom: 16px;
-      color: var(--primary-soft);
-      font-size: 13px;
-      font-weight: 700;
+    .sec h2 {
+      font-family:'Space Grotesk',sans-serif;
+      font-size:1.18rem; font-weight:700; letter-spacing:-.025em;
+      color:var(--text); margin-bottom:14px;
+      display:flex; align-items:center; gap:10px;
     }
-
-    .intro {
-      margin: 0;
-      max-width: 760px;
-      color: var(--body);
-      font-size: 15px;
-      line-height: 1.78;
+    .sec-icon {
+      width:32px; height:32px; border-radius:10px; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center; font-size:15px;
     }
-
-    .content {
-      padding: 14px 12px 24px;
+    .sec p {
+      color:var(--subtle); font-size:14.5px; line-height:1.78;
+      margin-bottom:12px;
     }
-
-    .section {
-      margin-bottom: 12px;
-      padding: 18px 16px;
-      background: linear-gradient(180deg, var(--surface), var(--surface-2));
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius-card);
-      overflow: hidden;
+    .sec p:last-child { margin-bottom:0; }
+    .sec ul {
+      padding-left:0; list-style:none;
+      display:flex; flex-direction:column; gap:9px;
+      margin-top:4px;
     }
-
-    .section:last-child { margin-bottom: 0; }
-
-    h2 {
-      margin: 0 0 10px;
-      color: #eff6ff;
-      font-size: 1.05rem;
-      line-height: 1.32;
-      font-weight: 700;
-      letter-spacing: -0.02em;
+    .sec li {
+      color:var(--subtle); font-size:14.5px; line-height:1.7;
+      display:flex; align-items:flex-start; gap:10px;
     }
-
-    p {
-      margin: 0 0 12px;
-      color: var(--body);
-      font-size: 14px;
-      line-height: 1.78;
+    .sec li::before {
+      content:''; flex-shrink:0;
+      width:6px; height:6px; border-radius:50%;
+      background:var(--teal); margin-top:8px;
     }
+    strong { color:var(--text); font-weight:700; }
+    a { color:var(--blue2); text-decoration:none; font-weight:600; }
+    a:hover { text-decoration:underline; }
 
-    p:last-child { margin-bottom: 0; }
-
-    ul {
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--body);
+    .highlight-box {
+      margin-top:18px; padding:18px 20px;
+      border-radius:var(--radius-sm);
+      background:linear-gradient(135deg,rgba(45,212,191,.1),rgba(79,140,255,.07));
+      border:1px solid rgba(45,212,191,.2);
     }
+    .highlight-box p { color:var(--subtle); margin:0; }
+    .highlight-box strong { color:var(--teal); }
 
-    li {
-      margin-bottom: 8px;
-      font-size: 14px;
-      line-height: 1.7;
+    .contact-card {
+      display:flex; align-items:center; gap:14px;
+      padding:18px 20px; border-radius:var(--radius-sm);
+      background:rgba(79,140,255,.08); border:1px solid rgba(79,140,255,.18);
+      margin-top:16px; text-decoration:none;
+      transition:background .2s,border-color .2s;
     }
-
-    strong {
-      color: #fff;
-      font-weight: 700;
+    .contact-card:hover {
+      background:rgba(79,140,255,.14); border-color:rgba(79,140,255,.3);
+      text-decoration:none;
     }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-      word-break: break-word;
+    .contact-card-icon {
+      width:38px; height:38px; border-radius:11px; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center; font-size:17px;
+      background:rgba(79,140,255,.14);
     }
+    .contact-card-label { font-size:13px; color:var(--muted); margin-bottom:2px; }
+    .contact-card-email { font-size:15px; font-weight:700; color:var(--blue2); }
 
-    a:hover { text-decoration: underline; }
-
-    .highlight {
-      margin-top: 14px;
-      padding: 14px 14px;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.16), rgba(56, 189, 248, 0.08));
-      border: 1px solid rgba(96, 165, 250, 0.16);
-      border-radius: var(--radius-inner);
-      overflow: hidden;
+    /* ── FOOTER ── */
+    footer {
+      border-top:1px solid var(--border);
+      padding:36px 0 48px;
     }
-
-    .footer {
-      border-top: 1px solid var(--divider);
-      padding: 20px 16px 28px;
-    }
-
     .footer-inner {
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 600;
-      line-height: 1.7;
+      display:flex; flex-wrap:wrap; align-items:center;
+      justify-content:space-between; gap:18px;
     }
+    .footer-brand { display:flex; align-items:center; gap:12px; }
+    .footer-icon {
+      width:36px; height:36px; border-radius:12px;
+      overflow:hidden; box-shadow:0 6px 18px rgba(79,140,255,.24);
+    }
+    .footer-icon img { width:100%; height:100%; display:block; object-fit:cover; }
+    .footer-copy { color:var(--muted); font-size:13px; line-height:1.6; }
+    .footer-links { display:flex; flex-wrap:wrap; gap:16px; }
+    .footer-links a {
+      color:var(--subtle); text-decoration:none;
+      font-size:13px; font-weight:600; transition:color .2s;
+    }
+    .footer-links a:hover { color:var(--text); }
 
-    @media (min-width: 768px) {
-      :root {
-        --radius-card: 18px;
-        --radius-inner: 14px;
-      }
-
-      .hero { padding: 40px 24px 30px; }
-      .content { padding: 18px 20px 32px; }
-      .section {
-        padding: 24px 22px;
-        margin-bottom: 14px;
-      }
-
-      h2 { font-size: 1.18rem; }
-
-      p, li { font-size: 15px; }
+    @media(max-width:640px) {
+      .hero { padding:60px 0 50px; }
+      .sec { padding:22px 18px; }
+      nav { position:static; }
+      .nav-inner { flex-direction:column; align-items:flex-start; padding:14px 0; }
     }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-inner">
-      <span class="badge">CMA Part 2 Privacy</span>
-      <h1>Privacy Policy</h1>
-      <span class="effective-date">Effective Date: June 3, 2026</span>
-      <p class="intro">
-        Welcome to <strong>CMA Part 2 Exam Preparation</strong>. We take your
-        privacy seriously. This policy explains how the app and its companion
-        information pages handle data. In short, the app is designed to work
-        without collecting or storing your personal information.
-      </p>
+<div class="page">
+
+  <!-- NAV -->
+  <nav>
+    <div class="shell nav-inner">
+      <a class="nav-brand" href="/cma-part2/">
+        <span class="nav-icon"><img src="../CMA_Appicon.png" alt="CMA Part 2 icon"></span>
+        <span class="nav-title">CMA Part 2 Exam Prep</span>
+      </a>
+      <a class="nav-back" href="/cma-part2/">← Back to Home</a>
     </div>
-  </header>
+  </nav>
 
-  <main class="content">
-    <div class="content-inner">
-      <section class="section">
-        <h2>1. Scope of This Policy</h2>
-        <p>
-          This Privacy Policy applies to the <strong>CMA Part 2 Exam
-          Preparation</strong> app and its related public information pages. It
-          describes what data the app does not collect, how the app works
-          offline, and what happens if you contact us directly by email.
-        </p>
-      </section>
+  <div class="page">
 
-      <section class="section">
-        <h2>2. Information We Do Not Collect</h2>
-        <p>
-          The <strong>CMA Part 2 Exam Preparation</strong> app does
-          <strong>not</strong> collect, sell, or share personal data through
-          its core study experience. We do not ask for:
-        </p>
-        <ul>
-          <li>Names, email addresses, phone numbers, or account credentials</li>
-          <li>IP addresses, device identifiers, or profile tracking data</li>
-          <li>Analytics events, advertising identifiers, or behavior tracking</li>
-          <li>Uploaded documents, photos, or any user-generated cloud content</li>
-        </ul>
-        <div class="highlight">
-          <p>
-            <strong>Privacy-first by default:</strong> the app is intended to
-            be usable without sign-in flows, marketing trackers, or hidden data
-            collection.
-          </p>
+    <!-- HERO -->
+    <header class="hero">
+      <div class="shell">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-icon"><img src="../CMA_Appicon.png" alt="App icon"></span>
+          CMA Part 2 · Legal
         </div>
-      </section>
+        <h1>Privacy <span class="h1-accent">Policy</span></h1>
+        <div class="hero-date">📅 Effective Date: June 3, 2026</div>
+        <p>
+          Welcome to <strong>CMA Part 2 Exam Preparation</strong>. We take your privacy seriously.
+          This policy explains how the app and its companion pages handle data. In short,
+          the app is designed to work without collecting or storing your personal information.
+        </p>
+      </div>
+    </header>
 
-      <section class="section">
-        <h2>3. Permissions and Device Access</h2>
-        <p>
-          The app does not require access to your camera, location, contacts,
-          microphone, or other sensitive device features to deliver its
-          intended study functionality.
-        </p>
-        <p>
-          You can use the app without granting special permissions that are not
-          directly required for normal study use.
-        </p>
-      </section>
+    <!-- CONTENT -->
+    <main class="content">
+      <div class="shell">
 
-      <section class="section">
-        <h2>4. Offline Use and Local Storage</h2>
-        <p>
-          The app is designed to operate as an offline-friendly study tool.
-          Since personal data is not collected by the core experience, there is
-          no personal account database connected to your study activity.
-        </p>
-        <p>
-          If any app content is stored locally on your device for convenience,
-          that information remains on your device and is not transmitted to us
-          as part of normal use.
-        </p>
-      </section>
+        <!-- Table of Contents -->
+        <nav class="toc" aria-label="Table of contents">
+          <div class="toc-title">Contents</div>
+          <div class="toc-links">
+            <a class="toc-link" href="#scope">1. Scope</a>
+            <a class="toc-link" href="#no-collect">2. Data We Don't Collect</a>
+            <a class="toc-link" href="#permissions">3. Permissions</a>
+            <a class="toc-link" href="#offline">4. Offline &amp; Local Storage</a>
+            <a class="toc-link" href="#third-party">5. Third-Party Services</a>
+            <a class="toc-link" href="#contact-data">6. Contacting Us</a>
+            <a class="toc-link" href="#updates">7. Policy Updates</a>
+            <a class="toc-link" href="#contact">8. Contact</a>
+          </div>
+        </nav>
 
-      <section class="section">
-        <h2>5. Third-Party Services</h2>
-        <p>
-          The app does not rely on advertising networks, analytics SDKs, or
-          third-party data brokers to deliver the core study experience.
-        </p>
-        <p>
-          This website may be delivered through a standard static hosting
-          platform, but the app itself does not include third-party services
-          for user tracking or personal data monetization.
-        </p>
-      </section>
+        <div class="sections">
 
-      <section class="section">
-        <h2>6. Contacting Us</h2>
-        <p>
-          If you email us for support or feedback, we will receive the
-          information you choose to include in that message, such as your email
-          address and the contents of your request.
-        </p>
-        <p>
-          We use that information only to respond to your question or support
-          request.
-        </p>
-      </section>
+          <section class="sec" id="scope">
+            <div class="sec-num">Section 01</div>
+            <h2>
+              <span class="sec-icon" style="background:rgba(79,140,255,.14);">📋</span>
+              Scope of This Policy
+            </h2>
+            <p>
+              This Privacy Policy applies to the <strong>CMA Part 2 Exam Preparation</strong> app
+              and its related public information pages. It describes what data the app does not collect,
+              how the app works offline, and what happens if you contact us directly by email.
+            </p>
+          </section>
 
-      <section class="section">
-        <h2>7. Policy Updates</h2>
-        <p>
-          We may update this Privacy Policy from time to time for clarity,
-          legal compliance, or product changes. If we do, the revised version
-          will appear on this page with a new effective date.
-        </p>
-      </section>
+          <section class="sec" id="no-collect">
+            <div class="sec-num">Section 02</div>
+            <h2>
+              <span class="sec-icon" style="background:rgba(52,211,153,.14);">🛡️</span>
+              Information We Do Not Collect
+            </h2>
+            <p>
+              The <strong>CMA Part 2 Exam Preparation</strong> app does <strong>not</strong> collect,
+              sell, or share personal data through its core study experience. We do not ask for:
+            </p>
+            <ul>
+              <li>Names, email addresses, phone numbers, or account credentials</li>
+              <li>IP addresses, device identifiers, or profile tracking data</li>
+              <li>Analytics events, advertising identifiers, or behavior tracking</li>
+              <li>Uploaded documents, photos, or any user-generated cloud content</li>
+            </ul>
+            <div class="highlight-box">
+              <p>
+                <strong>Privacy-first by default:</strong> the app is intended to be usable without
+                sign-in flows, marketing trackers, or hidden data collection of any kind.
+              </p>
+            </div>
+          </section>
 
-      <section class="section">
-        <h2>8. Contact Information</h2>
-        <p>
-          If you have questions about this Privacy Policy, please contact:
-          <a href="mailto:support@miracleapps.in">support@miracleapps.in</a>
-        </p>
-      </section>
-    </div>
-  </main>
+          <section class="sec" id="permissions">
+            <div class="sec-num">Section 03</div>
+            <h2>
+              <span class="sec-icon" style="background:rgba(245,193,69,.14);">🔒</span>
+              Permissions and Device Access
+            </h2>
+            <p>
+              The app does not require access to your camera, location, contacts, microphone,
+              or other sensitive device features to deliver its intended study functionality.
+            </p>
+            <p>
+              You can use the app without granting special permissions that are not
+              directly required for normal study use. The only data processed locally are
+              your quiz results, saved questions, and preferences — all stored on-device
+              using encrypted secure storage.
+            </p>
+          </section>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      CMA Part 2 Exam Preparation<br>
-      Privacy Policy effective June 3, 2026
-    </div>
-  </footer>
+          <section class="sec" id="offline">
+            <div class="sec-num">Section 04</div>
+            <h2>
+              <span class="sec-icon" style="background:rgba(45,212,191,.14);">📴</span>
+              Offline Use and Local Storage
+            </h2>
+            <p>
+              The app is designed to operate as a fully offline study tool. All question banks,
+              explanations, and features — including on-device ML translation — function without
+              an internet connection.
+            </p>
+            <p>
+              Your quiz history, saved questions, exam mode preference, and exam date are stored
+              locally on your device using encrypted secure storage. This information is never
+              transmitted to us or any third party as part of normal app use.
+            </p>
+            <p>
+              You can permanently delete all locally stored data at any time via
+              <strong>Settings → Clear History</strong> inside the app.
+            </p>
+          </section>
+
+          <section class="sec" id="third-party">
+            <div class="sec-num">Section 05</div>
+            <h2>
+              <span class="sec-icon" style="background:rgba(139,123,255,.14);">🔗</span>
+              Third-Party Services
+            </h2>
+            <p>
+              The app may display ads in the free version through standard advertising platforms.
+              Upgrading to Pro removes all ads. The on-device ML translation feature uses
+              Google ML Kit, which processes text entirely on your device without sending data
+              to external servers.
+            </p>
+            <p>
+              This website may be served through a standard static hosting platform, but the
+              app itself does not include third-party services for user tracking or personal
+              data monetization.
+            </p>
+          </section>
+
+          <section class="sec" id="contact-data">
+            <div class="sec-num">Section 06</div>
+            <h2>
+              <span class="sec-icon" style="background:rgba(244,114,182,.14);">✉️</span>
+              Contacting Us
+            </h2>
+            <p>
+              If you email us for support or feedback, we will receive the information you choose
+              to include in that message — such as your email address and the contents of your request.
+            </p>
+            <p>
+              We use that information only to respond to your question or support request and
+              do not store it in any marketing or analytics system.
+            </p>
+          </section>
+
+          <section class="sec" id="updates">
+            <div class="sec-num">Section 07</div>
+            <h2>
+              <span class="sec-icon" style="background:rgba(79,140,255,.14);">🔄</span>
+              Policy Updates
+            </h2>
+            <p>
+              We may update this Privacy Policy from time to time for clarity, legal compliance,
+              or product changes. If we do, the revised version will appear on this page with a
+              new effective date. Continued use of the app after an update constitutes
+              acceptance of the revised policy.
+            </p>
+          </section>
+
+          <section class="sec" id="contact">
+            <div class="sec-num">Section 08</div>
+            <h2>
+              <span class="sec-icon" style="background:rgba(52,211,153,.14);">💬</span>
+              Contact Information
+            </h2>
+            <p>
+              If you have questions or concerns about this Privacy Policy, please reach out:
+            </p>
+            <a class="contact-card" href="mailto:support@miracleapps.in">
+              <div class="contact-card-icon">✉️</div>
+              <div>
+                <div class="contact-card-label">Send us an email</div>
+                <div class="contact-card-email">support@miracleapps.in</div>
+              </div>
+            </a>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="shell footer-inner">
+        <div class="footer-brand">
+          <span class="footer-icon"><img src="../CMA_Appicon.png" alt="CMA Part 2 icon"></span>
+          <div class="footer-copy">
+            CMA Part 2 Exam Preparation<br>
+            <span style="font-size:12px;">Privacy Policy · Effective June 3, 2026</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="/cma-part2/">Home</a>
+          <a href="/cma-part2/terms/">Terms &amp; Conditions</a>
+          <a href="mailto:support@miracleapps.in">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
 </body>
 </html>

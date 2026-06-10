@@ -6,9 +6,9 @@
   <title>ACSM-CPT Exam Preparation - Miracle Apps</title>
   <meta name="description" content="ACSM-CPT Exam Preparation helps personal trainer candidates practice ACSM-CPT question sets, track readiness, review missed questions, and prepare with focused study tools.">
   <meta name="author" content="Miracle Apps">
-  <meta name="theme-color" content="#29A0B1">
-  <meta property="og:title" content="ACSM-CPT Exam Preparation">
-  <meta property="og:description" content="Practice ACSM-CPT exam topics with question-set quizzes, a 200-question final test, readiness tracking, daily questions, saved questions, missed question review, and Pro study tools.">
+  <meta name="theme-color" content="#29a0b1">
+  <meta property="og:title" content="ACSM-CPT Exam Preparation - Miracle Apps">
+  <meta property="og:description" content="ACSM-CPT Exam Preparation helps personal trainer candidates practice ACSM-CPT question sets, track readiness, review missed questions, and prepare with focused study tools.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.miracleapps.in/acsmcpt/ACSMCPT_Appicon.png">
   <link rel="canonical" href="https://www.miracleapps.in/acsmcpt/">
@@ -16,268 +16,70 @@
   <link rel="apple-touch-icon" href="ACSMCPT_Appicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500;600;700&amp;family=Raleway:wght@600;700;800;900&amp;display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg:#f1f2f8;--ink:#1f3640;--muted:#60757d;--card:rgba(255,255,255,.86);
-      --line:rgba(41,160,177,.18);--teal:#29a0b1;--teal2:#067593;--blue:#5a8dee;
-      --green:#32cd30;--gold:#f5a524;--shadow:0 24px 70px rgba(26,91,105,.16);
-      --radius:28px;--radius-sm:18px;
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;}
-    body{min-height:100vh;font-family:"Cabin",system-ui,sans-serif;background:radial-gradient(circle at 12% 0%,rgba(41,160,177,.22),transparent 28%),radial-gradient(circle at 88% 4%,rgba(90,141,238,.15),transparent 25%),linear-gradient(180deg,#f8fcfd 0%,var(--bg) 42%,#e9f3f5 100%);color:var(--ink);overflow-x:hidden;}
-    a{color:inherit;text-decoration:none;}
-    .shell{width:min(100%,1160px);margin:0 auto;padding:0 24px;}
-    nav{position:sticky;top:0;z-index:30;background:rgba(248,252,253,.76);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid var(--line);}
-    .nav-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px;}
-    .brand{display:flex;align-items:center;gap:12px;font-family:"Raleway",sans-serif;font-weight:900;letter-spacing:-.04em;}
-    .brand img{width:38px;height:38px;border-radius:11px;box-shadow:0 10px 26px rgba(41,160,177,.24);}
-    .nav-links{display:flex;align-items:center;gap:6px;}
-    .nav-links a{padding:8px 13px;border-radius:999px;color:var(--muted);font-size:14px;font-weight:700;}
-    .nav-links a:hover{background:rgba(41,160,177,.09);color:var(--teal2);}
-    .hero{padding:92px 0 74px;position:relative;}
-    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:54px;align-items:center;}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border-radius:999px;background:rgba(41,160,177,.1);border:1px solid rgba(41,160,177,.16);color:var(--teal2);font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:24px;}
-    .dot{width:8px;height:8px;border-radius:99px;background:var(--green);box-shadow:0 0 0 5px rgba(50,205,48,.13);}
-    h1{font-family:"Raleway",sans-serif;font-size:clamp(3rem,7vw,5.8rem);line-height:.9;letter-spacing:-.075em;color:#18323a;margin-bottom:28px;}
-    h1 span{color:var(--teal);}
-    .hero-copy{max-width:650px;color:var(--muted);font-size:18px;line-height:1.7;margin-bottom:34px;}
-    .cta-row{display:flex;flex-wrap:wrap;gap:13px;}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 22px;border-radius:15px;font-weight:800;transition:transform .18s,box-shadow .18s,background .18s;}
-    .btn:hover{transform:translateY(-2px);}
-    .btn-primary{color:white;background:linear-gradient(135deg,var(--teal),var(--teal2));box-shadow:0 16px 38px rgba(41,160,177,.32);}
-    .btn-ghost{background:rgba(255,255,255,.72);border:1px solid var(--line);color:var(--teal2);}
-    .app-card{position:relative;border-radius:38px;background:linear-gradient(155deg,rgba(255,255,255,.92),rgba(223,242,245,.82));border:1px solid rgba(255,255,255,.78);box-shadow:var(--shadow);padding:26px;overflow:hidden;}
-    .app-card::before{content:"";position:absolute;inset:-40% -20% auto auto;width:260px;height:260px;background:radial-gradient(circle,rgba(41,160,177,.28),transparent 62%);pointer-events:none;}
-    .phone{position:relative;margin:0 auto;max-width:330px;min-height:590px;border-radius:38px;background:#fbfefe;border:10px solid #18323a;box-shadow:0 26px 50px rgba(24,50,58,.26);padding:26px 18px;}
-    .phone-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
-    .phone-top img{width:54px;height:54px;border-radius:14px;}
-    .pill{padding:8px 12px;border-radius:999px;background:rgba(50,205,48,.14);color:#188016;font-size:12px;font-weight:800;}
-    .phone-title{font-family:"Raleway",sans-serif;font-size:27px;font-weight:900;letter-spacing:-.05em;margin-bottom:14px;color:var(--teal2);}
-    .readiness{padding:18px;border-radius:20px;background:var(--teal);color:white;margin-bottom:14px;}
-    .readiness-line{display:flex;justify-content:space-between;font-weight:800;margin-bottom:12px;}
-    .bar{height:7px;border-radius:99px;background:rgba(255,255,255,.25);overflow:hidden;}
-    .bar span{display:block;height:100%;width:70%;border-radius:inherit;background:var(--green);}
-    .quiz-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-    .mini{min-height:100px;display:flex;flex-direction:column;justify-content:center;gap:8px;border-radius:18px;background:white;padding:15px;box-shadow:0 10px 24px rgba(26,91,105,.08);}
-    .mini strong{font-size:15px;color:var(--ink);line-height:1.15;}
-    .mini span{color:var(--muted);font-size:12px;font-weight:700;}
-    .stats{padding:28px 0 54px;}
-    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;}
-    .stat{padding:22px;border-radius:var(--radius-sm);background:rgba(255,255,255,.72);border:1px solid var(--line);box-shadow:0 12px 30px rgba(26,91,105,.08);}
-    .stat strong{display:block;font-family:"Raleway",sans-serif;font-size:34px;color:var(--teal2);letter-spacing:-.05em;}
-    .stat span{display:block;color:var(--muted);font-size:13px;font-weight:700;margin-top:5px;line-height:1.45;}
-    .section{padding:82px 0;}
-    .section-head{max-width:690px;margin-bottom:42px;}
-    .kicker{color:var(--teal2);text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;margin-bottom:12px;}
-    h2{font-family:"Raleway",sans-serif;font-size:clamp(2.1rem,5vw,3.6rem);line-height:1;letter-spacing:-.06em;color:#18323a;}
-    .section-head p{margin-top:16px;color:var(--muted);font-size:17px;line-height:1.7;}
-    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-    .feature{min-height:230px;padding:26px;border-radius:var(--radius);background:var(--card);border:1px solid rgba(255,255,255,.72);box-shadow:0 18px 42px rgba(26,91,105,.09);}
-    .feature-badge{width:44px;height:44px;border-radius:15px;display:grid;place-items:center;color:white;font-weight:900;background:linear-gradient(135deg,var(--teal),var(--teal2));margin-bottom:18px;}
-    .feature h3{font-family:"Raleway",sans-serif;font-size:21px;letter-spacing:-.035em;margin-bottom:10px;color:var(--ink);}
-    .feature p{color:var(--muted);line-height:1.65;font-size:15px;}
-    .domain-panel{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:start;}
-    .domain-summary{padding:30px;border-radius:var(--radius);background:var(--teal);color:white;box-shadow:0 22px 54px rgba(41,160,177,.24);position:sticky;top:90px;}
-    .domain-summary h3{font-family:"Raleway",sans-serif;font-size:32px;line-height:1;letter-spacing:-.05em;margin-bottom:14px;}
-    .domain-summary p{color:rgba(255,255,255,.78);line-height:1.7;}
-    .domain-list{display:grid;gap:12px;}
-    .domain{display:grid;grid-template-columns:46px 1fr auto;align-items:center;gap:14px;padding:16px;border-radius:18px;background:rgba(255,255,255,.76);border:1px solid var(--line);}
-    .code{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(41,160,177,.1);color:var(--teal2);font-weight:900;}
-    .domain strong{display:block;color:var(--ink);font-size:15px;line-height:1.25;}
-    .domain span{color:var(--muted);font-size:12px;font-weight:700;}
-    .weight{color:var(--teal2);font-weight:900;font-size:14px;}
-    .legal-card{padding:42px;border-radius:34px;background:linear-gradient(135deg,#18323a,#29a0b1);color:white;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;box-shadow:0 26px 70px rgba(24,50,58,.24);}
-    .legal-card h2{color:white;margin-bottom:12px;}
-    .legal-card p{color:rgba(255,255,255,.74);line-height:1.7;max-width:640px;}
-    .legal-links{display:flex;gap:12px;flex-wrap:wrap;}
-    .legal-links a{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);color:white;}
-    footer{padding:42px 0 54px;border-top:1px solid var(--line);}
-    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px;font-weight:700;}
-    .footer-links{display:flex;gap:18px;flex-wrap:wrap;}
-    .footer-links a:hover{color:var(--teal2);}
-    @media(max-width:920px){.hero-grid,.domain-panel,.legal-card{grid-template-columns:1fr;}.domain-summary{position:static;}.feature-grid,.stats-grid{grid-template-columns:1fr 1fr;}}
-    @media(max-width:640px){.nav-links{display:none;}.hero{padding:64px 0 52px;}.phone{min-height:0;}.feature-grid,.stats-grid{grid-template-columns:1fr;}.domain{grid-template-columns:42px 1fr;}.weight{grid-column:2;}.legal-card{padding:28px;}}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
 </head>
-<body>
-  <nav>
+<body class="app-page" style="--app:#29a0b1;--app-2:#067593">
+<nav class="nav">
     <div class="shell nav-inner">
-      <a class="brand" href="/acsmcpt/">
-        <img src="ACSMCPT_Appicon.png" alt="ACSM-CPT Exam Preparation icon">
-        <span>ACSM-CPT Exam Preparation</span>
-      </a>
+      <a class="brand" href="/acsmcpt/"><img src="ACSMCPT_Appicon.png" alt="ACSM-CPT Exam Preparation icon"><span>ACSM-CPT Prep</span></a>
       <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#coverage">Coverage</a>
-        <a href="#legal">Legal</a>
-        <a href="mailto:support@miracleapps.in">Support</a>
+        <a href="/">Home</a>
+        <a href="/acsmcpt/#features">Features</a>
+        <a href="/acsmcpt/#coverage">Coverage</a>
+        <a href="/acsmcpt/privacy/">Privacy</a>
+        <a class="nav-cta" href="mailto:support@miracleapps.in">Support</a>
       </div>
     </div>
   </nav>
-
-  <header class="hero">
-    <div class="shell hero-grid">
-      <div>
-        <div class="eyebrow"><span class="dot"></span> ACSM-CPT study companion</div>
-        <h1>Practice ACSM-CPT with structure and momentum.</h1>
-        <p class="hero-copy">
-          ACSM-CPT Exam Preparation helps you prepare for the certified personal trainer exam
-          with question-set quizzes, a 200-question final test, readiness tracking,
-          daily questions, saved questions, missed question review, and flexible exam modes.
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#features">Explore Features &rarr;</a>
-          <a class="btn btn-ghost" href="/acsmcpt/privacy/">Privacy Policy</a>
-          <a class="btn btn-ghost" href="/acsmcpt/terms/">Terms</a>
-        </div>
-      </div>
-
-      <div class="app-card" aria-label="ACSM-CPT app preview">
-        <div class="phone">
-          <div class="phone-top">
-            <img src="ACSMCPT_Appicon.png" alt="ACSM-CPT app icon">
-            <span class="pill">200-question final</span>
-          </div>
-          <div class="phone-title">ACSM-CPT Prep</div>
-          <div class="readiness">
-            <div class="readiness-line">
-              <span>Readiness Score</span>
-              <span>70%</span>
-            </div>
-            <div class="bar"><span></span></div>
-          </div>
-          <div class="quiz-grid">
-            <div class="mini"><strong>Practice Sets</strong><span>10 modules</span></div>
-            <div class="mini"><strong>Final Test</strong><span>200 questions</span></div>
-            <div class="mini"><strong>Today&apos;s Question</strong><span>Daily study</span></div>
-            <div class="mini"><strong>Missed Questions</strong><span>Review weak areas</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <section class="stats">
-    <div class="shell stats-grid">
-      <div class="stat"><strong>10</strong><span>ACSM-CPT practice sets</span></div>
-      <div class="stat"><strong>20+</strong><span>questions in each module quiz</span></div>
-      <div class="stat"><strong>200</strong><span>questions in final practice mode</span></div>
-      <div class="stat"><strong>Pro</strong><span>monthly or lifetime access options</span></div>
-    </div>
-  </section>
-
   <main>
+    <header class="app-hero">
+      <div class="shell app-layout">
+        <div class="reveal">
+          <div class="kicker">ACSM-CPT study companion</div>
+          <h1 class="hero-title">Practice ACSM-CPT with structure and momentum.</h1>
+          <p class="hero-copy">Prepare for the certified personal trainer exam with 10 question-set modules, a 200-question final test, readiness tracking, daily questions, saved questions, missed-question review, and flexible exam modes.</p>
+          <div class="action-row"><a class="btn btn-primary" href="#features">Explore features</a><a class="btn btn-ghost" href="/acsmcpt/privacy/">Privacy Policy</a><a class="btn btn-ghost" href="/acsmcpt/terms/">Terms</a></div>
+        </div>
+        <div class="app-stage reveal">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="phone-head"><img src="ACSMCPT_Appicon.png" alt="ACSM-CPT Prep icon"><span class="phone-pill">200-question final</span></div>
+              <div class="phone-title">ACSM-CPT Prep</div>
+              <div class="readiness"><div class="readiness-line"><span>Readiness Score</span><span>72%</span></div><div class="bar"><span></span></div></div>
+              <div class="phone-grid"><div class="phone-card"><strong>10 practice sets</strong><span>Start here</span></div><div class="phone-card"><strong>200-question final</strong><span>Track progress</span></div><div class="phone-card"><strong>Daily question</strong><span>Review loop</span></div><div class="phone-card"><strong>Pro access</strong><span>Pro tools</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="shell stat-grid-four"><div class="stat-tile reveal"><strong>10</strong><span>ACSM-CPT practice sets</span></div><div class="stat-tile reveal"><strong>20+</strong><span>questions in each module quiz</span></div><div class="stat-tile reveal"><strong>200</strong><span>questions in final practice</span></div><div class="stat-tile reveal"><strong>Pro</strong><span>monthly or lifetime options</span></div></div>
+    </section>
     <section class="section" id="features">
       <div class="shell">
-        <div class="section-head">
-          <div class="kicker">Study Tools</div>
-          <h2>Built for daily ACSM-CPT preparation.</h2>
-          <p>
-            The app turns personal trainer exam prep into small, repeatable study actions:
-            answer questions, learn from explanations, save important items, review mistakes,
-            and track readiness as you move through the question sets.
-          </p>
-        </div>
-        <div class="feature-grid">
-          <article class="feature">
-            <div class="feature-badge">01</div>
-            <h3>Question-set quizzes</h3>
-            <p>Practice ACSM-CPT topics through 10 question-set modules with progress saved across your study sessions.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-badge">02</div>
-            <h3>Three exam modes</h3>
-            <p>Use full support with explanations, answer-only review, or exam-style mode where answers appear after the test.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-badge">03</div>
-            <h3>200-question final test</h3>
-            <p>Take a randomized final practice test pulled from the available ACSM-CPT question sets.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-badge">04</div>
-            <h3>Saved and missed questions</h3>
-            <p>Save questions for later and automatically review missed questions so weak areas stay visible.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-badge">05</div>
-            <h3>Readiness and review</h3>
-            <p>Use the Stats and Review tabs to see tests completed, answer accuracy, correct answers, and overall readiness.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-badge">06</div>
-            <h3>Pro access</h3>
-            <p>Unlock random quizzes, missed-question practice, saved-question practice, ad removal, and purchase restore support.</p>
-          </article>
-        </div>
+        <div class="section-head reveal"><div class="kicker">Features</div><h2 class="section-title">Built around the way people actually use it.</h2><p class="section-copy">The redesign keeps feature information crisp, scannable, and ready for App Store review links.</p></div>
+        <div class="feature-grid"><article class="feature reveal"><h3>Question-set quizzes</h3><p>Practice ACSM-CPT topics through 10 modules with progress saved across sessions.</p></article><article class="feature reveal"><h3>Three exam modes</h3><p>Use full support with explanations, answer-only review, or exam-style mode.</p></article><article class="feature reveal"><h3>200-question final test</h3><p>Take a randomized final practice test pulled from the ACSM-CPT question sets.</p></article><article class="feature reveal"><h3>Saved and missed questions</h3><p>Save important questions and automatically revisit missed ones.</p></article><article class="feature reveal"><h3>Readiness and review</h3><p>Use Stats and Review to see tests completed, answer accuracy, correct answers, and readiness.</p></article><article class="feature reveal"><h3>Pro access</h3><p>Unlock random quizzes, missed-question practice, saved-question practice, ad removal, and restore support.</p></article></div>
       </div>
     </section>
-
     <section class="section" id="coverage">
       <div class="shell">
-        <div class="section-head">
-          <div class="kicker">Exam Coverage</div>
-          <h2>Organized into clean practice sets.</h2>
-          <p>
-            ACSM-CPT Exam Preparation groups practice into simple question sets,
-            so you can keep sessions focused and build confidence one module at a time.
-          </p>
-        </div>
-        <div class="domain-panel">
-          <aside class="domain-summary">
-            <h3>10 practice sets, 200-question final.</h3>
-            <p>
-              Each set includes ACSM-CPT style practice questions and explanations.
-              The final test pulls across sets to help you check broader readiness.
-            </p>
-          </aside>
-          <div class="domain-list">
-            <div class="domain"><div class="code">01</div><div><strong>Question Set 1</strong><span>20+ question module</span></div><div class="weight">ACSM</div></div>
-            <div class="domain"><div class="code">02</div><div><strong>Question Set 2</strong><span>20+ question module</span></div><div class="weight">ACSM</div></div>
-            <div class="domain"><div class="code">03</div><div><strong>Question Set 3</strong><span>20+ question module</span></div><div class="weight">ACSM</div></div>
-            <div class="domain"><div class="code">04</div><div><strong>Question Set 4</strong><span>20+ question module</span></div><div class="weight">ACSM</div></div>
-            <div class="domain"><div class="code">05</div><div><strong>Question Set 5</strong><span>20+ question module</span></div><div class="weight">ACSM</div></div>
-            <div class="domain"><div class="code">06</div><div><strong>Question Set 6</strong><span>20+ question module</span></div><div class="weight">ACSM</div></div>
-            <div class="domain"><div class="code">07</div><div><strong>Question Set 7</strong><span>20+ question module</span></div><div class="weight">ACSM</div></div>
-            <div class="domain"><div class="code">08</div><div><strong>Question Set 8</strong><span>20+ question module</span></div><div class="weight">ACSM</div></div>
-            <div class="domain"><div class="code">09</div><div><strong>Question Set 9</strong><span>20+ question module</span></div><div class="weight">ACSM</div></div>
-            <div class="domain"><div class="code">10</div><div><strong>Question Set 10</strong><span>20+ question module</span></div><div class="weight">ACSM</div></div>
-          </div>
-        </div>
+        <div class="section-head reveal"><div class="kicker">Coverage</div><h2 class="section-title">Organized into clean ACSM-CPT practice sets.</h2><p class="section-copy">Each set keeps study sessions focused while the final test pulls across modules for broader readiness checks.</p></div>
+        <div class="coverage-grid"><div class="coverage-item reveal"><div class="coverage-code">01</div><div><strong>Question Set 1</strong><p>20+ question module</p></div></div><div class="coverage-item reveal"><div class="coverage-code">02</div><div><strong>Question Set 2</strong><p>20+ question module</p></div></div><div class="coverage-item reveal"><div class="coverage-code">03</div><div><strong>Question Set 3</strong><p>20+ question module</p></div></div><div class="coverage-item reveal"><div class="coverage-code">04</div><div><strong>Question Set 4</strong><p>20+ question module</p></div></div><div class="coverage-item reveal"><div class="coverage-code">05</div><div><strong>Question Set 5</strong><p>20+ question module</p></div></div><div class="coverage-item reveal"><div class="coverage-code">06</div><div><strong>Question Set 6</strong><p>20+ question module</p></div></div><div class="coverage-item reveal"><div class="coverage-code">07</div><div><strong>Question Set 7</strong><p>20+ question module</p></div></div><div class="coverage-item reveal"><div class="coverage-code">08</div><div><strong>Question Set 8</strong><p>20+ question module</p></div></div><div class="coverage-item reveal"><div class="coverage-code">09</div><div><strong>Question Set 9</strong><p>20+ question module</p></div></div><div class="coverage-item reveal"><div class="coverage-code">10</div><div><strong>Question Set 10</strong><p>20+ question module</p></div></div></div>
       </div>
     </section>
-
     <section class="section" id="legal">
       <div class="shell">
-        <div class="legal-card">
-          <div>
-            <h2>Clear privacy and terms for App Store review.</h2>
-            <p>
-              The ACSM-CPT app stores study progress on your device, supports optional Pro purchases,
-              and may show ads for free users. The full legal pages are available below.
-            </p>
-          </div>
-          <div class="legal-links">
-            <a class="btn" href="/acsmcpt/privacy/">Privacy Policy</a>
-            <a class="btn" href="/acsmcpt/terms/">Terms &amp; Conditions</a>
-          </div>
-        </div>
+        <div class="legal-card reveal"><div><h2>Privacy and terms are ready.</h2><p>Pro access unlocks deeper review and ad-free study for a more focused preparation flow.</p></div><div class="action-row"><a class="btn" href="/acsmcpt/privacy/">Privacy</a><a class="btn" href="/acsmcpt/terms/">Terms</a></div></div>
       </div>
     </section>
   </main>
-
-  <footer>
+<footer class="footer">
     <div class="shell footer-inner">
-      <div>&copy; 2026 Miracle Apps. ACSM-CPT Exam Preparation.</div>
-      <div class="footer-links">
-        <a href="/">Miracle Apps</a>
-        <a href="/acsmcpt/privacy/">Privacy</a>
-        <a href="/acsmcpt/terms/">Terms</a>
-        <a href="mailto:support@miracleapps.in">support@miracleapps.in</a>
-      </div>
+      <div class="footer-brand"><strong>Miracle Apps</strong>Mobile apps with clear purpose, polished design, and practical everyday value.</div>
+      <div class="footer-links"><a href="/cleanupai/">Cleanup AI</a><a href="/cma-part2/">CMA Part 2</a><a href="/aba/">ABA Prep</a><a href="/rbt/">RBT Prep</a><a href="/pmp/">PMP Prep</a><a href="/acsmcpt/">ACSM-CPT Prep</a><a href="mailto:support@miracleapps.in">support@miracleapps.in</a></div>
     </div>
   </footer>
+<script src="../assets/site.js"></script>
 </body>
 </html>

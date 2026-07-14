@@ -1,9 +1,8 @@
 /* ═══════════════════════════════════════════════════
-   MIRACLE APPS — Adaptive Scrolling Showcase Engine
+   MIRACLE APPS — Interactive Multi-Page JS Systems
    ═══════════════════════════════════════════════════ */
 
 const nav = document.querySelector('.nav');
-const reveals = [...document.querySelectorAll('.reveal')];
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ─── Scroll listener for nav shrink ─── */
@@ -81,73 +80,33 @@ if (canvas) {
   loop();
 }
 
-/* ─── Scrolling Adaptive Color & Active Link Observer ─── */
-if (!reduceMotion && 'IntersectionObserver' in window) {
-  const appSections = document.querySelectorAll('.app-section');
-  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+/* ─── Homepage App Cards Background Hover Transition ─── */
+const productCards = document.querySelectorAll('.product-card');
+if (productCards.length > 0) {
+  productCards.forEach(card => {
+    const bg = card.getAttribute('data-bg');
+    const accent = card.getAttribute('data-accent');
 
-  const observerOptions = {
-    root: null,
-    rootMargin: '-30% 0px -40% 0px',
-    threshold: 0.1
-  };
-
-  const updateActiveSection = (entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-
-      const target = entry.target;
-      const bg = target.getAttribute('data-bg');
-      const accent = target.getAttribute('data-accent');
-      const sectionId = target.getAttribute('id');
-
-      // Update body CSS variables
+    card.addEventListener('mouseenter', () => {
       document.documentElement.style.setProperty('--bg-color', bg);
       document.documentElement.style.setProperty('--accent-muted', accent);
       document.documentElement.style.setProperty('--accent-glow', `${accent}12`);
-
-      // Update navbar links
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === `#${sectionId}`) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-
-      // Trigger stat counter animations inside this section
-      animateCounters(target);
     });
-  };
 
-  const sectionObserver = new IntersectionObserver(updateActiveSection, observerOptions);
-  appSections.forEach(section => sectionObserver.observe(section));
-
-  // Reset to default color when hero is in view
-  const heroSection = document.querySelector('.hero');
-  if (heroSection) {
-    const heroObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        document.documentElement.style.setProperty('--bg-color', '#020205');
-        document.documentElement.style.setProperty('--accent-muted', '#475569');
-        document.documentElement.style.setProperty('--accent-glow', 'rgba(71, 85, 105, 0.12)');
-        navLinks.forEach(link => link.classList.remove('active'));
-      });
-    }, {
-      rootMargin: '-10% 0px -80% 0px',
-      threshold: 0.1
+    card.addEventListener('mouseleave', () => {
+      // Reset to default deep obsidian background
+      document.documentElement.style.setProperty('--bg-color', '#020205');
+      document.documentElement.style.setProperty('--accent-muted', '#64748b');
+      document.documentElement.style.setProperty('--accent-glow', 'rgba(71, 85, 105, 0.12)');
     });
-    heroObserver.observe(heroSection);
-  }
+  });
 }
 
-/* ─── Animated stat counters function ─── */
-const animateCounters = (parent) => {
-  const elements = parent.querySelectorAll('.hud-tile strong:not(.animated)');
-  elements.forEach(el => {
-    el.classList.add('animated');
+/* ─── App Pages Animated Stat Counters ─── */
+if (!reduceMotion && 'IntersectionObserver' in window) {
+  const statTiles = document.querySelectorAll('.hud-tile strong');
+
+  const animateCounter = (el) => {
     const text = el.textContent.trim();
     const match = text.match(/^([\d,]+)(\+?)$/);
     if (!match) return;
@@ -172,24 +131,18 @@ const animateCounters = (parent) => {
 
     el.textContent = '0' + suffix;
     requestAnimationFrame(tick);
+  };
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    });
+  }, {
+    rootMargin: '0px 0px -10% 0px',
+    threshold: 0.2
   });
-};
 
-/* ─── Parallax scroll offset on hero ─── */
-if (!reduceMotion) {
-  let ticking = false;
-
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        const scrolled = window.scrollY;
-        const heroSection = document.querySelector('.hero');
-        if (heroSection) {
-          heroSection.style.setProperty('--scroll-offset', `${scrolled * 0.15}px`);
-        }
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
+  statTiles.forEach(tile => counterObserver.observe(tile));
 }

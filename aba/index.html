@@ -4,82 +4,140 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>ABA Exam Preparation - Miracle Apps</title>
-  <meta name="description" content="ABA Exam Preparation helps BCBA candidates practice by domain, track readiness, review missed questions, and build confidence with focused study tools.">
+  <meta name="description" content="Study BCBA content areas with domain quizzes, exam-style practice, readiness tracking, saved questions, missed question review, daily questions, and Pro study tools.">
   <meta name="author" content="Miracle Apps">
-  <meta name="theme-color" content="#09090b">
+  <meta name="theme-color" content="#020205">
   <meta property="og:title" content="ABA Exam Preparation - Miracle Apps">
-  <meta property="og:description" content="ABA Exam Preparation helps BCBA candidates practice by domain, track readiness, review missed questions, and build confidence with focused study tools.">
+  <meta property="og:description" content="Study BCBA content areas with domain quizzes, exam-style practice, readiness tracking, saved questions, missed question review, daily questions, and Pro study tools.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.miracleapps.in/aba/ABA_Appicon.png">
   <link rel="canonical" href="https://www.miracleapps.in/aba/">
-  <link rel="icon" type="image/png" href="ABA_Appicon.png">
-  <link rel="apple-touch-icon" href="ABA_Appicon.png">
+  <link rel="icon" type="image/png" href="../ABA_Appicon.png">
+  <link rel="apple-touch-icon" href="../ABA_Appicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/site.css">
 </head>
-<body class="app-page" style="--app:#456684;--app-2:#04d4f0">
-<nav class="nav">
+<body style="--bg-color: #0b0f15; --accent-muted: #04d4f0; --accent-glow: #04d4f012;">
+  <canvas id="particles-canvas"></canvas>
+  <div class="ambient-glow"></div>
+
+  <!-- Floating Navigation -->
+  <nav class="nav">
     <div class="shell nav-inner">
-      <a class="brand" href="/aba/"><img src="ABA_Appicon.png" alt="ABA Exam Preparation icon"><span>ABA Prep</span></a>
+      <a class="brand" href="/"><img src="../miracle_logo.png" alt="Miracle Apps"><span>Miracle Apps</span></a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/aba/#features">Features</a>
-        <a href="/aba/#coverage">Coverage</a>
-        <a href="/aba/privacy/">Privacy</a>
-        <a class="nav-cta" href="mailto:support@miracleapps.in">Support</a>
+        <a href="/">Back to Home</a>
       </div>
+      <a class="btn nav-cta" href="mailto:support@miracleapps.in">Support</a>
     </div>
   </nav>
-  <main>
-    <header class="app-hero">
-      <div class="shell app-layout">
-        <div class="reveal">
+
+  <main class="shell">
+    <div class="app-layout">
+      <div class="details-side">
+        <div class="app-meta">
           <div class="kicker">BCBA and ABA study companion</div>
-          <h1 class="hero-title">Practice ABA with a plan, not panic.</h1>
-          <p class="hero-copy">Study BCBA content areas with domain quizzes, exam-style practice, readiness tracking, saved questions, missed question review, daily questions, and Pro study tools.</p>
-          <div class="action-row"><a class="btn btn-primary" href="#features">Explore features</a><a class="btn btn-ghost" href="/aba/privacy/">Privacy Policy</a><a class="btn btn-ghost" href="/aba/terms/">Terms</a></div>
+          <span class="badge">BCBA Study</span>
         </div>
-        <div class="app-stage reveal">
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="phone-head"><img src="ABA_Appicon.png" alt="ABA Prep icon"><span class="phone-pill">99% readiness goal</span></div>
-              <div class="phone-title">ABA Prep</div>
-              <div class="readiness"><div class="readiness-line"><span>Readiness Score</span><span>72%</span></div><div class="bar"><span></span></div></div>
-              <div class="phone-grid"><div class="phone-card"><strong>BCBA domains</strong><span>Start here</span></div><div class="phone-card"><strong>Readiness score</strong><span>Track progress</span></div><div class="phone-card"><strong>Daily question</strong><span>Review loop</span></div><div class="phone-card"><strong>Pro access</strong><span>Pro tools</span></div></div>
+        <h1 class="app-title">ABA Exam Preparation</h1>
+        <p class="app-desc">Study BCBA content areas with domain quizzes, exam-style practice, readiness tracking, saved questions, missed question review, daily questions, and Pro study tools.</p>
+        
+        <div class="hud-stats-grid">
+          <div class="hud-tile"><strong>9</strong><span>weighted BCBA domains</span></div>
+<div class="hud-tile"><strong>104</strong><span>topic-level practice areas</span></div>
+<div class="hud-tile"><strong>175</strong><span>exam-weighted outline questions</span></div>
+<div class="hud-tile"><strong>2500+</strong><span>practice questions with Pro</span></div>
+        </div>
+      </div>
+
+      <div class="mockup-side">
+        <div class="glass-phone">
+          <div class="glass-phone-screen">
+            <div class="phone-screen-header">
+              <img src="ABA_Appicon.png" alt="Icon">
+              <span>99% readiness goal</span>
+            </div>
+            <div class="phone-screen-title">ABA Prep</div>
+            <div class="phone-screen-stats">
+              <strong style="display: block; font-size: 14px; margin-bottom: 4px;">Readiness Score</strong>
+              <span style="color: var(--muted); font-size: 11px;">72% Complete</span>
+            </div>
+            <div class="phone-screen-grid">
+              <div class="phone-screen-card"><strong>BCBA domains</strong><span>Start here</span></div>
+<div class="phone-screen-card"><strong>Readiness score</strong><span>Track progress</span></div>
+<div class="phone-screen-card"><strong>Daily question</strong><span>Review loop</span></div>
+<div class="phone-screen-card"><strong>Pro access</strong><span>Pro tools</span></div>
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+
+    <!-- Core Features Section -->
     <section class="section">
-      <div class="shell stat-grid-four"><div class="stat-tile reveal"><strong>9</strong><span>weighted BCBA domains</span></div><div class="stat-tile reveal"><strong>104</strong><span>topic-level practice areas</span></div><div class="stat-tile reveal"><strong>175</strong><span>exam-weighted outline questions</span></div><div class="stat-tile reveal"><strong>2500+</strong><span>practice questions with Pro</span></div></div>
-    </section>
-    <section class="section" id="features">
-      <div class="shell">
-        <div class="section-head reveal"><div class="kicker">Features</div><h2 class="section-title">Structured practice for stronger ABA recall.</h2><p class="section-copy">Study across BCBA content areas, track readiness, and keep daily questions, saved items, and missed-question review close at hand.</p></div>
-        <div class="feature-grid"><article class="feature reveal"><h3>Domain quick quizzes</h3><p>Practice across ABA and BCBA domains, then drill into topics when you need targeted review.</p></article><article class="feature reveal"><h3>Three exam modes</h3><p>Use full support with explanations, answer-only review, or exam-style mode.</p></article><article class="feature reveal"><h3>Readiness score</h3><p>Track completed topics, answer accuracy, correct answers, tests completed, and overall readiness.</p></article><article class="feature reveal"><h3>Saved and missed questions</h3><p>Save important questions and revisit mistakes automatically.</p></article><article class="feature reveal"><h3>Today's question</h3><p>Keep your study habit alive with one daily question.</p></article><article class="feature reveal"><h3>Pro access</h3><p>Unlock more questions, final tests, random quizzes, explanations, and ad-free study.</p></article></div>
+      <div class="section-head" style="text-align: center; margin-bottom: 42px;">
+        <div class="kicker">Features</div>
+        <h2 class="section-title">Core App Features</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-panel"><h3>Domain quick quizzes</h3><p>Practice across ABA and BCBA domains, then drill into topics when you need targeted review.</p></div>
+<div class="feature-panel"><h3>Three exam modes</h3><p>Use full support with explanations, answer-only review, or exam-style mode.</p></div>
+<div class="feature-panel"><h3>Readiness score</h3><p>Track completed topics, answer accuracy, correct answers, tests completed, and overall readiness.</p></div>
+<div class="feature-panel"><h3>Saved and missed questions</h3><p>Save important questions and revisit mistakes automatically.</p></div>
+<div class="feature-panel"><h3>Today's question</h3><p>Keep your study habit alive with one daily question.</p></div>
+<div class="feature-panel"><h3>Pro access</h3><p>Unlock more questions, final tests, random quizzes, explanations, and ad-free study.</p></div>
       </div>
     </section>
-    <section class="section" id="coverage">
-      <div class="shell">
-        <div class="section-head reveal"><div class="kicker">Coverage</div><h2 class="section-title">Aligned around ABA content areas.</h2><p class="section-copy">The app follows a weighted domain structure so your practice map stays visible.</p></div>
-        <div class="coverage-grid"><div class="coverage-item reveal"><div class="coverage-code">A</div><div><strong>Behaviorism and Philosophical Foundations</strong><p>5 topics, 5%</p></div></div><div class="coverage-item reveal"><div class="coverage-code">B</div><div><strong>Concepts and Principles</strong><p>24 topics, 14%</p></div></div><div class="coverage-item reveal"><div class="coverage-code">C</div><div><strong>Measurement, Data Display, and Interpretation</strong><p>12 topics, 12%</p></div></div><div class="coverage-item reveal"><div class="coverage-code">D</div><div><strong>Experimental Design</strong><p>9 topics, 7%</p></div></div><div class="coverage-item reveal"><div class="coverage-code">E</div><div><strong>Ethical and Professional Issues</strong><p>12 topics, 13%</p></div></div><div class="coverage-item reveal"><div class="coverage-code">F</div><div><strong>Behavior Assessment</strong><p>8 topics, 13%</p></div></div><div class="coverage-item reveal"><div class="coverage-code">G</div><div><strong>Behavior-Change Procedures</strong><p>19 topics, 14%</p></div></div><div class="coverage-item reveal"><div class="coverage-code">H</div><div><strong>Selecting and Implementing Interventions</strong><p>8 topics, 11%</p></div></div><div class="coverage-item reveal"><div class="coverage-code">I</div><div><strong>Personnel Supervision and Management</strong><p>7 topics, 11%</p></div></div></div>
+
+    <!-- App Coverage Area -->
+    <section class="section">
+      <div class="section-head" style="text-align: center; margin-bottom: 42px;">
+        <div class="kicker">Coverage</div>
+        <h2 class="section-title">What is covered</h2>
+      </div>
+      <div class="coverage-grid">
+        <div class="coverage-item"><div class="coverage-code">A</div><div><strong>Behaviorism & Foundations</strong><p>5 topics, 5%</p></div></div>
+<div class="coverage-item"><div class="coverage-code">B</div><div><strong>Concepts and Principles</strong><p>24 topics, 14%</p></div></div>
+<div class="coverage-item"><div class="coverage-code">C</div><div><strong>Measurement & Display</strong><p>12 topics, 12%</p></div></div>
+<div class="coverage-item"><div class="coverage-code">D</div><div><strong>Experimental Design</strong><p>9 topics, 7%</p></div></div>
+<div class="coverage-item"><div class="coverage-code">E</div><div><strong>Ethical Issues</strong><p>12 topics, 13%</p></div></div>
+<div class="coverage-item"><div class="coverage-code">F</div><div><strong>Behavior Assessment</strong><p>8 topics, 13%</p></div></div>
+<div class="coverage-item"><div class="coverage-code">G</div><div><strong>Behavior-Change Procedures</strong><p>19 topics, 14%</p></div></div>
+<div class="coverage-item"><div class="coverage-code">H</div><div><strong>Interventions</strong><p>8 topics, 11%</p></div></div>
+<div class="coverage-item"><div class="coverage-code">I</div><div><strong>Supervision & Management</strong><p>7 topics, 11%</p></div></div>
       </div>
     </section>
-    <section class="section" id="legal">
-      <div class="shell">
-        <div class="legal-card reveal"><div><h2>Clear policies, easy to find.</h2><p>Pro access unlocks more practice, final tests, random quizzes, explanations, missed-question review, saved-question review, and ad removal.</p></div><div class="action-row"><a class="btn" href="/aba/privacy/">Privacy</a><a class="btn" href="/aba/terms/">Terms</a></div></div>
+
+    <!-- Legal Area Section -->
+    <section class="section" style="padding-bottom: 120px;">
+      <div class="legal-card">
+        <div>
+          <h2>Clear policies, easy to find.</h2>
+          <p>Pro access unlocks more practice, final tests, random quizzes, explanations, missed-question review, saved-question review, and ad removal.</p>
+        </div>
+        <div class="action-row">
+          <a class="btn btn-primary" href="privacy/">Privacy Policy</a>
+          <a class="btn btn-ghost" href="terms/">Terms &amp; Conditions</a>
+        </div>
       </div>
     </section>
   </main>
-<footer class="footer">
+
+  <footer class="footer">
     <div class="shell footer-inner">
-      <div class="footer-brand"><strong>Miracle Apps</strong>Mobile apps with clear purpose, polished design, and practical everyday value.</div>
-      <div class="footer-links"><a href="/cleanupai/">Cleanup AI</a><a href="/cma-part2/">CMA Part 2</a><a href="/aba/">ABA Prep</a><a href="/rbt/">RBT Prep</a><a href="/pmp/">PMP Prep</a><a href="/acsmcpt/">ACSM-CPT Prep</a><a href="/fmradio/">FM Radio</a><a href="/vault/">Secret Vault Pro</a><a href="/traslator/">Traslate All</a><a href="mailto:support@miracleapps.in">support@miracleapps.in</a></div>
+      <div class="footer-brand">
+        <strong>Miracle Apps</strong>
+        <p style="font-size: 13px; color: var(--muted); margin-top: 6px;">Mobile apps with clear purpose, polished design, and practical everyday value.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">Back to Homepage</a>
+        <a href="mailto:support@miracleapps.in">support@miracleapps.in</a>
+      </div>
     </div>
   </footer>
-<script src="../assets/site.js"></script>
+
+  <script src="../assets/site.js"></script>
 </body>
 </html>

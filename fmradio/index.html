@@ -4,82 +4,137 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>FM Radio - Miracle Apps</title>
-  <meta name="description" content="FM Radio helps you stream live radio stations from around the world with search, favorites, charts, CarPlay, Siri shortcuts, Shazam, sleep timer, and background audio.">
+  <meta name="description" content="Stream live radio stations from around the world with search, nearby stations, globe discovery, charts, favorites, recents, Siri shortcuts, CarPlay, Shazam, and sleep timer.">
   <meta name="author" content="Miracle Apps">
-  <meta name="theme-color" content="#09090b">
+  <meta name="theme-color" content="#020205">
   <meta property="og:title" content="FM Radio - Miracle Apps">
-  <meta property="og:description" content="FM Radio helps you stream live radio stations from around the world with search, favorites, charts, CarPlay, Siri shortcuts, Shazam, sleep timer, and background audio.">
+  <meta property="og:description" content="Stream live radio stations from around the world with search, nearby stations, globe discovery, charts, favorites, recents, Siri shortcuts, CarPlay, Shazam, and sleep timer.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.miracleapps.in/fmradio/FMRadio_Appicon.png">
   <link rel="canonical" href="https://www.miracleapps.in/fmradio/">
-  <link rel="icon" type="image/png" href="FMRadio_Appicon.png">
-  <link rel="apple-touch-icon" href="FMRadio_Appicon.png">
+  <link rel="icon" type="image/png" href="../FMRadio_Appicon.png">
+  <link rel="apple-touch-icon" href="../FMRadio_Appicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/site.css">
 </head>
-<body class="app-page" style="--app:#111827;--app-2:#ff453a">
-<nav class="nav">
+<body style="--bg-color: #160808; --accent-muted: #ff453a; --accent-glow: #ff453a12;">
+  <canvas id="particles-canvas"></canvas>
+  <div class="ambient-glow"></div>
+
+  <!-- Floating Navigation -->
+  <nav class="nav">
     <div class="shell nav-inner">
-      <a class="brand" href="/fmradio/"><img src="FMRadio_Appicon.png" alt="FM Radio icon"><span>FM Radio</span></a>
+      <a class="brand" href="/"><img src="../miracle_logo.png" alt="Miracle Apps"><span>Miracle Apps</span></a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/fmradio/#features">Features</a>
-        <a href="/fmradio/#coverage">Coverage</a>
-        <a href="/fmradio/privacy/">Privacy</a>
-        <a class="nav-cta" href="mailto:support@miracleapps.in">Support</a>
+        <a href="/">Back to Home</a>
       </div>
+      <a class="btn nav-cta" href="mailto:support@miracleapps.in">Support</a>
     </div>
   </nav>
-  <main>
-    <header class="app-hero">
-      <div class="shell app-layout">
-        <div class="reveal">
+
+  <main class="shell">
+    <div class="app-layout">
+      <div class="details-side">
+        <div class="app-meta">
           <div class="kicker">Global radio streaming</div>
-          <h1 class="hero-title">Live radio from around the world, ready when you are.</h1>
-          <p class="hero-copy">FM Radio helps you browse 134K+ stations across countries, languages, genres, charts, favorites, CarPlay, Siri shortcuts, Shazam, sleep timer, and background playback.</p>
-          <div class="action-row"><a class="btn btn-primary" href="#features">Explore features</a><a class="btn btn-ghost" href="/fmradio/privacy/">Privacy Policy</a><a class="btn btn-ghost" href="/fmradio/terms/">Terms</a></div>
+          <span class="badge">Global Radio</span>
         </div>
-        <div class="app-stage reveal">
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="phone-head"><img src="FMRadio_Appicon.png" alt="FM Radio icon"><span class="phone-pill">134K+ stations</span></div>
-              <div class="phone-title">FM Radio</div>
-              <div class="readiness"><div class="readiness-line"><span>Now Playing</span><span>Live</span></div><div class="bar"><span></span></div></div>
-              <div class="phone-grid"><div class="phone-card"><strong>Nearby stations</strong><span>Local discovery</span></div><div class="phone-card"><strong>Global search</strong><span>Stations and genres</span></div><div class="phone-card"><strong>CarPlay</strong><span>Road-ready radio</span></div><div class="phone-card"><strong>Sleep timer</strong><span>Auto stop</span></div></div>
+        <h1 class="app-title">FM Radio</h1>
+        <p class="app-desc">Stream live radio stations from around the world with search, nearby stations, globe discovery, charts, favorites, recents, Siri shortcuts, CarPlay, Shazam, and sleep timer.</p>
+        
+        <div class="hud-stats-grid">
+          <div class="hud-tile"><strong>134K+</strong><span>radio stations in the directory</span></div>
+<div class="hud-tile"><strong>292</strong><span>countries represented</span></div>
+<div class="hud-tile"><strong>966</strong><span>languages available</span></div>
+<div class="hud-tile"><strong>CarPlay</strong><span>Siri, background audio, and road-friendly browsing</span></div>
+        </div>
+      </div>
+
+      <div class="mockup-side">
+        <div class="glass-phone">
+          <div class="glass-phone-screen">
+            <div class="phone-screen-header">
+              <img src="FMRadio_Appicon.png" alt="Icon">
+              <span>134K+ stations</span>
+            </div>
+            <div class="phone-screen-title">FM Radio</div>
+            <div class="phone-screen-stats">
+              <strong style="display: block; font-size: 14px; margin-bottom: 4px;">Now Playing</strong>
+              <span style="color: var(--muted); font-size: 11px;">Live Streaming</span>
+            </div>
+            <div class="phone-screen-grid">
+              <div class="phone-screen-card"><strong>Nearby stations</strong><span>Local discovery</span></div>
+<div class="phone-screen-card"><strong>Global search</strong><span>Stations and genres</span></div>
+<div class="phone-screen-card"><strong>CarPlay</strong><span>Road-ready radio</span></div>
+<div class="phone-screen-card"><strong>Sleep timer</strong><span>Auto stop</span></div>
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+
+    <!-- Core Features Section -->
     <section class="section">
-      <div class="shell stat-grid-four"><div class="stat-tile reveal"><strong>134K+</strong><span>radio stations in the directory</span></div><div class="stat-tile reveal"><strong>292</strong><span>countries represented</span></div><div class="stat-tile reveal"><strong>966</strong><span>languages available</span></div><div class="stat-tile reveal"><strong>CarPlay</strong><span>Siri, background audio, and road-friendly browsing</span></div></div>
-    </section>
-    <section class="section" id="features">
-      <div class="shell">
-        <div class="section-head reveal"><div class="kicker">Features</div><h2 class="section-title">Radio that stays quick, personal, and easy to browse.</h2><p class="section-copy">Start with nearby stations or explore globally, then keep favorites, playback tools, CarPlay, Siri shortcuts, and song discovery within easy reach.</p></div>
-        <div class="feature-grid"><article class="feature reveal"><h3>Global station directory</h3><p>Browse a large radio directory with station names, countries, languages, genres, stream URLs, favicons, codec, and bitrate details.</p></article><article class="feature reveal"><h3>Search and browse</h3><p>Search stations, genres, and countries, then keep exploring through nearby stations, popular stations, countries, languages, and genre lists.</p></article><article class="feature reveal"><h3>Globe discovery</h3><p>Use the globe view to explore stations visually, move around the map, and jump into a random station when you want something new.</p></article><article class="feature reveal"><h3>Charts</h3><p>Listen through local and worldwide charts with genre and country filters for faster discovery.</p></article><article class="feature reveal"><h3>Favorites, recents, and songs</h3><p>Save favorite stations, revisit recently played stations, and use Shazam support to identify and save songs you hear.</p></article><article class="feature reveal"><h3>CarPlay, Siri, and sleep timer</h3><p>Listen in the background, control playback from Now Playing, browse from CarPlay, use Siri shortcuts, and set a sleep timer from 1 to 240 minutes.</p></article></div>
+      <div class="section-head" style="text-align: center; margin-bottom: 42px;">
+        <div class="kicker">Features</div>
+        <h2 class="section-title">Core App Features</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-panel"><h3>Global station directory</h3><p>Browse a large radio directory with station names, countries, languages, genres, stream URLs, favicons, codec, and bitrate details.</p></div>
+<div class="feature-panel"><h3>Search and browse</h3><p>Search stations, genres, and countries, then keep exploring through nearby stations, popular stations, countries, languages, and genre lists.</p></div>
+<div class="feature-panel"><h3>Globe discovery</h3><p>Use the globe view to explore stations visually, move around the map, and jump into a random station when you want something new.</p></div>
+<div class="feature-panel"><h3>Charts</h3><p>Listen through local and worldwide charts with genre and country filters for faster discovery.</p></div>
+<div class="feature-panel"><h3>Favorites, recents, and songs</h3><p>Save favorite stations, revisit recently played stations, and use Shazam support to identify and save songs you hear.</p></div>
+<div class="feature-panel"><h3>CarPlay, Siri, and sleep timer</h3><p>Listen in the background, control playback from Now Playing, browse from CarPlay, use Siri shortcuts, and set a sleep timer from 1 to 240 minutes.</p></div>
       </div>
     </section>
-    <section class="section" id="coverage">
-      <div class="shell">
-        <div class="section-head reveal"><div class="kicker">Coverage</div><h2 class="section-title">Built for local favorites and worldwide discovery.</h2><p class="section-copy">FM Radio combines a large station database with practical listening features, so people can start with their area or explore globally.</p></div>
-        <div class="coverage-grid"><div class="coverage-item reveal"><div class="coverage-code">01</div><div><strong>Station database</strong><p>134,743 stations with stream and station metadata.</p></div></div><div class="coverage-item reveal"><div class="coverage-code">02</div><div><strong>Countries</strong><p>Browse stations across 292 country entries and nearby listening options.</p></div></div><div class="coverage-item reveal"><div class="coverage-code">03</div><div><strong>Languages</strong><p>Discover radio across 966 language entries.</p></div></div><div class="coverage-item reveal"><div class="coverage-code">04</div><div><strong>Genres</strong><p>Explore popular music, talk, news, sports, and specialty categories.</p></div></div><div class="coverage-item reveal"><div class="coverage-code">05</div><div><strong>Charts</strong><p>Switch between local and worldwide charts with fast filters.</p></div></div><div class="coverage-item reveal"><div class="coverage-code">06</div><div><strong>Playback tools</strong><p>Now Playing, remote controls, background audio, CarPlay, Siri, Shazam, and sleep timer support.</p></div></div></div>
+
+    <!-- App Coverage Area -->
+    <section class="section">
+      <div class="section-head" style="text-align: center; margin-bottom: 42px;">
+        <div class="kicker">Coverage</div>
+        <h2 class="section-title">What is covered</h2>
+      </div>
+      <div class="coverage-grid">
+        <div class="coverage-item"><div class="coverage-code">01</div><div><strong>Station Database</strong><p>134,743 stations with stream and station metadata.</p></div></div>
+<div class="coverage-item"><div class="coverage-code">02</div><div><strong>Countries</strong><p>Browse stations across 292 country entries.</p></div></div>
+<div class="coverage-item"><div class="coverage-code">03</div><div><strong>Languages</strong><p>Discover radio across 966 language entries.</p></div></div>
+<div class="coverage-item"><div class="coverage-code">04</div><div><strong>Genres</strong><p>Explore popular music, talk, news, sports, and specialty categories.</p></div></div>
+<div class="coverage-item"><div class="coverage-code">05</div><div><strong>Charts</strong><p>Switch between local and worldwide charts with fast filters.</p></div></div>
+<div class="coverage-item"><div class="coverage-code">06</div><div><strong>Playback Tools</strong><p>Now Playing, CarPlay, Siri, Shazam, and sleep timer.</p></div></div>
       </div>
     </section>
-    <section class="section" id="legal">
-      <div class="shell">
-        <div class="legal-card reveal"><div><h2>Clear policies, easy to find.</h2><p>FM Radio does not require an account. Favorites, recents, and audio quality preferences are stored locally on your device.</p></div><div class="action-row"><a class="btn" href="/fmradio/privacy/">Privacy</a><a class="btn" href="/fmradio/terms/">Terms</a></div></div>
+
+    <!-- Legal Area Section -->
+    <section class="section" style="padding-bottom: 120px;">
+      <div class="legal-card">
+        <div>
+          <h2>Clear policies, easy to find.</h2>
+          <p>FM Radio does not require an account. Favorites, recents, and audio quality preferences are stored locally on your device.</p>
+        </div>
+        <div class="action-row">
+          <a class="btn btn-primary" href="privacy/">Privacy Policy</a>
+          <a class="btn btn-ghost" href="terms/">Terms &amp; Conditions</a>
+        </div>
       </div>
     </section>
   </main>
-<footer class="footer">
+
+  <footer class="footer">
     <div class="shell footer-inner">
-      <div class="footer-brand"><strong>Miracle Apps</strong>Mobile apps with clear purpose, polished design, and practical everyday value.</div>
-      <div class="footer-links"><a href="/cleanupai/">Cleanup AI</a><a href="/cma-part2/">CMA Part 2</a><a href="/aba/">ABA Prep</a><a href="/rbt/">RBT Prep</a><a href="/pmp/">PMP Prep</a><a href="/acsmcpt/">ACSM-CPT Prep</a><a href="/fmradio/">FM Radio</a><a href="/vault/">Secret Vault Pro</a><a href="/traslator/">Traslate All</a><a href="mailto:support@miracleapps.in">support@miracleapps.in</a></div>
+      <div class="footer-brand">
+        <strong>Miracle Apps</strong>
+        <p style="font-size: 13px; color: var(--muted); margin-top: 6px;">Mobile apps with clear purpose, polished design, and practical everyday value.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">Back to Homepage</a>
+        <a href="mailto:support@miracleapps.in">support@miracleapps.in</a>
+      </div>
     </div>
   </footer>
-<script src="../assets/site.js"></script>
+
+  <script src="../assets/site.js"></script>
 </body>
 </html>

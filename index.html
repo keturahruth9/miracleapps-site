@@ -20,26 +20,20 @@
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <!-- Ambient background loops -->
+  <!-- Ambient background overlays -->
   <canvas id="particles-canvas"></canvas>
   <div class="ambient-glow"></div>
 
-  <!-- Sticky Glass Navigation Capsule -->
+  <!-- Floating Capsule Navigation -->
   <nav class="nav">
     <div class="shell nav-inner">
       <a class="brand" href="/"><img src="miracle_logo.png" alt="Miracle Apps"><span>Miracle Apps</span></a>
       <div class="nav-links">
-        <a href="#cleanupai">Cleanup AI</a>
-        <a href="#cma-part2">CMA Part 2</a>
-        <a href="#aba">ABA Prep</a>
-        <a href="#rbt">RBT Prep</a>
-        <a href="#pmp">PMP Prep</a>
-        <a href="#acsmcpt">ACSM-CPT</a>
-        <a href="#fmradio">FM Radio</a>
-        <a href="#vault">Secret Vault</a>
-        <a href="#traslator">Translate All</a>
+        <a href="#apps">Apps</a>
+        <a href="#principles">Principles</a>
+        <a href="mailto:support@miracleapps.in">Support</a>
       </div>
-      <a class="btn nav-cta" href="mailto:support@miracleapps.in">Support</a>
+      <a class="btn nav-cta" href="#apps">Explore Apps</a>
     </div>
   </nav>
 
@@ -49,533 +43,164 @@
       <div class="hero-content">
         <div class="kicker">Independent Mobile Product Studio</div>
         <h1 class="hero-title">Thoughtful apps for the things that <span class="accent">matter daily.</span></h1>
-        <p class="hero-copy">Miracle Apps builds focused mobile products for organizing digital life, protecting private files, translating content, preparing for professional exams, and discovering live radio around the world.</p>
+        <p class="hero-copy">Miracle Apps creates focused mobile products for organizing digital life, protecting private files, translating content, preparing for professional exams, and discovering live radio around the world.</p>
         <div class="action-row">
-          <a class="btn btn-primary" href="#cleanupai">Explore Suite</a>
+          <a class="btn btn-primary" href="#apps">See all apps</a>
           <a class="btn btn-ghost" href="mailto:support@miracleapps.in">Contact support</a>
         </div>
-        <div class="scroll-indicator">Scroll to discover</div>
       </div>
     </header>
 
-    <!-- App 1: Cleanup AI -->
-    <section class="app-section even" id="cleanupai" data-bg="#060c18" data-accent="#06b6d4">
-      <div class="details-side">
-        <div class="app-meta">
-          <div class="kicker">Smart cleanup for busy phones</div>
-          <span class="badge">Phone Cleanup</span>
-        </div>
-        <h2 class="app-title">Cleanup AI</h2>
-        <p class="app-desc">Cleanup AI brings photo cleanup, video compression, Gmail cleanup, contact management, AI sorting, and private file protection into one focused mobile app.</p>
-        
-        <div class="hud-stats-grid">
-          <div class="hud-tile"><strong>8+</strong><span>cleanup tools in one app</span></div>
-          <div class="hud-tile"><strong>AI</strong><span>gallery sorting support</span></div>
-          <div class="hud-tile"><strong>Gmail</strong><span>optional inbox cleanup</span></div>
-          <div class="hud-tile"><strong>Private</strong><span>secret space for files</span></div>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-panel">
-            <h4>Duplicate photo cleanup</h4>
-            <p>Find duplicate and similar photos quickly, then review them before deleting anything.</p>
-          </div>
-          <div class="feature-panel">
-            <h4>Video compression</h4>
-            <p>Reduce large video file sizes to recover storage while keeping useful copies.</p>
-          </div>
-        </div>
-
-        <div class="action-row">
-          <a href="/cleanupai/privacy/" class="btn btn-primary">Privacy Policy</a>
-          <a href="/cleanupai/terms/" class="btn btn-ghost">Terms of Service</a>
-        </div>
+    <!-- Apps Cards Grid Section -->
+    <section class="section" id="apps">
+      <div class="section-head">
+        <div class="kicker">Product Collection</div>
+        <h2 class="section-title">Nine focused apps. <span class="accent">One trusted studio.</span></h2>
       </div>
 
-      <div class="mockup-side">
-        <div class="glass-phone">
-          <div class="glass-phone-screen">
-            <div class="phone-screen-header">
-              <img src="cleanupai/appicon.png" alt="Cleanup AI Icon">
-              <span>On-device cleanup</span>
-            </div>
-            <div class="phone-screen-title">Cleanup Dashboard</div>
-            <div class="phone-screen-stats">
-              <strong style="display: block; font-size: 14px; margin-bottom: 4px;">Storage Focus</strong>
-              <span style="color: var(--muted); font-size: 11px;">Smart Sorting Active</span>
-            </div>
-            <div class="phone-screen-grid">
-              <div class="phone-screen-card"><strong>Duplicate photos</strong><span>Start here</span></div>
-              <div class="phone-screen-card"><strong>Video compression</strong><span>Track progress</span></div>
-              <div class="phone-screen-card"><strong>AI gallery cleanup</strong><span>Review loop</span></div>
-              <div class="phone-screen-card"><strong>Gmail cleaner</strong><span>Pro tools</span></div>
-            </div>
+      <div class="product-grid">
+        <!-- Card 1: Cleanup AI -->
+        <a class="product-card" href="/cleanupai/" data-bg="#060c18" data-accent="#06b6d4">
+          <div class="product-top">
+            <img src="cleanupai/appicon.png" alt="Cleanup AI Icon">
+            <span class="badge">Phone Cleanup</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- App 2: CMA Part 2 -->
-    <section class="app-section odd" id="cma-part2" data-bg="#120e08" data-accent="#f59e0b">
-      <div class="details-side">
-        <div class="app-meta">
-          <div class="kicker">Strategic Financial Management prep</div>
-          <span class="badge">Exam Prep</span>
-        </div>
-        <h2 class="app-title">CMA Part 2</h2>
-        <p class="app-desc">Practice the six CMA Part 2 domains with timed quizzes, readiness scoring, missed-question drills, saved questions, exam modes, and offline-first study tools.</p>
-        
-        <div class="hud-stats-grid">
-          <div class="hud-tile"><strong>6</strong><span>official-style core domains</span></div>
-          <div class="hud-tile"><strong>5</strong><span>quiz modes for study goals</span></div>
-          <div class="hud-tile"><strong>3</strong><span>exam modes with explanations</span></div>
-          <div class="hud-tile"><strong>Offline</strong><span>study without internet</span></div>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-panel">
-            <h4>Timed practice</h4>
-            <p>Built-in countdowns help you rehearse under pressure instead of only reading explanations.</p>
+          <h3>Cleanup AI</h3>
+          <p>Cleanup AI brings photo cleanup, video compression, Gmail cleanup, contact management, AI sorting, and private file protection into one focused mobile app.</p>
+          <div class="product-tags">
+            <span>Duplicate photos</span>
+            <span>Video compression</span>
+            <span>AI sorting</span>
           </div>
-          <div class="feature-panel">
-            <h4>Missed question drills</h4>
-            <p>Wrong answers are collected into focused review so weak areas become your next study block.</p>
+        </a>
+
+        <!-- Card 2: CMA Part 2 -->
+        <a class="product-card" href="/cma-part2/" data-bg="#120e08" data-accent="#f59e0b">
+          <div class="product-top">
+            <img src="cma-part2/CMA_Appicon.png" alt="CMA Part 2 Icon">
+            <span class="badge">Exam Prep</span>
           </div>
-        </div>
-
-        <div class="action-row">
-          <a href="/cma-part2/privacy/" class="btn btn-primary">Privacy Policy</a>
-          <a href="/cma-part2/terms/" class="btn btn-ghost">Terms of Service</a>
-        </div>
-      </div>
-
-      <div class="mockup-side">
-        <div class="glass-phone">
-          <div class="glass-phone-screen">
-            <div class="phone-screen-header">
-              <img src="cma-part2/CMA_Appicon.png" alt="CMA Icon">
-              <span>6 core domains</span>
-            </div>
-            <div class="phone-screen-title">CMA Part 2 Prep</div>
-            <div class="phone-screen-stats">
-              <strong style="display: block; font-size: 14px; margin-bottom: 4px;">Readiness Score</strong>
-              <span style="color: var(--muted); font-size: 11px;">72% Complete</span>
-            </div>
-            <div class="phone-screen-grid">
-              <div class="phone-screen-card"><strong>Timed quizzes</strong><span>Start here</span></div>
-              <div class="phone-screen-card"><strong>Readiness score</strong><span>Track progress</span></div>
-              <div class="phone-screen-card"><strong>Saved questions</strong><span>Review loop</span></div>
-              <div class="phone-screen-card"><strong>Missed drills</strong><span>Pro tools</span></div>
-            </div>
+          <h3>CMA Part 2</h3>
+          <p>Practice the six CMA Part 2 domains with timed quizzes, readiness scoring, missed-question drills, saved questions, exam modes, and offline-first study tools.</p>
+          <div class="product-tags">
+            <span>Timed quizzes</span>
+            <span>Readiness score</span>
+            <span>Offline-first</span>
           </div>
-        </div>
-      </div>
-    </section>
+        </a>
 
-    <!-- App 3: ABA Prep -->
-    <section class="app-section even" id="aba" data-bg="#0b0f15" data-accent="#04d4f0">
-      <div class="details-side">
-        <div class="app-meta">
-          <div class="kicker">BCBA and ABA study companion</div>
-          <span class="badge">BCBA Study</span>
-        </div>
-        <h2 class="app-title">ABA Prep</h2>
-        <p class="app-desc">Study BCBA content areas with domain quizzes, exam-style practice, readiness tracking, saved questions, missed question review, daily questions, and Pro study tools.</p>
-        
-        <div class="hud-stats-grid">
-          <div class="hud-tile"><strong>9</strong><span>weighted BCBA domains</span></div>
-          <div class="hud-tile"><strong>104</strong><span>topic-level practice areas</span></div>
-          <div class="hud-tile"><strong>175</strong><span>exam-weighted outline questions</span></div>
-          <div class="hud-tile"><strong>2500+</strong><span>practice questions with Pro</span></div>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-panel">
-            <h4>Domain quick quizzes</h4>
-            <p>Practice across ABA and BCBA domains, then drill into topics when you need targeted review.</p>
+        <!-- Card 3: ABA Prep -->
+        <a class="product-card" href="/aba/" data-bg="#0b0f15" data-accent="#04d4f0">
+          <div class="product-top">
+            <img src="aba/ABA_Appicon.png" alt="ABA Prep Icon">
+            <span class="badge">BCBA Study</span>
           </div>
-          <div class="feature-panel">
-            <h4>Three exam modes</h4>
-            <p>Use full support with explanations, answer-only review, or exam-style mode.</p>
+          <h3>ABA Prep</h3>
+          <p>Study BCBA content areas with domain quizzes, exam-style practice, readiness tracking, saved questions, missed question review, daily questions, and Pro study tools.</p>
+          <div class="product-tags">
+            <span>BCBA domains</span>
+            <span>Readiness tracker</span>
+            <span>Pro tools</span>
           </div>
-        </div>
+        </a>
 
-        <div class="action-row">
-          <a href="/aba/privacy/" class="btn btn-primary">Privacy Policy</a>
-          <a href="/aba/terms/" class="btn btn-ghost">Terms of Service</a>
-        </div>
-      </div>
-
-      <div class="mockup-side">
-        <div class="glass-phone">
-          <div class="glass-phone-screen">
-            <div class="phone-screen-header">
-              <img src="aba/ABA_Appicon.png" alt="ABA Icon">
-              <span>99% readiness goal</span>
-            </div>
-            <div class="phone-screen-title">ABA Prep</div>
-            <div class="phone-screen-stats">
-              <strong style="display: block; font-size: 14px; margin-bottom: 4px;">Readiness Score</strong>
-              <span style="color: var(--muted); font-size: 11px;">72% Complete</span>
-            </div>
-            <div class="phone-screen-grid">
-              <div class="phone-screen-card"><strong>BCBA domains</strong><span>Start here</span></div>
-              <div class="phone-screen-card"><strong>Readiness score</strong><span>Track progress</span></div>
-              <div class="phone-screen-card"><strong>Daily question</strong><span>Review loop</span></div>
-              <div class="phone-screen-card"><strong>Pro access</strong><span>Pro tools</span></div>
-            </div>
+        <!-- Card 4: RBT Prep -->
+        <a class="product-card" href="/rbt/" data-bg="#081216" data-accent="#067593">
+          <div class="product-top">
+            <img src="rbt/RBT_Appicon.png" alt="RBT Prep Icon">
+            <span class="badge">RBT Study</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- App 4: RBT Prep -->
-    <section class="app-section odd" id="rbt" data-bg="#081216" data-accent="#067593">
-      <div class="details-side">
-        <div class="app-meta">
-          <div class="kicker">RBT Task List study companion</div>
-          <span class="badge">RBT Study</span>
-        </div>
-        <h2 class="app-title">RBT Prep</h2>
-        <p class="app-desc">Use Task List domain quizzes, an 85-question final practice mode, readiness tracking, daily questions, saved questions, missed-question review, and Pro access.</p>
-        
-        <div class="hud-stats-grid">
-          <div class="hud-tile"><strong>6</strong><span>weighted RBT domains</span></div>
-          <div class="hud-tile"><strong>37</strong><span>topic-level practice areas</span></div>
-          <div class="hud-tile"><strong>85</strong><span>questions in final practice</span></div>
-          <div class="hud-tile"><strong>1000+</strong><span>practice questions with Pro</span></div>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-panel">
-            <h4>Task List practice</h4>
-            <p>Practice by RBT domain and topic instead of guessing what to study next.</p>
+          <h3>RBT Prep</h3>
+          <p>Use Task List domain quizzes, an 85-question final practice mode, readiness tracking, daily questions, saved questions, missed-question review, and Pro access.</p>
+          <div class="product-tags">
+            <span>Final test</span>
+            <span>Task list practice</span>
+            <span>Daily question</span>
           </div>
-          <div class="feature-panel">
-            <h4>Three exam modes</h4>
-            <p>Use explanations when learning, then switch to exam-style practice when ready.</p>
+        </a>
+
+        <!-- Card 5: PMP Prep -->
+        <a class="product-card" href="/pmp/" data-bg="#100b1a" data-accent="#8b5cf6">
+          <div class="product-top">
+            <img src="pmp/PMP_Appicon.png" alt="PMP Prep Icon">
+            <span class="badge">Project Study</span>
           </div>
-        </div>
-
-        <div class="action-row">
-          <a href="/rbt/privacy/" class="btn btn-primary">Privacy Policy</a>
-          <a href="/rbt/terms/" class="btn btn-ghost">Terms of Service</a>
-        </div>
-      </div>
-
-      <div class="mockup-side">
-        <div class="glass-phone">
-          <div class="glass-phone-screen">
-            <div class="phone-screen-header">
-              <img src="rbt/RBT_Appicon.png" alt="RBT Icon">
-              <span>85-question final</span>
-            </div>
-            <div class="phone-screen-title">RBT Prep</div>
-            <div class="phone-screen-stats">
-              <strong style="display: block; font-size: 14px; margin-bottom: 4px;">Readiness Score</strong>
-              <span style="color: var(--muted); font-size: 11px;">72% Complete</span>
-            </div>
-            <div class="phone-screen-grid">
-              <div class="phone-screen-card"><strong>RBT domains</strong><span>Start here</span></div>
-              <div class="phone-screen-card"><strong>Final test</strong><span>Track progress</span></div>
-              <div class="phone-screen-card"><strong>Daily question</strong><span>Review loop</span></div>
-              <div class="phone-screen-card"><strong>Readiness score</strong><span>Pro tools</span></div>
-            </div>
+          <h3>PMP Prep</h3>
+          <p>Study project management concepts with knowledge-area quizzes, practice sets, a 180-question final quiz, readiness tracking, saved questions, missed-question review, and daily questions.</p>
+          <div class="product-tags">
+            <span>Knowledge areas</span>
+            <span>180-question final</span>
+            <span>Pro access</span>
           </div>
-        </div>
-      </div>
-    </section>
+        </a>
 
-    <!-- App 5: PMP Prep -->
-    <section class="app-section even" id="pmp" data-bg="#100b1a" data-accent="#8b5cf6">
-      <div class="details-side">
-        <div class="app-meta">
-          <div class="kicker">PMP knowledge-area study companion</div>
-          <span class="badge">Project Management Study</span>
-        </div>
-        <h2 class="app-title">PMP Prep</h2>
-        <p class="app-desc">Study project management concepts with knowledge-area quizzes, practice sets, a 180-question final quiz, readiness tracking, saved questions, missed-question review, and daily questions.</p>
-        
-        <div class="hud-stats-grid">
-          <div class="hud-tile"><strong>10</strong><span>PMP knowledge areas</span></div>
-          <div class="hud-tile"><strong>20</strong><span>quiz files with 40 questions each</span></div>
-          <div class="hud-tile"><strong>180</strong><span>questions in final quiz mode</span></div>
-          <div class="hud-tile"><strong>2500+</strong><span>practice questions with Pro</span></div>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-panel">
-            <h4>Knowledge-area quizzes</h4>
-            <p>Practice Integration, Scope, Time, Cost, Quality, Resource, Communications, Risk, Procurement, and Stakeholder topics.</p>
+        <!-- Card 6: ACSM-CPT -->
+        <a class="product-card" href="/acsmcpt/" data-bg="#061114" data-accent="#29a0b1">
+          <div class="product-top">
+            <img src="acsmcpt/ACSMCPT_Appicon.png" alt="ACSM-CPT Prep Icon">
+            <span class="badge">Trainer Study</span>
           </div>
-          <div class="feature-panel">
-            <h4>Three exam modes</h4>
-            <p>Use explanations while learning or switch into exam-style review when ready.</p>
+          <h3>ACSM-CPT Prep</h3>
+          <p>Prepare for the certified personal trainer exam with 10 question-set modules, a 200-question final test, readiness tracking, daily questions, saved questions, missed-question review, and flexible exam modes.</p>
+          <div class="product-tags">
+            <span>10 practice sets</span>
+            <span>200-question final</span>
+            <span>Pro access</span>
           </div>
-        </div>
+        </a>
 
-        <div class="action-row">
-          <a href="/pmp/privacy/" class="btn btn-primary">Privacy Policy</a>
-          <a href="/pmp/terms/" class="btn btn-ghost">Terms of Service</a>
-        </div>
-      </div>
-
-      <div class="mockup-side">
-        <div class="glass-phone">
-          <div class="glass-phone-screen">
-            <div class="phone-screen-header">
-              <img src="pmp/PMP_Appicon.png" alt="PMP Icon">
-              <span>180-question final</span>
-            </div>
-            <div class="phone-screen-title">PMP Prep</div>
-            <div class="phone-screen-stats">
-              <strong style="display: block; font-size: 14px; margin-bottom: 4px;">Readiness Score</strong>
-              <span style="color: var(--muted); font-size: 11px;">72% Complete</span>
-            </div>
-            <div class="phone-screen-grid">
-              <div class="phone-screen-card"><strong>Knowledge areas</strong><span>Start here</span></div>
-              <div class="phone-screen-card"><strong>180-question final</strong><span>Track progress</span></div>
-              <div class="phone-screen-card"><strong>Readiness score</strong><span>Review loop</span></div>
-              <div class="phone-screen-card"><strong>Pro access</strong><span>Pro tools</span></div>
-            </div>
+        <!-- Card 7: FM Radio -->
+        <a class="product-card" href="/fmradio/" data-bg="#160808" data-accent="#ff453a">
+          <div class="product-top">
+            <img src="fmradio/FMRadio_Appicon.png" alt="FM Radio Icon">
+            <span class="badge">Global Radio</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- App 6: ACSM-CPT -->
-    <section class="app-section odd" id="acsmcpt" data-bg="#061114" data-accent="#29a0b1">
-      <div class="details-side">
-        <div class="app-meta">
-          <div class="kicker">ACSM-CPT study companion</div>
-          <span class="badge">Personal Trainer Study</span>
-        </div>
-        <h2 class="app-title">ACSM-CPT Prep</h2>
-        <p class="app-desc">Prepare for the certified personal trainer exam with 10 question-set modules, a 200-question final test, readiness tracking, daily questions, saved questions, missed-question review, and flexible exam modes.</p>
-        
-        <div class="hud-stats-grid">
-          <div class="hud-tile"><strong>10</strong><span>ACSM-CPT practice sets</span></div>
-          <div class="hud-tile"><strong>20+</strong><span>questions in each module quiz</span></div>
-          <div class="hud-tile"><strong>200</strong><span>questions in final practice</span></div>
-          <div class="hud-tile"><strong>Pro</strong><span>monthly or lifetime options</span></div>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-panel">
-            <h4>Question-set quizzes</h4>
-            <p>Practice ACSM-CPT topics through 10 modules with progress saved across sessions.</p>
+          <h3>FM Radio</h3>
+          <p>Stream live radio stations from around the world with search, nearby stations, globe discovery, charts, favorites, recents, Siri shortcuts, CarPlay, Shazam, and sleep timer.</p>
+          <div class="product-tags">
+            <span>134K+ stations</span>
+            <span>CarPlay</span>
+            <span>Globe discovery</span>
           </div>
-          <div class="feature-panel">
-            <h4>Three exam modes</h4>
-            <p>Use full support with explanations, answer-only review, or exam-style mode.</p>
+        </a>
+
+        <!-- Card 8: Secret Vault -->
+        <a class="product-card" href="/vault/" data-bg="#0f100a" data-accent="#f6c350">
+          <div class="product-top">
+            <img src="vault/Vault_Appicon.png" alt="Secret Vault Pro Icon">
+            <span class="badge">Private Vault</span>
           </div>
-        </div>
-
-        <div class="action-row">
-          <a href="/acsmcpt/privacy/" class="btn btn-primary">Privacy Policy</a>
-          <a href="/acsmcpt/terms/" class="btn btn-ghost">Terms of Service</a>
-        </div>
-      </div>
-
-      <div class="mockup-side">
-        <div class="glass-phone">
-          <div class="glass-phone-screen">
-            <div class="phone-screen-header">
-              <img src="acsmcpt/ACSMCPT_Appicon.png" alt="ACSM Icon">
-              <span>200-question final</span>
-            </div>
-            <div class="phone-screen-title">ACSM-CPT Prep</div>
-            <div class="phone-screen-stats">
-              <strong style="display: block; font-size: 14px; margin-bottom: 4px;">Readiness Score</strong>
-              <span style="color: var(--muted); font-size: 11px;">72% Complete</span>
-            </div>
-            <div class="phone-screen-grid">
-              <div class="phone-screen-card"><strong>10 practice sets</strong><span>Start here</span></div>
-              <div class="phone-screen-card"><strong>200-question final</strong><span>Track progress</span></div>
-              <div class="phone-screen-card"><strong>Daily question</strong><span>Review loop</span></div>
-              <div class="phone-screen-card"><strong>Pro access</strong><span>Pro tools</span></div>
-            </div>
+          <h3>Secret Vault</h3>
+          <p>Protect private photos, videos, captured images, and browsing with a calculator-style lock, passcode, Face ID or Touch ID, local albums, CloudKit sync, and restore tools.</p>
+          <div class="product-tags">
+            <span>Calculator lock</span>
+            <span>Biometric unlock</span>
+            <span>CloudKit sync</span>
           </div>
-        </div>
-      </div>
-    </section>
+        </a>
 
-    <!-- App 7: FM Radio -->
-    <section class="app-section even" id="fmradio" data-bg="#160808" data-accent="#ff453a">
-      <div class="details-side">
-        <div class="app-meta">
-          <div class="kicker">Global radio streaming</div>
-          <span class="badge">Global Radio</span>
-        </div>
-        <h2 class="app-title">FM Radio</h2>
-        <p class="app-desc">Stream live radio stations from around the world with search, nearby stations, globe discovery, charts, favorites, recents, Siri shortcuts, CarPlay, Shazam, and sleep timer.</p>
-        
-        <div class="hud-stats-grid">
-          <div class="hud-tile"><strong>134K+</strong><span>radio stations in the directory</span></div>
-          <div class="hud-tile"><strong>292</strong><span>countries represented</span></div>
-          <div class="hud-tile"><strong>966</strong><span>languages available</span></div>
-          <div class="hud-tile"><strong>CarPlay</strong><span>Siri, background audio, and road-friendly browsing</span></div>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-panel">
-            <h4>Global station directory</h4>
-            <p>Browse a large radio directory with station names, countries, languages, genres, stream URLs, favicons, codec, and bitrate details.</p>
+        <!-- Card 9: Translate All -->
+        <a class="product-card" href="/traslator/" data-bg="#180c06" data-accent="#f97316">
+          <div class="product-top">
+            <img src="traslator/Translator_Appicon.png" alt="Translate All Icon">
+            <span class="badge">Translation</span>
           </div>
-          <div class="feature-panel">
-            <h4>Search and browse</h4>
-            <p>Search stations, genres, and countries, then keep exploring through nearby stations, popular stations, countries, languages, and genre lists.</p>
+          <h3>Translate All</h3>
+          <p>Translate text, photos, camera scans, voice conversations, audio files, PDFs, documents, spreadsheets, presentations, and CSV files with history, sharing, offline mode, and Pro access.</p>
+          <div class="product-tags">
+            <span>204 languages</span>
+            <span>Photo OCR</span>
+            <span>File translate</span>
           </div>
-        </div>
-
-        <div class="action-row">
-          <a href="/fmradio/privacy/" class="btn btn-primary">Privacy Policy</a>
-          <a href="/fmradio/terms/" class="btn btn-ghost">Terms of Service</a>
-        </div>
-      </div>
-
-      <div class="mockup-side">
-        <div class="glass-phone">
-          <div class="glass-phone-screen">
-            <div class="phone-screen-header">
-              <img src="fmradio/FMRadio_Appicon.png" alt="FM Radio Icon">
-              <span>134K+ stations</span>
-            </div>
-            <div class="phone-screen-title">FM Radio</div>
-            <div class="phone-screen-stats">
-              <strong style="display: block; font-size: 14px; margin-bottom: 4px;">Now Playing</strong>
-              <span style="color: var(--muted); font-size: 11px;">Live Streaming</span>
-            </div>
-            <div class="phone-screen-grid">
-              <div class="phone-screen-card"><strong>Nearby stations</strong><span>Local discovery</span></div>
-              <div class="phone-screen-card"><strong>Global search</strong><span>Stations and genres</span></div>
-              <div class="phone-screen-card"><strong>CarPlay</strong><span>Road-ready radio</span></div>
-              <div class="phone-screen-card"><strong>Sleep timer</strong><span>Auto stop</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- App 8: Secret Vault -->
-    <section class="app-section odd" id="vault" data-bg="#0f100a" data-accent="#f6c350">
-      <div class="details-side">
-        <div class="app-meta">
-          <div class="kicker">Private vault utility</div>
-          <span class="badge">Private Vault</span>
-        </div>
-        <h2 class="app-title">Secret Vault Pro</h2>
-        <p class="app-desc">Protect private photos, videos, captured images, and browsing with a calculator-style lock, passcode, Face ID or Touch ID, local albums, CloudKit sync, and restore tools.</p>
-        
-        <div class="hud-stats-grid">
-          <div class="hud-tile"><strong>4-digit</strong><span>calculator-style passcode entry</span></div>
-          <div class="hud-tile"><strong>Face ID</strong><span>or Touch ID unlock support</span></div>
-          <div class="hud-tile"><strong>3</strong><span>vault media areas for photos, videos, and captures</span></div>
-          <div class="hud-tile"><strong>iCloud</strong><span>private CloudKit media sync support</span></div>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-panel">
-            <h4>Calculator-style lock</h4>
-            <p>Use a numeric passcode entry flow that looks like a calculator-style unlock screen before entering the vault.</p>
-          </div>
-          <div class="feature-panel">
-            <h4>Face ID or Touch ID</h4>
-            <p>Turn biometric unlock on or off from Settings when your device supports Apple biometric authentication.</p>
-          </div>
-        </div>
-
-        <div class="action-row">
-          <a href="/vault/privacy/" class="btn btn-primary">Privacy Policy</a>
-          <a href="/vault/terms/" class="btn btn-ghost">Terms of Service</a>
-        </div>
-      </div>
-
-      <div class="mockup-side">
-        <div class="glass-phone">
-          <div class="glass-phone-screen">
-            <div class="phone-screen-header">
-              <img src="vault/Vault_Appicon.png" alt="Vault Icon">
-              <span>Passcode lock</span>
-            </div>
-            <div class="phone-screen-title">Secret Vault Pro</div>
-            <div class="phone-screen-stats">
-              <strong style="display: block; font-size: 14px; margin-bottom: 4px;">Vault Status</strong>
-              <span style="color: var(--muted); font-size: 11px;">Securely Locked</span>
-            </div>
-            <div class="phone-screen-grid">
-              <div class="phone-screen-card"><strong>Photos</strong><span>Private album</span></div>
-              <div class="phone-screen-card"><strong>Videos</strong><span>Secure storage</span></div>
-              <div class="phone-screen-card"><strong>Captured Images</strong><span>Camera imports</span></div>
-              <div class="phone-screen-card"><strong>Browser</strong><span>Private browsing</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- App 9: Translate All -->
-    <section class="app-section even" id="traslator" data-bg="#180c06" data-accent="#f97316">
-      <div class="details-side">
-        <div class="app-meta">
-          <div class="kicker">Translation utility</div>
-          <span class="badge">Translation</span>
-        </div>
-        <h2 class="app-title">Translate All</h2>
-        <p class="app-desc">Translate text, photos, camera scans, voice conversations, audio files, PDFs, documents, spreadsheets, presentations, and CSV files with history, sharing, offline mode, and Pro access.</p>
-        
-        <div class="hud-stats-grid">
-          <div class="hud-tile"><strong>204</strong><span>translation language entries</span></div>
-          <div class="hud-tile"><strong>66</strong><span>app interface localizations</span></div>
-          <div class="hud-tile"><strong>6</strong><span>supported file translation types</span></div>
-          <div class="hud-tile"><strong>8</strong><span>audio formats for transcription</span></div>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-panel">
-            <h4>Text translation</h4>
-            <p>Type or paste text, choose source and target languages, translate, listen with text-to-speech, copy results, share results, and keep translations in history.</p>
-          </div>
-          <div class="feature-panel">
-            <h4>Photo and camera translation</h4>
-            <p>Use the camera or pick an image from Photos. The app reads text from the image with OCR, translates it, and can create a translated image result.</p>
-          </div>
-        </div>
-
-        <div class="action-row">
-          <a href="/traslator/privacy/" class="btn btn-primary">Privacy Policy</a>
-          <a href="/traslator/terms/" class="btn btn-ghost">Terms of Service</a>
-        </div>
-      </div>
-
-      <div class="mockup-side">
-        <div class="glass-phone">
-          <div class="glass-phone-screen">
-            <div class="phone-screen-header">
-              <img src="traslator/Translator_Appicon.png" alt="Translator Icon">
-              <span>204 languages</span>
-            </div>
-            <div class="phone-screen-title">Translate All</div>
-            <div class="phone-screen-stats">
-              <strong style="display: block; font-size: 14px; margin-bottom: 4px;">Translation Mode</strong>
-              <span style="color: var(--muted); font-size: 11px;">Ready</span>
-            </div>
-            <div class="phone-screen-grid">
-              <div class="phone-screen-card"><strong>Text</strong><span>Type or paste</span></div>
-              <div class="phone-screen-card"><strong>Photos</strong><span>OCR translate</span></div>
-              <div class="phone-screen-card"><strong>Files</strong><span>PDF, DOCX, XLSX</span></div>
-              <div class="phone-screen-card"><strong>Voice</strong><span>Speak and listen</span></div>
-            </div>
-          </div>
-        </div>
+        </a>
       </div>
     </section>
 
     <!-- Principles Area -->
-    <section class="principles" id="principles">
-      <div style="text-align: center; margin-bottom: 48px;">
+    <section class="section" id="principles">
+      <div class="section-head">
         <div class="kicker">How we build</div>
-        <h2 class="app-title">Less noise. More confidence.</h2>
+        <h2 class="section-title">Less noise. More confidence.</h2>
       </div>
       <div class="principles-grid">
         <div class="principle-card">
@@ -598,18 +223,18 @@
     <div class="shell footer-inner">
       <div class="footer-brand">
         <strong>Miracle Apps</strong>
-        <p style="font-size: 13px; color: var(--muted);">Mobile apps with clear purpose, polished design, and practical everyday value.</p>
+        <p style="font-size: 13px; color: var(--muted); margin-top: 6px;">Mobile apps with clear purpose, polished design, and practical everyday value.</p>
       </div>
       <div class="footer-links">
-        <a href="#cleanupai">Cleanup AI</a>
-        <a href="#cma-part2">CMA Part 2</a>
-        <a href="#aba">ABA Prep</a>
-        <a href="#rbt">RBT Prep</a>
-        <a href="#pmp">PMP Prep</a>
-        <a href="#acsmcpt">ACSM-CPT Prep</a>
-        <a href="#fmradio">FM Radio</a>
-        <a href="#vault">Secret Vault Pro</a>
-        <a href="#traslator">Translate All</a>
+        <a href="/cleanupai/">Cleanup AI</a>
+        <a href="/cma-part2/">CMA Part 2</a>
+        <a href="/aba/">ABA Prep</a>
+        <a href="/rbt/">RBT Prep</a>
+        <a href="/pmp/">PMP Prep</a>
+        <a href="/acsmcpt/">ACSM-CPT Prep</a>
+        <a href="/fmradio/">FM Radio</a>
+        <a href="/vault/">Secret Vault Pro</a>
+        <a href="/traslator/">Translate All</a>
         <a href="mailto:support@miracleapps.in">support@miracleapps.in</a>
       </div>
     </div>

@@ -1,3 +1,7 @@
+/* ═══════════════════════════════════════════════════
+   MIRACLE APPS — Enhanced Animations & Interactions
+   ═══════════════════════════════════════════════════ */
+
 const root = document.documentElement;
 const nav = document.querySelector('.nav');
 const reveals = [...document.querySelectorAll('.reveal')];
@@ -6,7 +10,7 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 root.classList.add('has-js');
 
 reveals.forEach((element, index) => {
-  element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 45}ms`);
+  element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 60}ms`);
 });
 
 if (!reduceMotion && 'IntersectionObserver' in window) {
@@ -17,8 +21,8 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
       observer.unobserve(entry.target);
     });
   }, {
-    rootMargin: '0px 0px -8% 0px',
-    threshold: 0.08,
+    rootMargin: '0px 0px -6% 0px',
+    threshold: 0.06,
   });
 
   reveals.forEach((element) => observer.observe(element));
@@ -26,12 +30,16 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   reveals.forEach((element) => element.classList.add('visible'));
 }
 
+/* ─── Nav scroll effect ─── */
+
 const updateNav = () => {
   nav?.classList.toggle('is-scrolled', window.scrollY > 10);
 };
 
 updateNav();
 window.addEventListener('scroll', updateNav, { passive: true });
+
+/* ─── Active nav link ─── */
 
 document.querySelectorAll('.nav-links a[href]').forEach((link) => {
   const href = link.getAttribute('href');
@@ -42,3 +50,69 @@ document.querySelectorAll('.nav-links a[href]').forEach((link) => {
     link.setAttribute('aria-current', 'page');
   }
 });
+
+/* ─── Animated stat counters ─── */
+
+if (!reduceMotion && 'IntersectionObserver' in window) {
+  const statTiles = document.querySelectorAll('.stat-tile strong');
+
+  const animateCounter = (el) => {
+    const text = el.textContent.trim();
+    const match = text.match(/^([\d,]+)(\+?)$/);
+    if (!match) return;
+
+    const target = parseInt(match[1].replace(/,/g, ''), 10);
+    const suffix = match[2] || '';
+    const duration = 1400;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 4);
+      const current = Math.round(target * eased);
+
+      el.textContent = current.toLocaleString() + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      }
+    };
+
+    el.textContent = '0' + suffix;
+    requestAnimationFrame(tick);
+  };
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    });
+  }, {
+    rootMargin: '0px 0px -10% 0px',
+    threshold: 0.2,
+  });
+
+  statTiles.forEach((tile) => counterObserver.observe(tile));
+}
+
+/* ─── Subtle parallax on gradient orbs ─── */
+
+if (!reduceMotion) {
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrolled = window.scrollY;
+        const heroSection = document.querySelector('.hero, .app-hero');
+        if (heroSection) {
+          heroSection.style.setProperty('--scroll-offset', `${scrolled * 0.08}px`);
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}

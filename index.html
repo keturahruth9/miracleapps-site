@@ -6,7 +6,7 @@
   <title>Miracle Apps - Thoughtful Mobile Apps</title>
   <meta name="description" content="Miracle Apps builds focused mobile products for cleanup, private vaults, translation, exam preparation, radio streaming, productivity, and daily digital life.">
   <meta name="author" content="Miracle Apps">
-  <meta name="theme-color" content="#09090b">
+  <meta name="theme-color" content="#020205">
   <meta property="og:title" content="Miracle Apps - Thoughtful Mobile Apps">
   <meta property="og:description" content="Miracle Apps builds focused mobile products for cleanup, private vaults, translation, exam preparation, radio streaming, productivity, and daily digital life.">
   <meta property="og:type" content="website">
@@ -19,131 +19,164 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css">
 </head>
-<body style="--app:#2563eb;--app-2:#f59e0b">
-<nav class="nav">
-    <div class="shell nav-inner">
-      <a class="brand" href="/"><img src="miracle_logo.png" alt="Miracle Apps"><span>Miracle Apps</span></a>
-      <div class="nav-links">
-        <a href="#apps">Apps</a>
-        <a href="#principles">Principles</a>
-        <a href="mailto:support@miracleapps.in">Support</a>
-        <a class="nav-cta" href="#apps">Explore apps</a>
-      </div>
-    </div>
-  </nav>
-  <main>
-    <header class="hero">
-      <div class="shell hero-grid">
-        <div class="reveal">
-          <div class="kicker">Independent mobile product studio</div>
-          <h1 class="hero-title">Thoughtful apps for the things that <span class="accent">matter daily.</span></h1>
-          <p class="hero-copy">Miracle Apps creates focused mobile products for organizing digital life, protecting private files, translating content, preparing for professional exams, and discovering live radio around the world.</p>
-          <div class="action-row"><a class="btn btn-primary" href="#apps">See all apps</a><a class="btn btn-ghost" href="mailto:support@miracleapps.in">Contact support</a></div>
+<body>
+  <!-- Ambient background glow elements -->
+  <canvas id="particles-canvas"></canvas>
+  <div class="ambient-glow"></div>
+
+  <!-- Dashboard Container -->
+  <div class="dashboard-layout">
+    <!-- Column 1: Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <img src="miracle_logo.png" alt="Miracle Apps">
+          <span>Miracle Apps</span>
         </div>
-        <div class="home-stage reveal" aria-label="Miracle Apps product collection">
-          <div class="studio-window">
-            <div class="studio-head"><strong>Miracle Apps Collection</strong><span>9 products</span></div>
-            <div class="studio-app-grid">
-              <a class="studio-app" style="--item:#2563eb" href="/cleanupai/"><img src="cleanupai/appicon.png" alt="Cleanup AI"><strong>Cleanup AI</strong></a>
-              <a class="studio-app" style="--item:#3b82f6" href="/cma-part2/"><img src="cma-part2/CMA_Appicon.png" alt="CMA Part 2"><strong>CMA Part 2</strong></a>
-              <a class="studio-app" style="--item:#04d4f0" href="/aba/"><img src="aba/ABA_Appicon.png" alt="ABA Exam Preparation"><strong>ABA Prep</strong></a>
-              <a class="studio-app" style="--item:#067593" href="/rbt/"><img src="rbt/RBT_Appicon.png" alt="RBT Exam Preparation"><strong>RBT Prep</strong></a>
-              <a class="studio-app" style="--item:#433878" href="/pmp/"><img src="pmp/PMP_Appicon.png" alt="PMP Exam Preparation"><strong>PMP Prep</strong></a>
-              <a class="studio-app" style="--item:#29a0b1" href="/acsmcpt/"><img src="acsmcpt/ACSMCPT_Appicon.png" alt="ACSM-CPT Exam Preparation"><strong>ACSM-CPT</strong></a>
-              <a class="studio-app" style="--item:#ff453a" href="/fmradio/"><img src="fmradio/FMRadio_Appicon.png" alt="FM Radio"><strong>FM Radio</strong></a>
-              <a class="studio-app" style="--item:#f6c350" href="/vault/"><img src="vault/Vault_Appicon.png" alt="Secret Vault Pro"><strong>Secret Vault</strong></a>
-              <a class="studio-app" style="--item:#f97316" href="/traslator/"><img src="traslator/Translator_Appicon.png" alt="Traslate All - Photos, Files"><strong>Traslate All</strong></a>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <div class="menu-label">Product Collection</div>
+        <div class="menu-item active" data-app="cleanupai">
+          <img src="cleanupai/appicon.png" alt="Cleanup AI">
+          <span>Cleanup AI</span>
+        </div>
+        <div class="menu-item" data-app="cma-part2">
+          <img src="cma-part2/CMA_Appicon.png" alt="CMA Part 2">
+          <span>CMA Part 2</span>
+        </div>
+        <div class="menu-item" data-app="aba">
+          <img src="aba/ABA_Appicon.png" alt="ABA Prep">
+          <span>ABA Prep</span>
+        </div>
+        <div class="menu-item" data-app="rbt">
+          <img src="rbt/RBT_Appicon.png" alt="RBT Prep">
+          <span>RBT Prep</span>
+        </div>
+        <div class="menu-item" data-app="pmp">
+          <img src="pmp/PMP_Appicon.png" alt="PMP Prep">
+          <span>PMP Prep</span>
+        </div>
+        <div class="menu-item" data-app="acsmcpt">
+          <img src="acsmcpt/ACSMCPT_Appicon.png" alt="ACSM-CPT">
+          <span>ACSM-CPT</span>
+        </div>
+        <div class="menu-item" data-app="fmradio">
+          <img src="fmradio/FMRadio_Appicon.png" alt="FM Radio">
+          <span>FM Radio</span>
+        </div>
+        <div class="menu-item" data-app="vault">
+          <img src="vault/Vault_Appicon.png" alt="Secret Vault Pro">
+          <span>Secret Vault</span>
+        </div>
+        <div class="menu-item" data-app="traslator">
+          <img src="traslator/Translator_Appicon.png" alt="Translate All">
+          <span>Translate All</span>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="mailto:support@miracleapps.in">Support &amp; Contact</a>
+      </div>
+    </aside>
+
+    <!-- Column 2: Main Workspace Details -->
+    <main class="workspace">
+      <div class="workspace-content">
+        <div class="app-meta">
+          <div class="kicker workspace-kicker">Smart cleanup for busy phones</div>
+          <span class="badge workspace-badge">Phone Cleanup</span>
+        </div>
+        
+        <h1 class="workspace-title" style="margin: 16px 0 20px 0;">Cleanup AI</h1>
+        <p class="workspace-copy">Cleanup AI brings photo cleanup, video compression, Gmail cleanup, contact management, AI sorting, and private file protection into one focused mobile app.</p>
+      </div>
+
+      <div class="features-section">
+        <h3 class="features-section-title">Key Statistics</h3>
+        <div class="hud-stats-grid">
+          <!-- Loaded dynamically via JS -->
+        </div>
+      </div>
+
+      <div class="features-section">
+        <h3 class="features-section-title">Core Features</h3>
+        <div class="features-list">
+          <!-- Loaded dynamically via JS -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Column 3: Mockup Preview Panel -->
+    <section class="showcase">
+      <div class="glass-phone">
+        <div class="glass-phone-screen">
+          <div class="phone-screen-header">
+            <img src="cleanupai/appicon.png" alt="App Icon" id="phone-app-icon">
+            <span class="phone-pill">On-device cleanup</span>
+          </div>
+          <div class="phone-screen-title">Cleanup Dashboard</div>
+          <div class="readiness" style="margin-bottom: 6px; padding: 12px;">
+            <div class="readiness-line" style="margin-bottom: 6px; font-size: 11px;">
+              <span>Storage Focus</span>
+              <span>Smart</span>
             </div>
-            <div class="studio-foot"><span>Focused tools. Clear support.</span><strong>Built by Miracle Apps</strong></div>
+            <div class="bar" style="height: 5px;"><span style="width: 72%;"></span></div>
+          </div>
+          <div class="phone-screen-grid">
+            <!-- Loaded dynamically via JS -->
           </div>
         </div>
       </div>
-    </header>
-    <section class="section" id="apps">
-      <div class="shell">
-        <div class="section-head reveal"><div class="kicker">Product collection</div><h2 class="section-title">Nine focused apps. <span class="accent">One trusted studio.</span></h2><p class="section-copy">Explore practical tools for device care, secure storage, translation, exam preparation, and global radio, each with clear product details, privacy information, and support.</p></div>
-        <div class="product-grid"><article class="product-card reveal" style="--app:#2563eb;--app-2:#06b6d4">
-      <div class="product-top"><img src="cleanupai/appicon.png" alt="Cleanup AI"><span class="badge">Phone Cleanup</span></div>
+
+      <div class="cta-group">
+        <a href="/cleanupai/privacy/" class="btn btn-primary btn-privacy">Privacy Policy</a>
+        <a href="/cleanupai/terms/" class="btn btn-ghost btn-terms">Terms &amp; Conditions</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- SEO Indexing Support (Hidden from view, accessible by search engines) -->
+  <div style="display: none;" aria-hidden="true">
+    <h2>Our Complete App Suite</h2>
+    <article>
       <h3>Cleanup AI</h3>
       <p>Cleanup AI brings photo cleanup, video compression, Gmail cleanup, contact management, AI sorting, and private file protection into one focused mobile app.</p>
-      <div class="product-tags"><span>Duplicate photos</span><span>Video compression</span><span>AI gallery cleanup</span><span>Gmail cleaner</span></div>
-      <a class="product-link" href="/cleanupai/">View product page</a>
     </article>
-<article class="product-card reveal" style="--app:#3b82f6;--app-2:#f59e0b">
-      <div class="product-top"><img src="cma-part2/CMA_Appicon.png" alt="CMA Part 2 Exam Preparation"><span class="badge">Exam Prep</span></div>
+    <article>
       <h3>CMA Part 2 Exam Preparation</h3>
       <p>Practice the six CMA Part 2 domains with timed quizzes, readiness scoring, missed-question drills, saved questions, exam modes, and offline-first study tools.</p>
-      <div class="product-tags"><span>Timed quizzes</span><span>Readiness score</span><span>Saved questions</span><span>Missed drills</span></div>
-      <a class="product-link" href="/cma-part2/">View product page</a>
     </article>
-<article class="product-card reveal" style="--app:#456684;--app-2:#04d4f0">
-      <div class="product-top"><img src="aba/ABA_Appicon.png" alt="ABA Exam Preparation"><span class="badge">BCBA Study</span></div>
+    <article>
       <h3>ABA Exam Preparation</h3>
       <p>Study BCBA content areas with domain quizzes, exam-style practice, readiness tracking, saved questions, missed question review, daily questions, and Pro study tools.</p>
-      <div class="product-tags"><span>BCBA domains</span><span>Readiness score</span><span>Daily question</span><span>Pro access</span></div>
-      <a class="product-link" href="/aba/">View product page</a>
     </article>
-<article class="product-card reveal" style="--app:#456684;--app-2:#067593">
-      <div class="product-top"><img src="rbt/RBT_Appicon.png" alt="RBT Exam Preparation"><span class="badge">RBT Study</span></div>
+    <article>
       <h3>RBT Exam Preparation</h3>
       <p>Use Task List domain quizzes, an 85-question final practice mode, readiness tracking, daily questions, saved questions, missed-question review, and Pro access.</p>
-      <div class="product-tags"><span>RBT domains</span><span>Final test</span><span>Daily question</span><span>Readiness score</span></div>
-      <a class="product-link" href="/rbt/">View product page</a>
     </article>
-<article class="product-card reveal" style="--app:#433878;--app-2:#04d4f0">
-      <div class="product-top"><img src="pmp/PMP_Appicon.png" alt="PMP Exam Preparation"><span class="badge">Project Management Study</span></div>
+    <article>
       <h3>PMP Exam Preparation</h3>
       <p>Study project management concepts with knowledge-area quizzes, practice sets, a 180-question final quiz, readiness tracking, saved questions, missed-question review, and daily questions.</p>
-      <div class="product-tags"><span>Knowledge areas</span><span>180-question final</span><span>Readiness score</span><span>Pro access</span></div>
-      <a class="product-link" href="/pmp/">View product page</a>
     </article>
-<article class="product-card reveal" style="--app:#29a0b1;--app-2:#067593">
-      <div class="product-top"><img src="acsmcpt/ACSMCPT_Appicon.png" alt="ACSM-CPT Exam Preparation"><span class="badge">Personal Trainer Study</span></div>
+    <article>
       <h3>ACSM-CPT Exam Preparation</h3>
       <p>Prepare for the certified personal trainer exam with 10 question-set modules, a 200-question final test, readiness tracking, daily questions, saved questions, missed-question review, and flexible exam modes.</p>
-      <div class="product-tags"><span>10 practice sets</span><span>200-question final</span><span>Daily question</span><span>Pro access</span></div>
-      <a class="product-link" href="/acsmcpt/">View product page</a>
     </article>
-<article class="product-card reveal" style="--app:#111827;--app-2:#ff453a">
-      <div class="product-top"><img src="fmradio/FMRadio_Appicon.png" alt="FM Radio"><span class="badge">Global Radio</span></div>
+    <article>
       <h3>FM Radio</h3>
       <p>Stream live radio stations from around the world with search, nearby stations, globe discovery, charts, favorites, recents, Siri shortcuts, CarPlay, Shazam, and sleep timer.</p>
-      <div class="product-tags"><span>134K+ stations</span><span>292 countries</span><span>CarPlay</span><span>Siri shortcuts</span></div>
-      <a class="product-link" href="/fmradio/">View product page</a>
     </article>
-<article class="product-card reveal" style="--app:#46515d;--app-2:#f6c350">
-      <div class="product-top"><img src="vault/Vault_Appicon.png" alt="Secret Vault Pro"><span class="badge">Private Vault</span></div>
+    <article>
       <h3>Secret Vault Pro</h3>
       <p>Protect private photos, videos, captured images, and browsing with a calculator-style lock, passcode, Face ID or Touch ID, local albums, CloudKit sync, and restore tools.</p>
-      <div class="product-tags"><span>Photo vault</span><span>Video vault</span><span>Biometric lock</span><span>Private browser</span></div>
-      <a class="product-link" href="/vault/">View product page</a>
     </article>
-<article class="product-card reveal" style="--app:#f97316;--app-2:#facc15">
-      <div class="product-top"><img src="traslator/Translator_Appicon.png" alt="Traslate All - Photos, Files"><span class="badge">Translation</span></div>
-      <h3>Traslate All - Photos, Files</h3>
+    <article>
+      <h3>Translate All - Photos, Files</h3>
       <p>Translate text, photos, camera scans, voice conversations, audio files, PDFs, documents, spreadsheets, presentations, and CSV files with history, sharing, offline mode, and Pro access.</p>
-      <div class="product-tags"><span>204 languages</span><span>Photo OCR</span><span>File translation</span><span>Voice and audio</span></div>
-      <a class="product-link" href="/traslator/">View product page</a>
-    </article></div>
-      </div>
-    </section>
-    <section class="section" id="principles">
-      <div class="shell">
-        <div class="section-head reveal"><div class="kicker">How we build</div><h2 class="section-title">Less noise. More confidence.</h2></div>
-        <div class="principles-grid">
-          <div class="tile reveal"><strong>Purpose first</strong><p>Every screen points toward a real user action: clean, practice, review, restore, or get help.</p></div>
-          <div class="tile reveal"><strong>Privacy-aware</strong><p>Study progress and cleanup workflows are written plainly, with clear privacy and terms pages for each app.</p></div>
-          <div class="tile reveal"><strong>Designed to last</strong><p>Shared structure makes the site easier to maintain as more Miracle Apps products are added.</p></div>
-        </div>
-      </div>
-    </section>
-  </main>
-<footer class="footer">
-    <div class="shell footer-inner">
-      <div class="footer-brand"><strong>Miracle Apps</strong>Mobile apps with clear purpose, polished design, and practical everyday value.</div>
-      <div class="footer-links"><a href="/cleanupai/">Cleanup AI</a><a href="/cma-part2/">CMA Part 2</a><a href="/aba/">ABA Prep</a><a href="/rbt/">RBT Prep</a><a href="/pmp/">PMP Prep</a><a href="/acsmcpt/">ACSM-CPT Prep</a><a href="/fmradio/">FM Radio</a><a href="/vault/">Secret Vault Pro</a><a href="/traslator/">Traslate All</a><a href="mailto:support@miracleapps.in">support@miracleapps.in</a></div>
-    </div>
-  </footer>
-<script src="assets/site.js"></script>
+    </article>
+  </div>
+
+  <script src="assets/site.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   MIRACLE APPS — Enhanced Animations & Interactions
+   MIRACLE APPS — Holographic Interactive JS Systems
    ═══════════════════════════════════════════════════ */
 
 const root = document.documentElement;
@@ -33,13 +33,13 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
 /* ─── Nav scroll effect ─── */
 
 const updateNav = () => {
-  nav?.classList.toggle('is-scrolled', window.scrollY > 10);
+  nav?.classList.toggle('is-scrolled', window.scrollY > 8);
 };
 
 updateNav();
 window.addEventListener('scroll', updateNav, { passive: true });
 
-/* ─── Active nav link ─── */
+/* ─── Active nav link indicator ─── */
 
 document.querySelectorAll('.nav-links a[href]').forEach((link) => {
   const href = link.getAttribute('href');
@@ -63,13 +63,13 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
 
     const target = parseInt(match[1].replace(/,/g, ''), 10);
     const suffix = match[2] || '';
-    const duration = 1400;
+    const duration = 1600;
     const start = performance.now();
 
     const tick = (now) => {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 4);
+      const eased = 1 - Math.pow(1 - progress, 5); // Quintic easing out
       const current = Math.round(target * eased);
 
       el.textContent = current.toLocaleString() + suffix;
@@ -97,7 +97,7 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   statTiles.forEach((tile) => counterObserver.observe(tile));
 }
 
-/* ─── Subtle parallax on gradient orbs ─── */
+/* ─── Parallax on scroll ─── */
 
 if (!reduceMotion) {
   let ticking = false;
@@ -108,11 +108,27 @@ if (!reduceMotion) {
         const scrolled = window.scrollY;
         const heroSection = document.querySelector('.hero, .app-hero');
         if (heroSection) {
-          heroSection.style.setProperty('--scroll-offset', `${scrolled * 0.08}px`);
+          heroSection.style.setProperty('--scroll-offset', `${scrolled * 0.12}px`);
         }
         ticking = false;
       });
       ticking = true;
     }
   }, { passive: true });
+}
+
+/* ─── Interactive Mouse Hover Glow on Glass Cards ─── */
+
+if (!reduceMotion) {
+  const cards = document.querySelectorAll('.product-card, .tile, .feature, .coverage-item, .studio-window');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
 }

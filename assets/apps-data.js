@@ -66,6 +66,14 @@
       privacy: "Favorites, recents, and listening preferences are designed to stay on your device. No account is required to begin listening, and Miracle Apps does not sell your personal information.",
       faq: [["Do I need an account?", "No. You can start discovering and listening without creating an account."], ["Can I listen in the background?", "Yes. Playback can continue while you use other apps or lock your screen."], ["Why can a station become unavailable?", "Streams are provided by radio stations and directory partners, so a station may change or temporarily go offline."], ["Is every station free?", "The app provides access to live streams offered by their respective stations; normal internet data charges may apply."]],
       screenLabels: ["Discover stations", "Now playing", "Favorites & recents"],
+      appStoreScreenshots: [
+        { src: "/fmradio/appstore-screenshots/01.webp", label: "Discover music you love" },
+        { src: "/fmradio/appstore-screenshots/02.webp", label: "Tune by country, language, and genre" },
+        { src: "/fmradio/appstore-screenshots/03.webp", label: "Advanced station search" },
+        { src: "/fmradio/appstore-screenshots/04.webp", label: "Favorite your stations" },
+        { src: "/fmradio/appstore-screenshots/05.webp", label: "Station reminders" },
+        { src: "/fmradio/appstore-screenshots/06.webp", label: "Add a custom station" },
+      ],
     },
     {
       id: "qr_code_reader",

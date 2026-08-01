@@ -96,16 +96,23 @@
     if (descriptionMeta) descriptionMeta.setAttribute("content", app.description);
 
     const storeButtons = Object.entries(app.stores).map(([platform, url]) => storeButton(platform, url)).join("");
+    const realScreenshots = Array.isArray(app.appStoreScreenshots) ? app.appStoreScreenshots : [];
+    const heroPreview = realScreenshots.length
+      ? `<div class="hero-device hero-real-preview reveal"><div class="halo"></div><figure class="hero-real-frame"><img src="${safe((realScreenshots[1] || realScreenshots[0]).src)}" alt="${safe(app.name)} App Store preview: ${safe((realScreenshots[1] || realScreenshots[0]).label)}"><figcaption>Official App Store preview</figcaption></figure></div>`
+      : `<div class="hero-device reveal"><div class="halo"></div>${phonePreview(app, 0)}<div class="floating-note note-one"><span>✦</span><strong>${safe(app.features[1][0])}</strong></div><div class="floating-note note-two"><span>✓</span><strong>You stay in control</strong></div></div>`;
+    const screenGallery = realScreenshots.length
+      ? `<div class="appstore-preview-grid">${realScreenshots.map((screenshot, index) => `<figure class="appstore-preview-card reveal"><img src="${safe(screenshot.src)}" alt="${safe(app.name)} App Store preview: ${safe(screenshot.label)}" loading="lazy"><figcaption><span>${String(index + 1).padStart(2, "0")}</span><strong>${safe(screenshot.label)}</strong></figcaption></figure>`).join("")}</div>`
+      : `<div class="preview-grid">${app.screenLabels.map((label, index) => `<figure class="preview-card reveal"><div class="preview-device">${phonePreview(app, index)}</div><figcaption><span>0${index + 1}</span><strong>${safe(label)}</strong></figcaption></figure>`).join("")}</div>`;
     root.innerHTML = `
       <a class="skip-link" href="#main">Skip to content</a>
       <nav class="product-nav"><div class="product-shell nav-shell">${brandMarkup("/")}<div class="desktop-nav"><a href="#features">Features</a><a href="#previews">Screens</a><a href="#privacy">Privacy</a><a class="nav-action" href="#download">Get the app</a></div><button class="menu-button" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button></div></nav>
       <main id="main">
         <header class="product-hero grid-surface"><div class="product-shell product-hero-grid">
           <div class="product-intro reveal"><div class="app-identity"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon"><span>${safe(app.eyebrow)}</span></div><h1>${safe(app.name)}</h1><h2>${safe(app.tagline)}</h2><p>${safe(app.description)}</p><div class="tag-row">${app.tags.map((tag) => `<span>${safe(tag)}</span>`).join("")}</div><div class="store-row" id="download">${storeButtons}</div><div class="trust-row"><span>Purpose-built</span><span>Privacy-aware</span><span>${safe(platformText(app))}</span></div></div>
-          <div class="hero-device reveal"><div class="halo"></div>${phonePreview(app, 0)}<div class="floating-note note-one"><span>✦</span><strong>${safe(app.features[1][0])}</strong></div><div class="floating-note note-two"><span>✓</span><strong>You stay in control</strong></div></div>
+          ${heroPreview}
         </div></header>
 
-        <section class="product-section" id="previews"><div class="product-shell"><div class="section-heading reveal"><span>A closer look</span><h2>Designed to make ${safe(app.shortName)} feel obvious.</h2><p>Every screen keeps the next action clear, the visual hierarchy calm, and the useful details close.</p></div><div class="preview-grid">${app.screenLabels.map((label, index) => `<figure class="preview-card reveal"><div class="preview-device">${phonePreview(app, index)}</div><figcaption><span>0${index + 1}</span><strong>${safe(label)}</strong></figcaption></figure>`).join("")}</div></div></section>
+        <section class="product-section" id="previews"><div class="product-shell"><div class="section-heading reveal"><span>A closer look</span><h2>Designed to make ${safe(app.shortName)} feel obvious.</h2><p>${realScreenshots.length ? `Every preview shown here is the real artwork published on the App Store for ${safe(app.name)}.` : "Every screen keeps the next action clear, the visual hierarchy calm, and the useful details close."}</p></div>${screenGallery}</div></section>
 
         <section class="product-section soft-section" id="features"><div class="product-shell"><div class="section-heading reveal"><span>Key features</span><h2>Useful depth, without the clutter.</h2><p>A focused toolkit built around the job this app needs to do well.</p></div><div class="feature-list">${app.features.map((feature, index) => `<article class="feature-item reveal"><span>${String(index + 1).padStart(2, "0")}</span><div><h3>${safe(feature[0])}</h3><p>${safe(feature[1])}</p></div></article>`).join("")}</div></div></section>
 

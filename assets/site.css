@@ -87,6 +87,7 @@ svg { display: block; }
 .ticker-track span::after { content: '✦'; color: var(--lime); }
 @keyframes ticker { to { transform: translateX(-50%); } }
 .home-section { position: relative; padding: 116px 0; }
+.home-section.catalog-section { padding-top: 58px; }
 .home-section.alt { background: var(--cream); color: #11130e; }
 .home-section-head { max-width: 850px; margin-bottom: 48px; }
 .home-section-head.label-only { width: 100%; max-width: 1142px; margin: 0 auto 12px; }
@@ -345,6 +346,7 @@ svg { display: block; }
   .os-apps { grid-template-columns: 1fr; }
   .os-app:nth-child(n+7) { display: none; }
   .home-section { padding: 82px 0; }
+  .home-section.catalog-section { padding-top: 41px; }
   .home-section-head.row { grid-template-columns: 1fr; gap: 0; }
   .home-section-head.label-only { max-width: none; }
   .portfolio-grid, .principle-grid, .benefit-grid, .feature-list, .studio-panel { grid-template-columns: 1fr; }

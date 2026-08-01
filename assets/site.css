@@ -139,6 +139,8 @@ svg { display: block; }
 .site-footer { padding: 74px 0 24px; color: #b5bbc7; background: #060914; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr .7fr .7fr; gap: 54px; }
 .site-footer .brand { color: #fff; }
+.site-footer .brand-mark { box-sizing: border-box; border: 2px solid #fff; border-radius: 12px; background: #fff; }
+.site-footer .brand-mark img { border-radius: 8px; transform: scale(1.12); }
 .site-footer p { max-width: 430px; line-height: 1.65; }
 .site-footer h2 { margin: 0 0 20px; color: #fff; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
 .site-footer a:not(.brand) { display: block; margin: 10px 0; font-size: 14px; transition: color .2s ease; }

@@ -93,6 +93,7 @@ svg { display: block; }
 .home-section .section-kicker { color: var(--lime); }
 .alt .section-kicker { color: #66705c; }
 .home-section h2 { margin: 0; font-family: 'Manrope', sans-serif; font-size: clamp(2.8rem, 6vw, 5.7rem); line-height: .96; letter-spacing: -.065em; }
+.home-section h2.everyday-title { font-size: clamp(1.4rem, 3vw, 2.85rem); line-height: 1.08; letter-spacing: -.045em; }
 .home-section-head > p:last-child { margin: 24px 0 0; max-width: 680px; color: #98a0ae; font-size: 17px; line-height: 1.7; }
 .alt .home-section-head > p:last-child { color: var(--muted); }
 .portfolio-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 272px)); justify-content: center; gap: 18px; }

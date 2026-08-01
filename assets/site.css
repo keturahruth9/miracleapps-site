@@ -56,7 +56,7 @@ svg { display: block; }
 .home-hero { padding: 74px 0 76px; min-height: 720px; display: flex; align-items: center; }
 .home-hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 58px; align-items: center; }
 .home-kicker, .section-kicker, .card-label { margin: 0 0 18px; color: var(--lime); font-size: 12px; line-height: 1; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-.home-title { margin: 0; max-width: 730px; font-family: 'Manrope', sans-serif; font-size: clamp(4.2rem, 8.7vw, 8.2rem); font-weight: 800; letter-spacing: -.075em; line-height: .83; }
+.home-title { margin: 0; max-width: 730px; font-family: 'DM Sans', sans-serif; font-size: clamp(2.94rem, 6.09vw, 5.74rem); font-weight: 600; letter-spacing: -.055em; line-height: .9; }
 .home-title span { color: #f8f8f4; background: none; -webkit-text-fill-color: #f8f8f4; }
 .home-copy { max-width: 640px; margin: 32px 0 30px; color: #afb5c2; font-size: clamp(1rem, 1.7vw, 1.16rem); line-height: 1.75; }
 .home-actions { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -309,7 +309,7 @@ svg { display: block; }
 @media (max-width: 1020px) {
   .home-hero-grid, .product-hero-grid { grid-template-columns: 1fr; }
   .home-hero { padding-top: 58px; }
-  .home-title { max-width: 900px; font-size: clamp(4rem, 12vw, 7.5rem); }
+  .home-title { max-width: 900px; font-size: clamp(2.8rem, 8.4vw, 5.25rem); }
   .os-panel { max-width: 760px; }
   .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 272px)); }
   .studio-panel { gap: 32px; }
@@ -335,7 +335,7 @@ svg { display: block; }
   .home-links.open, .desktop-nav.open { display: grid; }
   .home-links > a, .desktop-nav > a { width: 100%; justify-content: center; text-align: center; }
   .menu-button { display: block; }
-  .home-title { font-size: clamp(3.6rem, 18vw, 6rem); }
+  .home-title { font-size: clamp(2.52rem, 12.6vw, 4.2rem); }
   .home-copy { margin-top: 24px; }
   .os-panel { padding: 15px; }
   .os-apps { grid-template-columns: 1fr; }
@@ -375,7 +375,7 @@ svg { display: block; }
   .brand span:last-child { font-size: 15px; }
   .brand-mark { width: 36px; height: 36px; }
   .home-hero { min-height: auto; padding-bottom: 54px; }
-  .home-title { font-size: clamp(3.35rem, 17vw, 5rem); }
+  .home-title { font-size: clamp(2.35rem, 11.9vw, 3.5rem); }
   .button-primary, .button-secondary { width: 100%; }
   .os-app { grid-template-columns: 43px minmax(0,1fr) 15px; }
   .os-app em { display: none; }

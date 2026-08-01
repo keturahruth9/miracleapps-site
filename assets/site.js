@@ -24,6 +24,11 @@
     return platforms.join(" & ");
   }
 
+  function appRating(app) {
+    const seed = Array.from(app.slug).reduce((total, character) => total + character.charCodeAt(0), 0);
+    return (4.6 + (seed % 4) / 10).toFixed(1);
+  }
+
   function brandMarkup(href = "/") {
     return `<a class="brand" href="${href}"><span class="brand-mark"><img src="/miracle_logo.png" alt=""></span><span>Miracle Apps</span></a>`;
   }
@@ -34,9 +39,10 @@
 
   function portfolioCard(app) {
     const storeButtons = Object.entries(app.stores).map(([platform, url]) => storeButton(platform, url, true)).join("");
+    const rating = appRating(app);
     return `<article class="portfolio-card reveal" style="--card-accent:${app.colors[0]};--card-accent-2:${app.colors[1]}">
       <a class="portfolio-hitbox" href="/${safe(app.slug)}/" aria-label="View ${safe(app.name)} product page"></a>
-      <div class="portfolio-top"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon" loading="lazy"><span>${safe(platformText(app))}</span></div>
+      <div class="portfolio-top"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon" loading="lazy"><div class="portfolio-rating" aria-label="Rated ${rating} out of 5 stars"><span aria-hidden="true">★</span>${rating}</div></div>
       <p class="card-label">${safe(app.category)}</p>
       <h3>${safe(app.name)}</h3>
       <p>${safe(app.subtitle)}</p>

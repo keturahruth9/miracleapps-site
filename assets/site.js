@@ -106,9 +106,14 @@
     const screenHeading = app.slug === "fmradio"
       ? `<div class="section-heading fm-preview-heading reveal"><h2>Your favorite stations are always close.</h2><p>A simple, powerful listening experience designed for discovery, favorites, reminders, and uninterrupted radio.</p></div>`
       : `<div class="section-heading reveal"><span>A closer look</span><h2>Designed to make ${safe(app.shortName)} feel obvious.</h2><p>Every screen keeps the next action clear, the visual hierarchy calm, and the useful details close.</p></div>`;
+    const showDetailSections = app.slug !== "fmradio";
+    const detailSections = showDetailSections ? `
+        <section class="product-section soft-section" id="features"><div class="product-shell"><div class="section-heading reveal"><span>Key features</span><h2>Useful depth, without the clutter.</h2><p>A focused toolkit built around the job this app needs to do well.</p></div><div class="feature-list">${app.features.map((feature, index) => `<article class="feature-item reveal"><span>${String(index + 1).padStart(2, "0")}</span><div><h3>${safe(feature[0])}</h3><p>${safe(feature[1])}</p></div></article>`).join("")}</div></div></section>
+
+        <section class="product-section"><div class="product-shell"><div class="section-heading reveal"><span>Why it helps</span><h2>Small improvements that add up.</h2></div><div class="benefit-grid">${app.benefits.map((benefit, index) => `<article class="benefit-card reveal"><span>${["✦", "↗", "✓"][index]}</span><h3>${safe(benefit[0])}</h3><p>${safe(benefit[1])}</p></article>`).join("")}</div></div></section>` : "";
     root.innerHTML = `
       <a class="skip-link" href="#main">Skip to content</a>
-      <nav class="product-nav"><div class="product-shell nav-shell">${brandMarkup("/")}<div class="desktop-nav"><a href="#features">Features</a><a href="#previews">Screens</a><a href="#privacy">Privacy</a><a class="nav-action" href="#download">Get the app</a></div><button class="menu-button" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button></div></nav>
+      <nav class="product-nav"><div class="product-shell nav-shell">${brandMarkup("/")}<div class="desktop-nav">${showDetailSections ? '<a href="#features">Features</a>' : ""}<a href="#previews">Screens</a><a href="#privacy">Privacy</a><a class="nav-action" href="#download">Get the app</a></div><button class="menu-button" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button></div></nav>
       <main id="main">
         <header class="product-hero grid-surface"><div class="product-shell product-hero-grid">
           <div class="product-intro reveal"><div class="app-identity"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon"><span>${safe(app.eyebrow)}</span></div><h1>${safe(app.name)}</h1><h2>${safe(app.tagline)}</h2><p>${safe(app.description)}</p><div class="tag-row">${app.tags.map((tag) => `<span>${safe(tag)}</span>`).join("")}</div><div class="store-row" id="download">${storeButtons}</div><div class="trust-row"><span>Purpose-built</span><span>Privacy-aware</span><span>${safe(platformText(app))}</span></div></div>
@@ -117,9 +122,7 @@
 
         <section class="product-section" id="previews"><div class="product-shell">${screenHeading}${screenGallery}</div></section>
 
-        <section class="product-section soft-section" id="features"><div class="product-shell"><div class="section-heading reveal"><span>Key features</span><h2>Useful depth, without the clutter.</h2><p>A focused toolkit built around the job this app needs to do well.</p></div><div class="feature-list">${app.features.map((feature, index) => `<article class="feature-item reveal"><span>${String(index + 1).padStart(2, "0")}</span><div><h3>${safe(feature[0])}</h3><p>${safe(feature[1])}</p></div></article>`).join("")}</div></div></section>
-
-        <section class="product-section"><div class="product-shell"><div class="section-heading reveal"><span>Why it helps</span><h2>Small improvements that add up.</h2></div><div class="benefit-grid">${app.benefits.map((benefit, index) => `<article class="benefit-card reveal"><span>${["✦", "↗", "✓"][index]}</span><h3>${safe(benefit[0])}</h3><p>${safe(benefit[1])}</p></article>`).join("")}</div></div></section>
+        ${detailSections}
 
         <section class="product-section privacy-section" id="privacy"><div class="product-shell"><div class="privacy-card reveal"><div><span class="privacy-icon">⌁</span><p class="card-label">Privacy by design</p><h2>Your data deserves a quiet life.</h2><p>${safe(app.privacy)}</p><ul><li>Clear permission prompts</li><li>No sale of personal information</li><li>Store billing handled by Apple or Google</li></ul></div><div class="privacy-actions"><a href="/privacy/" target="_blank" rel="noopener noreferrer">Read Privacy Policy ${icons.arrow}</a><a href="/terms/" target="_blank" rel="noopener noreferrer">Read Terms and Conditions ${icons.arrow}</a></div></div></div></section>
 

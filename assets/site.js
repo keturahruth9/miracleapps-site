@@ -132,7 +132,7 @@
 
         <section class="download-section"><div class="product-shell"><div class="download-card reveal" style="--download-a:${app.colors[0]};--download-b:${app.colors[1]}"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon"><div><p class="card-label">Ready when you are</p><h2>${safe(app.tagline)}</h2><p>${safe(app.subtitle)}.</p></div><div class="store-row">${storeButtons}</div></div></div></section>
       </main>
-      <footer class="site-footer product-footer"><div class="product-shell footer-grid"><div>${brandMarkup("/")}<p>Focused mobile apps for everyday life, learning, privacy, and progress.</p><a href="mailto:support@miracleapps.in">support@miracleapps.in</a></div><div><h2>Explore</h2><a href="/#apps">All apps</a><a href="/#principles">Our principles</a><a href="mailto:support@miracleapps.in">Support</a></div><div><h2>Legal</h2><a href="/privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy ↗</a><a href="/terms/" target="_blank" rel="noopener noreferrer">Terms and Conditions ↗</a></div></div><div class="product-shell footer-base"><span>© 2026 Miracle Apps</span></div></footer>`;
+      <footer class="site-footer product-footer"><div class="product-shell footer-grid"><div>${brandMarkup("/")}<a href="mailto:support@miracleapps.in">support@miracleapps.in</a></div><div><h2>Explore</h2><a href="/#apps">All apps</a><a href="/#principles">Our principles</a><a href="mailto:support@miracleapps.in">Support</a></div><div><h2>Legal</h2><a href="/privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy ↗</a><a href="/terms/" target="_blank" rel="noopener noreferrer">Terms and Conditions ↗</a></div></div><div class="product-shell footer-base"><span>© 2026 Miracle Apps</span></div></footer>`;
   }
 
   function initMenu() {

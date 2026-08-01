@@ -42,7 +42,7 @@
     const rating = appRating(app);
     return `<article class="portfolio-card reveal" style="--card-accent:${app.colors[0]};--card-accent-2:${app.colors[1]}">
       <a class="portfolio-hitbox" href="/${safe(app.slug)}/" aria-label="View ${safe(app.name)} product page"></a>
-      <div class="portfolio-top"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon" loading="lazy"><div class="portfolio-rating" aria-label="Rated ${rating} out of 5 stars"><span aria-hidden="true">★</span>${rating}</div></div>
+      <div class="portfolio-top"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon" loading="lazy"><div class="portfolio-rating" aria-label="Rated ${rating} out of 5">${rating}</div></div>
       <p class="card-label">${safe(app.category)}</p>
       <h3>${safe(app.name)}</h3>
       <p>${safe(app.subtitle)}</p>

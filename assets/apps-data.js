@@ -51,7 +51,7 @@
       tagline: "The whole world of radio, one tap away.",
       description: "Discover live music, news, sports, talk, and local stations from around the world with fast search, favorites, background playback, and a listening experience made for everyday moments.",
       icon: "/fmradio/FMRadio_Appicon.png",
-      colors: ["#5b6cff", "#ff5c7c"],
+      colors: ["#16b871", "#000000"],
       stores: both("https://apps.apple.com/app/id6759460192", "https://play.google.com/store/apps/details?id=com.vectorinfo.radio"),
       tags: ["100,000+ stations", "Global discovery", "Favorites", "Background audio"],
       features: [

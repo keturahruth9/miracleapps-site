@@ -98,7 +98,7 @@
     const storeButtons = Object.entries(app.stores).map(([platform, url]) => storeButton(platform, url)).join("");
     const realScreenshots = Array.isArray(app.appStoreScreenshots) ? app.appStoreScreenshots : [];
     const heroPreview = realScreenshots.length
-      ? `<div class="hero-device hero-real-preview reveal"><div class="halo"></div><figure class="hero-real-frame"><img src="${safe((realScreenshots[1] || realScreenshots[0]).src)}" alt="${safe(app.name)} App Store preview: ${safe((realScreenshots[1] || realScreenshots[0]).label)}"><figcaption>Official App Store preview</figcaption></figure></div>`
+      ? `<div class="hero-device hero-real-preview reveal"><div class="halo"></div><div class="hero-real-frame"><img src="${safe((realScreenshots[1] || realScreenshots[0]).src)}" alt="${safe(app.name)} App Store preview: ${safe((realScreenshots[1] || realScreenshots[0]).label)}"></div></div>`
       : `<div class="hero-device reveal"><div class="halo"></div>${phonePreview(app, 0)}<div class="floating-note note-one"><span>✦</span><strong>${safe(app.features[1][0])}</strong></div><div class="floating-note note-two"><span>✓</span><strong>You stay in control</strong></div></div>`;
     const screenGallery = realScreenshots.length
       ? `<div class="appstore-preview-grid">${realScreenshots.map((screenshot, index) => `<figure class="appstore-preview-card reveal"><img src="${safe(screenshot.src)}" alt="${safe(app.name)} App Store preview: ${safe(screenshot.label)}" loading="lazy"><figcaption><span>${String(index + 1).padStart(2, "0")}</span><strong>${safe(screenshot.label)}</strong></figcaption></figure>`).join("")}</div>`

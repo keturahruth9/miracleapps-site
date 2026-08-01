@@ -182,9 +182,8 @@ svg { display: block; }
 .trust-row span::before { content: '✓'; width: 18px; height: 18px; display: grid; place-items: center; color: #fff; border-radius: 50%; background: var(--accent); font-size: 10px; }
 .hero-device { min-height: 620px; position: relative; display: grid; place-items: center; }
 .halo { position: absolute; width: 490px; height: 490px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--accent-2) 55%, white), color-mix(in srgb, var(--accent) 42%, transparent) 48%, transparent 70%); filter: blur(8px); opacity: .55; }
-.hero-real-frame { width: min(100%, 342px); margin: 0; padding: 10px; position: relative; z-index: 2; overflow: hidden; border: 1px solid rgba(20,24,34,.1); border-radius: 34px; background: rgba(255,255,255,.9); box-shadow: 0 42px 90px rgba(18,24,40,.22); }
-.hero-real-frame img { width: 100%; display: block; border-radius: 25px; }
-.hero-real-frame figcaption { padding: 13px 8px 5px; color: #6c7382; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
+.hero-real-frame { width: 270px; height: 584px; position: relative; z-index: 2; overflow: hidden; border: 1px solid rgba(20,24,34,.1); border-radius: 30px; background: #0a0c10; box-shadow: 0 36px 78px rgba(18,24,40,.2); }
+.hero-real-frame img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .device { width: 282px; padding: 10px; position: relative; z-index: 2; border: 1px solid rgba(0,0,0,.18); border-radius: 45px; background: #11141c; box-shadow: 0 44px 90px rgba(19,24,41,.25), inset 0 0 0 2px rgba(255,255,255,.12); }
 .device::before { content: ''; position: absolute; z-index: 5; top: 17px; left: 50%; width: 78px; height: 22px; border-radius: 99px; background: #10131b; transform: translateX(-50%); }
 .device-screen { min-height: 560px; padding: 15px 13px 12px; overflow: hidden; border-radius: 36px; background: #f5f6fa; }
@@ -229,12 +228,12 @@ svg { display: block; }
 .preview-card figcaption { margin: 0 -24px; padding: 20px 23px; display: flex; gap: 12px; align-items: center; border-top: 1px solid var(--line); background: rgba(255,255,255,.58); }
 .preview-card figcaption span { color: var(--accent); font-size: 11px; font-weight: 800; }
 .preview-card figcaption strong { font-family: 'Manrope', sans-serif; font-size: 14px; }
-.appstore-preview-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.appstore-preview-card { min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 28px; background: #0a0c10; box-shadow: 0 20px 55px rgba(20,24,36,.08); }
-.appstore-preview-card img { width: 100%; aspect-ratio: 600 / 1299; display: block; object-fit: cover; }
-.appstore-preview-card figcaption { min-height: 76px; padding: 18px 20px; display: flex; align-items: center; gap: 12px; color: var(--ink); background: #fff; }
+.appstore-preview-grid { overflow-x: auto; display: grid; grid-template-columns: repeat(6, 180px); justify-content: safe center; gap: 16px; padding: 4px 0 12px; scroll-snap-type: x proximity; }
+.appstore-preview-card { width: 180px; height: 455px; min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: #0a0c10; box-shadow: 0 16px 38px rgba(20,24,36,.08); scroll-snap-align: start; }
+.appstore-preview-card img { width: 180px; height: 390px; display: block; object-fit: cover; }
+.appstore-preview-card figcaption { height: 65px; padding: 10px 12px; display: flex; align-items: center; gap: 8px; color: var(--ink); background: #fff; }
 .appstore-preview-card figcaption span { color: var(--accent); font-size: 11px; font-weight: 800; }
-.appstore-preview-card figcaption strong { font-family: 'Manrope', sans-serif; font-size: 14px; line-height: 1.3; }
+.appstore-preview-card figcaption strong { font-family: 'Manrope', sans-serif; font-size: 12px; line-height: 1.25; }
 .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .feature-item { min-height: 190px; padding: 26px; display: grid; grid-template-columns: 48px 1fr; gap: 20px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.72); }
 .feature-item > span { width: 48px; height: 48px; display: grid; place-items: center; color: #fff; border-radius: 15px; background: var(--accent); font-size: 11px; font-weight: 800; }
@@ -358,8 +357,7 @@ svg { display: block; }
   .floating-note { display: none; }
   .product-section { padding: 82px 0; }
   .preview-grid { grid-template-columns: repeat(3, minmax(270px, 84vw)); }
-  .appstore-preview-grid { overflow-x: auto; grid-template-columns: repeat(6, minmax(270px, 78vw)); padding-bottom: 10px; scroll-snap-type: x mandatory; }
-  .appstore-preview-card { scroll-snap-align: start; }
+  .appstore-preview-grid { grid-template-columns: repeat(6, 180px); justify-content: start; scroll-snap-type: x mandatory; }
   .privacy-card { padding: 34px 24px; grid-template-columns: 1fr; gap: 32px; }
   .faq-layout { grid-template-columns: 1fr; gap: 22px; }
   .download-card { padding: 28px; grid-template-columns: 68px 1fr; }
@@ -387,6 +385,7 @@ svg { display: block; }
   .footer-base { flex-direction: column; }
   .product-intro h1 { font-size: clamp(3.15rem, 15vw, 4.4rem); }
   .hero-device { min-height: 500px; }
+  .hero-real-frame { width: 230px; height: 498px; border-radius: 26px; }
   .device { width: 228px; }
   .device-screen { min-height: 475px; }
   .device-focus { min-height: 130px; }

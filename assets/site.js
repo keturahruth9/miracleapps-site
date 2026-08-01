@@ -8,15 +8,13 @@
 
   const icons = {
     arrow: '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5"/></svg>',
-    apple: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.1 12.7c0-2.6 2.2-3.9 2.3-4-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.2 1-4 .9-.9 0-2.2-.9-3.6-.9-1.8 0-3.5 1.1-4.5 2.7-1.9 3.3-.5 8.3 1.4 11 .9 1.3 2 2.7 3.4 2.6 1.4-.1 1.9-.9 3.6-.9 1.7 0 2.2.9 3.7.9 1.5 0 2.5-1.3 3.4-2.6 1.1-1.5 1.5-3 1.5-3.1-.1 0-3.4-1.3-3.4-4.6ZM14.6 5c.8-1 1.4-2.4 1.2-3.8-1.2.1-2.7.8-3.5 1.8-.8.9-1.4 2.3-1.2 3.6 1.3.1 2.7-.7 3.5-1.6Z"/></svg>',
-    play: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.7 2.8 14 12 3.7 21.2c-.4-.5-.7-1.2-.7-2V4.8c0-.8.3-1.5.7-2ZM15.5 13.3l-2.7 2.4L5 22.4c.5.2 1.1.2 1.7-.1l11.9-6.8-3.1-2.2Zm3.1-4.8L6.7 1.7C6.1 1.4 5.5 1.4 5 1.6l7.8 6.7 2.7 2.4 3.1-2.2Zm1.4.8-3 2.7 3 2.7c.6-.6 1-1.5 1-2.7s-.4-2.1-1-2.7Z"/></svg>',
   };
 
   function storeButton(platform, url, compact = false) {
     const isApple = platform === "ios";
-    const label = isApple ? "App Store" : "Google Play";
-    const preface = isApple ? "Download on the" : "Get it on";
-    return `<a class="store-button${compact ? " compact" : ""}" href="${safe(url)}" target="_blank" rel="noopener noreferrer" aria-label="Get it on ${label}">${isApple ? icons.apple : icons.play}<span><small>${preface}</small><strong>${label}</strong></span></a>`;
+    const label = isApple ? "Download on the App Store" : "Get it on Google Play";
+    const artwork = isApple ? "/assets/store-badges/app-store.svg" : "/assets/store-badges/google-play.png";
+    return `<a class="store-badge store-badge--${isApple ? "ios" : "android"}${compact ? " compact" : ""}" href="${safe(url)}" target="_blank" rel="noopener noreferrer" aria-label="${label}"><img src="${artwork}" alt="${label}"></a>`;
   }
 
   function platformText(app) {
@@ -35,12 +33,14 @@
   }
 
   function portfolioCard(app) {
+    const storeButtons = Object.entries(app.stores).map(([platform, url]) => storeButton(platform, url, true)).join("");
     return `<article class="portfolio-card reveal" style="--card-accent:${app.colors[0]};--card-accent-2:${app.colors[1]}">
+      <a class="portfolio-hitbox" href="/${safe(app.slug)}/" aria-label="View ${safe(app.name)} product page"></a>
       <div class="portfolio-top"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon" loading="lazy"><span>${safe(platformText(app))}</span></div>
       <p class="card-label">${safe(app.category)}</p>
       <h3>${safe(app.name)}</h3>
       <p>${safe(app.subtitle)}</p>
-      <a href="/${safe(app.slug)}/" aria-label="Explore ${safe(app.name)}">Explore product ${icons.arrow}</a>
+      <div class="card-store-row" aria-label="Download ${safe(app.name)}">${storeButtons}</div>
     </article>`;
   }
 

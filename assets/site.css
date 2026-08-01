@@ -89,7 +89,7 @@ svg { display: block; }
 .home-section { position: relative; padding: 116px 0; }
 .home-section.alt { background: var(--cream); color: #11130e; }
 .home-section-head { max-width: 850px; margin-bottom: 48px; }
-.home-section-head.label-only { margin-bottom: 28px; }
+.home-section-head.label-only { width: 100%; max-width: 1142px; margin: 0 auto 12px; }
 .home-section-head.label-only .section-kicker { margin-bottom: 0; }
 .home-section-head.row { max-width: none; display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items: end; }
 .home-section .section-kicker { color: var(--lime); }
@@ -314,6 +314,7 @@ svg { display: block; }
   .home-title { max-width: 900px; font-size: clamp(2.8rem, 8.4vw, 5.25rem); }
   .os-panel { max-width: 760px; }
   .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 272px)); }
+  .home-section-head.label-only { max-width: 562px; }
   .studio-panel { gap: 32px; }
   .hero-device { min-height: 600px; }
   .note-one { left: calc(50% - 290px); }
@@ -327,6 +328,7 @@ svg { display: block; }
 
 @media (max-width: 1140px) and (min-width: 1021px) {
   .portfolio-grid { grid-template-columns: repeat(3, minmax(0, 272px)); }
+  .home-section-head.label-only { max-width: 852px; }
 }
 
 @media (max-width: 760px) {
@@ -344,6 +346,7 @@ svg { display: block; }
   .os-app:nth-child(n+7) { display: none; }
   .home-section { padding: 82px 0; }
   .home-section-head.row { grid-template-columns: 1fr; gap: 0; }
+  .home-section-head.label-only { max-width: none; }
   .portfolio-grid, .principle-grid, .benefit-grid, .feature-list, .studio-panel { grid-template-columns: 1fr; }
   .stat-strip { grid-template-columns: 1fr 1fr; }
   .stat:nth-child(2) { border-right: 0; }

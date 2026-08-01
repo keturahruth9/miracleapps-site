@@ -94,6 +94,8 @@
     document.title = `${app.name} — Miracle Apps`;
     const descriptionMeta = $('meta[name="description"]');
     if (descriptionMeta) descriptionMeta.setAttribute("content", app.description);
+    const themeColorMeta = $('meta[name="theme-color"]');
+    if (themeColorMeta) themeColorMeta.setAttribute("content", app.colors[0]);
 
     const storeButtons = Object.entries(app.stores).map(([platform, url]) => storeButton(platform, url)).join("");
     const realScreenshots = Array.isArray(app.appStoreScreenshots) ? app.appStoreScreenshots : [];

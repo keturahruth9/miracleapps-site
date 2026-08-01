@@ -147,7 +147,7 @@ svg { display: block; }
 .footer-base { margin-top: 54px; padding-top: 20px; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line-dark); color: #747c8b; font-size: 12px; }
 
 /* Product pages */
-.product-page { --accent: #5b6cff; --accent-2: #38d5ff; background: #fbfbfd; }
+.product-page { background: #fbfbfd; }
 .product-nav { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(15,20,35,.08); background: rgba(251,251,253,.84); backdrop-filter: blur(18px); }
 .product-nav .nav-shell { min-height: 72px; }
 .product-nav .brand-mark { background: transparent; }

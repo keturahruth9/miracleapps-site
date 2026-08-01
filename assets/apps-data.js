@@ -7,6 +7,7 @@
     const abbreviation = config.abbreviation;
     const topic = config.topic;
     const domainText = config.domains || `${abbreviation} exam domains`;
+    const previewLabels = ["Build exam readiness", "Practice by topic", "Track your progress", "Review every explanation", "Strengthen weak areas", "Stay consistent"];
     return {
       ...config,
       category: "Exam preparation",
@@ -35,6 +36,12 @@
         ["Can I review questions I missed?", "Yes. Missed-answer review is built into the study loop so weak areas are easy to revisit."],
       ],
       screenLabels: ["Readiness dashboard", "Focused practice", "Review weak areas"],
+      previewHeading: `${abbreviation} preparation that keeps progress visible.`,
+      previewDescription: "Move from focused practice to review with a clear view of what you know and what deserves attention next.",
+      appStoreScreenshots: Array.from({ length: config.screenshotCount }, (_, index) => ({
+        src: `/${config.slug}/appstore-screenshots/${String(index + 1).padStart(2, "0")}.webp`,
+        label: previewLabels[index] || `${abbreviation} app preview`,
+      })),
     };
   }
 
@@ -66,6 +73,8 @@
       privacy: "Favorites, recents, and listening preferences are designed to stay on your device. No account is required to begin listening, and Miracle Apps does not sell your personal information.",
       faq: [["Do I need an account?", "No. You can start discovering and listening without creating an account."], ["Can I listen in the background?", "Yes. Playback can continue while you use other apps or lock your screen."], ["Why can a station become unavailable?", "Streams are provided by radio stations and directory partners, so a station may change or temporarily go offline."], ["Is every station free?", "The app provides access to live streams offered by their respective stations; normal internet data charges may apply."]],
       screenLabels: ["Discover stations", "Now playing", "Favorites & recents"],
+      previewHeading: "Your favorite stations are always close.",
+      previewDescription: "A simple, powerful listening experience designed for discovery, favorites, reminders, and uninterrupted radio.",
       appStoreScreenshots: [
         { src: "/fmradio/appstore-screenshots/01.webp", label: "Discover music you love" },
         { src: "/fmradio/appstore-screenshots/02.webp", label: "Tune by country, language, and genre" },
@@ -95,6 +104,16 @@
       privacy: "Camera and photo access are used only when you choose to scan. Scan results are handled for the feature you request, and nothing is opened or shared until you take action.",
       faq: [["Can I create QR codes too?", "Yes. The app supports creating shareable QR codes, not only scanning them."], ["Can I scan a code from a saved photo?", "Yes, when photo access is available and you select an image."], ["Does scanning automatically open a link?", "No. The result is shown first so you stay in control."], ["Does it support both iPhone and Android?", "Yes. Download links for both stores are available on this page."]],
       screenLabels: ["Live scanner", "Clear scan result", "Create & share"],
+      previewHeading: "Everything you need to scan, create, and share.",
+      previewDescription: "Move from camera scan to a useful result with focused tools that keep every action clear.",
+      appStoreScreenshots: [
+        { src: "/qr-code-reader/appstore-screenshots/01.webp", label: "Scan codes instantly" },
+        { src: "/qr-code-reader/appstore-screenshots/02.webp", label: "Create custom QR codes" },
+        { src: "/qr-code-reader/appstore-screenshots/03.webp", label: "Keep useful scan history" },
+        { src: "/qr-code-reader/appstore-screenshots/04.webp", label: "Scan from saved photos" },
+        { src: "/qr-code-reader/appstore-screenshots/05.webp", label: "Share results quickly" },
+        { src: "/qr-code-reader/appstore-screenshots/06.webp", label: "Simple tools, ready anytime" },
+      ],
     },
     {
       id: "cleanup_ai_photo_cleaner",
@@ -116,6 +135,16 @@
       privacy: "Photo access is used to analyze the library on your device and show cleanup suggestions. You stay in control of deletions, and Miracle Apps does not sell your personal photos or files.",
       faq: [["Will the app delete photos automatically?", "No. You review and confirm what should be removed."], ["Can I compare similar photos first?", "Yes. The review flow is designed to help you choose the version you want to keep."], ["Where do deleted photos go?", "Deletion follows the photo-library behavior provided by your device, including Recently Deleted where supported."], ["Does it work for large videos?", "The app can help surface storage-heavy media so you can review it deliberately."]],
       screenLabels: ["Storage overview", "Smart photo groups", "Review before delete"],
+      previewHeading: "A clearer look at what is taking up space.",
+      previewDescription: "Review clutter, compare similar photos, and reclaim storage through a visual cleanup flow that keeps you in control.",
+      appStoreScreenshots: [
+        { src: "/cleanupai/appstore-screenshots/01.webp", label: "See what uses your storage" },
+        { src: "/cleanupai/appstore-screenshots/02.webp", label: "Find duplicate photos" },
+        { src: "/cleanupai/appstore-screenshots/03.webp", label: "Review similar shots" },
+        { src: "/cleanupai/appstore-screenshots/04.webp", label: "Clean up large videos" },
+        { src: "/cleanupai/appstore-screenshots/05.webp", label: "Protect your best memories" },
+        { src: "/cleanupai/appstore-screenshots/06.webp", label: "Reclaim space with confidence" },
+      ],
     },
     {
       id: "translate_all_free",
@@ -137,6 +166,16 @@
       privacy: "Content is processed only to provide the translation you request. Online translation may use service providers, while available offline features keep supported processing on your device.",
       faq: [["Can I translate text in photos?", "Yes. Use the camera or choose a saved image to extract and translate supported text."], ["Can I translate documents?", "Common file types are supported where available on your device and app version."], ["Does it support voice?", "Yes. Spoken phrases can be translated for faster conversation."], ["Is internet access required?", "Some translation services need a connection; supported offline features vary by language and platform."]],
       screenLabels: ["Text workspace", "Camera translation", "Files & conversations"],
+      previewHeading: "Understand more from text, photos, files, and voice.",
+      previewDescription: "Keep everyday translation and content tools in one clear workspace built for travel, learning, and communication.",
+      appStoreScreenshots: [
+        { src: "/translate-all/appstore-screenshots/01.webp", label: "Translate text instantly" },
+        { src: "/translate-all/appstore-screenshots/02.webp", label: "Translate with your camera" },
+        { src: "/translate-all/appstore-screenshots/03.webp", label: "Work with files" },
+        { src: "/translate-all/appstore-screenshots/04.webp", label: "Create audio from content" },
+        { src: "/translate-all/appstore-screenshots/05.webp", label: "Keep useful translations close" },
+        { src: "/translate-all/appstore-screenshots/06.webp", label: "Communicate across languages" },
+      ],
     },
     {
       id: "admob_revenue_tracker",
@@ -158,6 +197,16 @@
       privacy: "Account authorization and reporting data are used only to provide the dashboard you request. Sign-in and AdMob reporting are handled through Google services; Miracle Apps does not ask for your Google password.",
       faq: [["Is this an official Google app?", "No. It is an independent reporting companion and is not endorsed by Google."], ["Does the app need my Google password?", "No. Authorization should occur through Google's sign-in flow."], ["Can I view multiple apps?", "The dashboard is designed to surface app-level reporting available to the connected account."], ["Is it available for iPhone?", "The catalog currently provides an Android download only."]],
       screenLabels: ["Revenue overview", "Performance trends", "App-level metrics"],
+      previewHeading: "Your monetization performance, always within reach.",
+      previewDescription: "Check revenue, compare trends, and understand app performance through a reporting experience designed for quick decisions.",
+      appStoreScreenshots: [
+        { src: "/admob-revenue-tracker/appstore-screenshots/01.webp", label: "Revenue at a glance" },
+        { src: "/admob-revenue-tracker/appstore-screenshots/02.webp", label: "Track earnings over time" },
+        { src: "/admob-revenue-tracker/appstore-screenshots/03.webp", label: "Compare app performance" },
+        { src: "/admob-revenue-tracker/appstore-screenshots/04.webp", label: "Review ad-unit insights" },
+        { src: "/admob-revenue-tracker/appstore-screenshots/05.webp", label: "Explore country breakdowns" },
+        { src: "/admob-revenue-tracker/appstore-screenshots/06.webp", label: "Export detailed reports" },
+      ],
     },
     {
       id: "chitcalculator",
@@ -179,6 +228,14 @@
       privacy: "Chit and calculation details are treated as private financial planning information. The app is designed to avoid unnecessary data collection and does not connect to your bank account.",
       faq: [["Does the app connect to my bank?", "No. It is a calculation and organization tool, not a banking service."], ["Are calculations financial advice?", "No. Results are estimates for planning; confirm final figures with the chit organizer or a qualified adviser."], ["Can I save calculations?", "The app provides organization tools for revisiting useful chit details."], ["Is it available on Android?", "The catalog currently provides an iPhone download only."]],
       screenLabels: ["Chit overview", "Auction calculator", "Contribution summary"],
+      previewHeading: "Every contribution and calculation, clearly organized.",
+      previewDescription: "Plan chit cycles, compare auction outcomes, and keep recurring figures easy to understand and revisit.",
+      appStoreScreenshots: [
+        { src: "/chitcalculator/appstore-screenshots/01.webp", label: "Plan your chit clearly" },
+        { src: "/chitcalculator/appstore-screenshots/02.webp", label: "Calculate auction outcomes" },
+        { src: "/chitcalculator/appstore-screenshots/03.webp", label: "Review contribution details" },
+        { src: "/chitcalculator/appstore-screenshots/04.webp", label: "Keep every cycle organized" },
+      ],
     },
     {
       id: "secret_vault_pro",
@@ -200,33 +257,39 @@
       privacy: "Your private media is protected through device-level access controls and the storage options you choose. Miracle Apps cannot see the contents of your vault, and your passcode remains your responsibility.",
       faq: [["Can Miracle Apps see my vault?", "No. Vault contents are designed to remain under your control through your device and selected storage settings."], ["What if I forget my passcode?", "Recovery options depend on the version and settings you enabled; keep device access and recovery details secure."], ["Does it support Face ID or Touch ID?", "Yes, on supported devices when biometric access is enabled."], ["Should I keep a backup?", "Yes. Maintain a secure backup of irreplaceable files and never rely on one app or device as the only copy."]],
       screenLabels: ["Discreet lock", "Private albums", "Secure media viewer"],
+      previewHeading: "Private photos and videos stay out of everyday view.",
+      previewDescription: "A discreet, focused space for personal media with clear controls and fast access when you need it.",
+      appStoreScreenshots: [
+        { src: "/vault/appstore-screenshots/01.webp", label: "Discreet calculator lock" },
+        { src: "/vault/appstore-screenshots/02.webp", label: "Keep private media protected" },
+      ],
     },
     examApp({
-      id: "pmi_pmp_exam_preparation", slug: "pmp", group: "Exam preparation", name: "PMI PMP Exam Preparation", shortName: "PMP Prep", subtitle: "Project Management Professional study tool", abbreviation: "PMP", topic: "Project Management Professional", domains: "project management principles, people, process, and business-environment topics", icon: "/pmp/PMP_Appicon.png", colors: ["#5c4ee5", "#34d5e8"], stores: both("https://apps.apple.com/app/id6737227841", "https://play.google.com/store/apps/details?id=com.exam.pmpquiz")
+      id: "pmi_pmp_exam_preparation", slug: "pmp", group: "Exam preparation", name: "PMI PMP Exam Preparation", shortName: "PMP Prep", subtitle: "Project Management Professional study tool", abbreviation: "PMP", topic: "Project Management Professional", domains: "project management principles, people, process, and business-environment topics", icon: "/pmp/PMP_Appicon.png", colors: ["#5c4ee5", "#34d5e8"], stores: both("https://apps.apple.com/app/id6737227841", "https://play.google.com/store/apps/details?id=com.exam.pmpquiz"), screenshotCount: 5
     }),
     examApp({
-      id: "rbt_exam_prep_2nd_edition", slug: "rbt", group: "Exam preparation", name: "RBT Exam Prep — 2nd Edition", shortName: "RBT Prep", subtitle: "Registered Behavior Technician exam prep", abbreviation: "RBT", topic: "Registered Behavior Technician", domains: "the current RBT task-list areas", icon: "/rbt/RBT_Appicon.png", colors: ["#0e879c", "#44d2c1"], stores: both("https://apps.apple.com/app/id6738731714", "https://play.google.com/store/apps/details?id=com.quiz.rbt")
+      id: "rbt_exam_prep_2nd_edition", slug: "rbt", group: "Exam preparation", name: "RBT Exam Prep — 2nd Edition", shortName: "RBT Prep", subtitle: "Registered Behavior Technician exam prep", abbreviation: "RBT", topic: "Registered Behavior Technician", domains: "the current RBT task-list areas", icon: "/rbt/RBT_Appicon.png", colors: ["#0e879c", "#44d2c1"], stores: both("https://apps.apple.com/app/id6738731714", "https://play.google.com/store/apps/details?id=com.quiz.rbt"), screenshotCount: 6
     }),
     examApp({
-      id: "acsm_cpt_exam_preparation", slug: "acsmcpt", group: "Exam preparation", name: "ACSM-CPT Exam Preparation", shortName: "ACSM-CPT Prep", subtitle: "ACSM-CPT certification question bank", abbreviation: "ACSM-CPT", topic: "Certified Personal Trainer", domains: "fitness assessment, exercise programming, client consultation, and professional practice", icon: "/acsmcpt/ACSMCPT_Appicon.png", colors: ["#1694a5", "#ffbf47"], stores: both("https://apps.apple.com/app/id1454106031", "https://play.google.com/store/apps/details?id=com.exam.acsmcpt")
+      id: "acsm_cpt_exam_preparation", slug: "acsmcpt", group: "Exam preparation", name: "ACSM-CPT Exam Preparation", shortName: "ACSM-CPT Prep", subtitle: "ACSM-CPT certification question bank", abbreviation: "ACSM-CPT", topic: "Certified Personal Trainer", domains: "fitness assessment, exercise programming, client consultation, and professional practice", icon: "/acsmcpt/ACSMCPT_Appicon.png", colors: ["#1694a5", "#ffbf47"], stores: both("https://apps.apple.com/app/id1454106031", "https://play.google.com/store/apps/details?id=com.exam.acsmcpt"), screenshotCount: 4
     }),
     examApp({
-      id: "bcba_exam_prep_6th_edition", slug: "aba", group: "Exam preparation", name: "BCBA Exam Prep — 6th Edition", shortName: "BCBA Prep", subtitle: "Board Certified Behavior Analyst prep", abbreviation: "BCBA", topic: "Board Certified Behavior Analyst", domains: "the 6th-edition behavior-analysis task areas", icon: "/aba/ABA_Appicon.png", colors: ["#5b6e88", "#15c7dc"], stores: both("https://apps.apple.com/app/id6738604267", "https://play.google.com/store/apps/details?id=com.quiz.aba")
+      id: "bcba_exam_prep_6th_edition", slug: "aba", group: "Exam preparation", name: "BCBA Exam Prep — 6th Edition", shortName: "BCBA Prep", subtitle: "Board Certified Behavior Analyst prep", abbreviation: "BCBA", topic: "Board Certified Behavior Analyst", domains: "the 6th-edition behavior-analysis task areas", icon: "/aba/ABA_Appicon.png", colors: ["#5b6e88", "#15c7dc"], stores: both("https://apps.apple.com/app/id6738604267", "https://play.google.com/store/apps/details?id=com.quiz.aba"), screenshotCount: 6
     }),
     examApp({
-      id: "cfp_exam_financial_planner", slug: "cfp-exam", group: "Exam preparation", name: "CFP Exam — Financial Planner", shortName: "CFP Prep", subtitle: "Certified Financial Planner exam prep", abbreviation: "CFP", topic: "Certified Financial Planner", domains: "professional conduct, financial planning, tax, retirement, estate, insurance, and investment topics", icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1f/d6/59/1fd659f9-45d6-c621-e992-7064665c9b44/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/512x512bb.jpg", colors: ["#1265d6", "#4cc9f0"], stores: both("https://apps.apple.com/app/id6753813007", "https://play.google.com/store/apps/details?id=com.quiz.cfp")
+      id: "cfp_exam_financial_planner", slug: "cfp-exam", group: "Exam preparation", name: "CFP Exam — Financial Planner", shortName: "CFP Prep", subtitle: "Certified Financial Planner exam prep", abbreviation: "CFP", topic: "Certified Financial Planner", domains: "professional conduct, financial planning, tax, retirement, estate, insurance, and investment topics", icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1f/d6/59/1fd659f9-45d6-c621-e992-7064665c9b44/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/512x512bb.jpg", colors: ["#1265d6", "#4cc9f0"], stores: both("https://apps.apple.com/app/id6753813007", "https://play.google.com/store/apps/details?id=com.quiz.cfp"), screenshotCount: 6
     }),
     examApp({
-      id: "cissp_exam_preparation", slug: "cissp-exam", group: "Exam preparation", name: "CISSP Exam Preparation", shortName: "CISSP Prep", subtitle: "Information security certification prep", abbreviation: "CISSP", topic: "Certified Information Systems Security Professional", domains: "security and risk, asset security, architecture, networks, identity, assessment, operations, and software security", icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/b5/9a/c5/b59ac524-42c9-8d32-d57d-bdb282cab054/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/512x512bb.jpg", colors: ["#0f5d8f", "#33d1b7"], stores: both("https://apps.apple.com/app/id6754099337", "https://play.google.com/store/apps/details?id=com.quiz.cissp")
+      id: "cissp_exam_preparation", slug: "cissp-exam", group: "Exam preparation", name: "CISSP Exam Preparation", shortName: "CISSP Prep", subtitle: "Information security certification prep", abbreviation: "CISSP", topic: "Certified Information Systems Security Professional", domains: "security and risk, asset security, architecture, networks, identity, assessment, operations, and software security", icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/b5/9a/c5/b59ac524-42c9-8d32-d57d-bdb282cab054/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/512x512bb.jpg", colors: ["#0f5d8f", "#33d1b7"], stores: both("https://apps.apple.com/app/id6754099337", "https://play.google.com/store/apps/details?id=com.quiz.cissp"), screenshotCount: 6
     }),
     examApp({
-      id: "cma_part1_exam_preparation", slug: "cma-part1", group: "Exam preparation", name: "CMA Part 1 Exam Preparation", shortName: "CMA Part 1", subtitle: "Certified Management Accountant Part 1", abbreviation: "CMA Part 1", topic: "Certified Management Accountant Part 1", domains: "planning, budgeting, performance, cost management, controls, technology, and analytics", icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2b/d1/e8/2bd1e87e-0c73-fba0-b662-5bf41ed0b708/AppIcon-0-0-1x_U007epad-0-11-0-sRGB-85-220.png/512x512bb.jpg", colors: ["#3562d9", "#f6b73c"], stores: both("https://apps.apple.com/app/id6755318524", "https://play.google.com/store/apps/details?id=com.quiz.cma1")
+      id: "cma_part1_exam_preparation", slug: "cma-part1", group: "Exam preparation", name: "CMA Part 1 Exam Preparation", shortName: "CMA Part 1", subtitle: "Certified Management Accountant Part 1", abbreviation: "CMA Part 1", topic: "Certified Management Accountant Part 1", domains: "planning, budgeting, performance, cost management, controls, technology, and analytics", icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2b/d1/e8/2bd1e87e-0c73-fba0-b662-5bf41ed0b708/AppIcon-0-0-1x_U007epad-0-11-0-sRGB-85-220.png/512x512bb.jpg", colors: ["#3562d9", "#f6b73c"], stores: both("https://apps.apple.com/app/id6755318524", "https://play.google.com/store/apps/details?id=com.quiz.cma1"), screenshotCount: 6
     }),
     examApp({
-      id: "cma_part2_exam_preparation", slug: "cma-part2", group: "Exam preparation", name: "CMA Part 2 Exam Preparation", shortName: "CMA Part 2", subtitle: "Certified Management Accountant Part 2", abbreviation: "CMA Part 2", topic: "Certified Management Accountant Part 2", domains: "financial statements, corporate finance, decision analysis, risk, investment, and ethics", icon: "/cma-part2/CMA_Appicon.png", colors: ["#406be0", "#f6a93b"], stores: both("https://apps.apple.com/app/id6755318438", "https://play.google.com/store/apps/details?id=com.quiz.cma2")
+      id: "cma_part2_exam_preparation", slug: "cma-part2", group: "Exam preparation", name: "CMA Part 2 Exam Preparation", shortName: "CMA Part 2", subtitle: "Certified Management Accountant Part 2", abbreviation: "CMA Part 2", topic: "Certified Management Accountant Part 2", domains: "financial statements, corporate finance, decision analysis, risk, investment, and ethics", icon: "/cma-part2/CMA_Appicon.png", colors: ["#406be0", "#f6a93b"], stores: both("https://apps.apple.com/app/id6755318438", "https://play.google.com/store/apps/details?id=com.quiz.cma2"), screenshotCount: 6
     }),
     examApp({
-      id: "ctp_exam_preparation", slug: "ctp-exam", group: "Exam preparation", name: "CTP Exam Preparation", shortName: "CTP Prep", subtitle: "Certified Treasury Professional exam prep", abbreviation: "CTP", topic: "Certified Treasury Professional", domains: "liquidity, capital, risk, treasury operations, technology, and financial management", icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/54/2a/34/542a343d-c24b-d995-68bf-0e68f973b73a/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/512x512bb.jpg", colors: ["#1d7d73", "#5ed0ae"], stores: both("https://apps.apple.com/app/id6670214747", "https://play.google.com/store/apps/details?id=com.quiz.ctp")
+      id: "ctp_exam_preparation", slug: "ctp-exam", group: "Exam preparation", name: "CTP Exam Preparation", shortName: "CTP Prep", subtitle: "Certified Treasury Professional exam prep", abbreviation: "CTP", topic: "Certified Treasury Professional", domains: "liquidity, capital, risk, treasury operations, technology, and financial management", icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/54/2a/34/542a343d-c24b-d995-68bf-0e68f973b73a/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/512x512bb.jpg", colors: ["#1d7d73", "#5ed0ae"], stores: both("https://apps.apple.com/app/id6670214747", "https://play.google.com/store/apps/details?id=com.quiz.ctp"), screenshotCount: 6
     }),
   ];
 })();

@@ -103,26 +103,11 @@
       ? `<div class="hero-device hero-real-preview reveal"><div class="halo"></div><div class="hero-real-frame"><img src="${safe((realScreenshots[1] || realScreenshots[0]).src)}" alt="${safe(app.name)} App Store preview: ${safe((realScreenshots[1] || realScreenshots[0]).label)}"></div></div>`
       : `<div class="hero-device reveal"><div class="halo"></div>${phonePreview(app, 0)}<div class="floating-note note-one"><span>✦</span><strong>${safe(app.features[1][0])}</strong></div><div class="floating-note note-two"><span>✓</span><strong>You stay in control</strong></div></div>`;
     const screenGallery = realScreenshots.length
-      ? `<div class="appstore-preview-grid">${realScreenshots.map((screenshot) => `<figure class="appstore-preview-card reveal"><img src="${safe(screenshot.src)}" alt="${safe(app.name)} App Store preview: ${safe(screenshot.label)}" loading="lazy"><figcaption><strong>${safe(screenshot.label)}</strong></figcaption></figure>`).join("")}</div>`
+      ? `<div class="appstore-preview-grid" style="--preview-count:${realScreenshots.length}">${realScreenshots.map((screenshot) => `<figure class="appstore-preview-card reveal"><img src="${safe(screenshot.src)}" alt="${safe(app.name)} store preview: ${safe(screenshot.label)}" loading="lazy"><figcaption><strong>${safe(screenshot.label)}</strong></figcaption></figure>`).join("")}</div>`
       : `<div class="preview-grid">${app.screenLabels.map((label, index) => `<figure class="preview-card reveal"><div class="preview-device">${phonePreview(app, index)}</div><figcaption><span>0${index + 1}</span><strong>${safe(label)}</strong></figcaption></figure>`).join("")}</div>`;
-    const screenHeading = app.slug === "fmradio"
-      ? `<div class="section-heading fm-preview-heading reveal"><h2>Your favorite stations are always close.</h2><p>A simple, powerful listening experience designed for discovery, favorites, reminders, and uninterrupted radio.</p></div>`
-      : `<div class="section-heading reveal"><span>A closer look</span><h2>Designed to make ${safe(app.shortName)} feel obvious.</h2><p>Every screen keeps the next action clear, the visual hierarchy calm, and the useful details close.</p></div>`;
-    const showDetailSections = app.slug !== "fmradio";
-    const detailSections = showDetailSections ? `
-        <section class="product-section soft-section" id="features"><div class="product-shell"><div class="section-heading reveal"><span>Key features</span><h2>Useful depth, without the clutter.</h2><p>A focused toolkit built around the job this app needs to do well.</p></div><div class="feature-list">${app.features.map((feature, index) => `<article class="feature-item reveal"><span>${String(index + 1).padStart(2, "0")}</span><div><h3>${safe(feature[0])}</h3><p>${safe(feature[1])}</p></div></article>`).join("")}</div></div></section>
-
-        <section class="product-section"><div class="product-shell"><div class="section-heading reveal"><span>Why it helps</span><h2>Small improvements that add up.</h2></div><div class="benefit-grid">${app.benefits.map((benefit, index) => `<article class="benefit-card reveal"><span>${["✦", "↗", "✓"][index]}</span><h3>${safe(benefit[0])}</h3><p>${safe(benefit[1])}</p></article>`).join("")}</div></div></section>` : "";
-    const supportSections = showDetailSections ? `
-        <section class="product-section privacy-section" id="privacy"><div class="product-shell"><div class="privacy-card reveal"><div><span class="privacy-icon">⌁</span><p class="card-label">Privacy by design</p><h2>Your data deserves a quiet life.</h2><p>${safe(app.privacy)}</p><ul><li>Clear permission prompts</li><li>No sale of personal information</li><li>Store billing handled by Apple or Google</li></ul></div><div class="privacy-actions"><a href="/privacy/" target="_blank" rel="noopener noreferrer">Read Privacy Policy ${icons.arrow}</a><a href="/terms/" target="_blank" rel="noopener noreferrer">Read Terms and Conditions ${icons.arrow}</a></div></div></div></section>
-
-        <section class="product-section faq-section"><div class="product-shell faq-layout"><div class="section-heading reveal"><span>Questions</span><h2>Frequently asked.</h2><p>Useful answers before you download.</p></div><div class="faq-list">${app.faq.map((item, index) => `<details class="reveal"${index === 0 ? " open" : ""}><summary>${safe(item[0])}<span>+</span></summary><p>${safe(item[1])}</p></details>`).join("")}</div></div></section>` : "";
-    const productNavigation = showDetailSections
-      ? `<nav class="product-nav"><div class="product-shell nav-shell">${brandMarkup("/")}<div class="desktop-nav"><a href="#features">Features</a><a href="#previews">Screens</a><a href="#privacy">Privacy</a><a class="nav-action" href="#download">Get the app</a></div><button class="menu-button" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button></div></nav>`
-      : "";
+    const screenHeading = `<div class="section-heading product-preview-heading reveal"><h2>${safe(app.previewHeading || `See ${app.shortName} in action.`)}</h2><p>${safe(app.previewDescription || "Every screen keeps the next action clear and the useful details close.")}</p></div>`;
     root.innerHTML = `
       <a class="skip-link" href="#main">Skip to content</a>
-      ${productNavigation}
       <main id="main">
         <header class="product-hero grid-surface"><div class="product-shell product-hero-grid">
           <div class="product-intro reveal"><div class="app-identity"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon"><span>${safe(app.eyebrow)}</span></div><h1>${safe(app.name)}</h1><h2>${safe(app.tagline)}</h2><p>${safe(app.description)}</p><div class="tag-row">${app.tags.map((tag) => `<span>${safe(tag)}</span>`).join("")}</div><div class="store-row" id="download">${storeButtons}</div><div class="trust-row"><span>Purpose-built</span><span>Privacy-aware</span><span>${safe(platformText(app))}</span></div></div>
@@ -130,10 +115,6 @@
         </div></header>
 
         <section class="product-section" id="previews"><div class="product-shell">${screenHeading}${screenGallery}</div></section>
-
-        ${detailSections}
-
-        ${supportSections}
 
         <section class="download-section"><div class="product-shell"><div class="download-card reveal" style="--download-a:${app.colors[0]};--download-b:${app.colors[1]}"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon"><div><p class="card-label">Ready when you are</p><h2>${safe(app.tagline)}</h2><p>${safe(app.subtitle)}.</p></div><div class="store-row">${storeButtons}</div></div></div></section>
       </main>

@@ -218,7 +218,7 @@ svg { display: block; }
 .section-heading { max-width: 780px; margin-bottom: 46px; }
 .section-heading > span { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .section-heading h2 { margin: 16px 0 0; font-family: 'Manrope', sans-serif; font-size: clamp(2.65rem, 5vw, 5rem); line-height: .98; letter-spacing: -.065em; }
-.fm-preview-heading h2 { margin-top: 0; font-size: clamp(1.325rem, 2.5vw, 2.5rem); }
+.product-preview-heading h2 { margin-top: 0; font-size: clamp(1.325rem, 2.5vw, 2.5rem); }
 .section-heading p { max-width: 640px; margin: 20px 0 0; color: var(--muted); font-size: 17px; line-height: 1.7; }
 .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .preview-card { min-width: 0; margin: 0; padding: 34px 24px 0; overflow: hidden; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 11%, white), color-mix(in srgb, var(--accent-2) 8%, white)); }
@@ -231,7 +231,7 @@ svg { display: block; }
 .preview-card figcaption { margin: 0 -24px; padding: 20px 23px; display: flex; gap: 12px; align-items: center; border-top: 1px solid var(--line); background: rgba(255,255,255,.58); }
 .preview-card figcaption span { color: var(--accent); font-size: 11px; font-weight: 800; }
 .preview-card figcaption strong { font-family: 'Manrope', sans-serif; font-size: 14px; }
-.appstore-preview-grid { overflow-x: auto; display: grid; grid-template-columns: repeat(6, 180px); justify-content: safe center; gap: 16px; padding: 4px 0 12px; scroll-snap-type: x proximity; }
+.appstore-preview-grid { overflow-x: auto; display: grid; grid-template-columns: repeat(var(--preview-count, 6), 180px); justify-content: safe center; gap: 16px; padding: 4px 0 12px; scroll-snap-type: x proximity; }
 .appstore-preview-card { width: 180px; height: 455px; min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: #0a0c10; box-shadow: 0 16px 38px rgba(20,24,36,.08); scroll-snap-align: start; }
 .appstore-preview-card img { width: 180px; height: 390px; display: block; object-fit: cover; }
 .appstore-preview-card figcaption { height: 65px; padding: 10px 12px; display: flex; align-items: center; justify-content: center; color: var(--ink); background: #fff; text-align: center; }
@@ -359,7 +359,7 @@ svg { display: block; }
   .floating-note { display: none; }
   .product-section { padding: 82px 0; }
   .preview-grid { grid-template-columns: repeat(3, minmax(270px, 84vw)); }
-  .appstore-preview-grid { grid-template-columns: repeat(6, 180px); justify-content: start; scroll-snap-type: x mandatory; }
+  .appstore-preview-grid { grid-template-columns: repeat(var(--preview-count, 6), 180px); justify-content: start; scroll-snap-type: x mandatory; }
   .privacy-card { padding: 34px 24px; grid-template-columns: 1fr; gap: 32px; }
   .faq-layout { grid-template-columns: 1fr; gap: 22px; }
   .download-card { padding: 28px; grid-template-columns: 68px 1fr; }

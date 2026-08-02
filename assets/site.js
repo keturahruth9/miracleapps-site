@@ -124,7 +124,7 @@
 
   function initMenu() {
     const button = $(".menu-button");
-    const nav = $(".desktop-nav");
+    const nav = $(".desktop-nav, .home-links");
     if (!button || !nav) return;
     button.addEventListener("click", () => {
       const open = button.getAttribute("aria-expanded") === "true";

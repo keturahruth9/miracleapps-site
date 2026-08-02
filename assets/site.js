@@ -30,7 +30,7 @@
   }
 
   function brandMarkup(href = "/") {
-    return `<a class="brand" href="${href}"><span class="brand-mark"><img src="/miracle_logo.png" alt=""></span><span>Miracle Apps</span></a>`;
+    return `<a class="brand" href="${href}"><span class="brand-mark"><img src="/miracle_logo.png?v=transparent-1" alt=""></span><span>Miracle Apps</span></a>`;
   }
 
   function appMiniCard(app) {

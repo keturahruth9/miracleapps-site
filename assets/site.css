@@ -103,6 +103,7 @@ svg { display: block; }
 .home-section .section-kicker { color: var(--lime); }
 .alt .section-kicker { color: #66705c; }
 .home-section h2 { margin: 0; font-family: 'Manrope', sans-serif; font-size: clamp(2.8rem, 6vw, 5.7rem); line-height: .96; letter-spacing: -.065em; }
+.home-section h2.care-title { font-size: clamp(1.96rem, 4.2vw, 3.99rem); line-height: 1.02; letter-spacing: -.05em; }
 .home-section-head > p:last-child { margin: 24px 0 0; max-width: 680px; color: #98a0ae; font-size: 17px; line-height: 1.7; }
 .home-section-head.label-only > p.section-kicker:last-child { margin: 0; }
 .alt .home-section-head > p:last-child { color: var(--muted); }

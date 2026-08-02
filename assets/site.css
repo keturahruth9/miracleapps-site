@@ -42,8 +42,8 @@ svg { display: block; }
 .home-nav .nav-shell { min-height: 62px; padding: 8px 10px 8px 12px; border: 1px solid #34412f; border-radius: 999px; background: rgba(20, 27, 18, .96); color: #f8f8f4; box-shadow: 0 18px 50px rgba(0,0,0,.34), inset 0 1px rgba(255,255,255,.04); }
 .nav-shell { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-family: 'Manrope', sans-serif; font-weight: 800; letter-spacing: -.035em; white-space: nowrap; }
-.brand-mark { width: 39px; height: 39px; display: grid; place-items: center; overflow: hidden; border-radius: 11px; background: transparent; }
-.brand-mark img { width: 100%; height: 100%; border-radius: 11px; object-fit: cover; }
+.brand-mark { box-sizing: border-box; width: 39px; height: 39px; display: grid; place-items: center; overflow: hidden; border: 1px solid rgba(255,255,255,.78); border-radius: 11px; background: #071226; box-shadow: 0 0 0 1px rgba(3,8,18,.22); }
+.brand-mark img { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; transform: scale(1.11); }
 .home-links, .desktop-nav { display: flex; align-items: center; gap: 8px; }
 .home-links > a:not(.home-cta), .desktop-nav > a:not(.nav-action) { padding: 12px 15px; font-size: 14px; font-weight: 700; color: #343844; border-radius: 999px; transition: color .2s ease, background .2s ease; }
 .home-links > a:not(.home-cta) { color: #d7ddd2; }
@@ -150,8 +150,8 @@ svg { display: block; }
 .site-footer { padding: 74px 0 24px; color: #b5bbc7; background: #060914; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr .7fr .7fr; gap: 54px; }
 .site-footer .brand { color: #fff; }
-.site-footer .brand-mark { box-sizing: border-box; border: 2px solid #fff; border-radius: 12px; background: #fff; }
-.site-footer .brand-mark img { border-radius: 8px; transform: scale(1.12); }
+.site-footer .brand-mark { border-color: rgba(255,255,255,.78); border-radius: 11px; background: #071226; }
+.site-footer .brand-mark img { border-radius: inherit; transform: scale(1.11); }
 .site-footer p { max-width: 430px; line-height: 1.65; }
 .site-footer h2 { margin: 0 0 20px; color: #fff; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
 .site-footer a:not(.brand) { display: block; margin: 10px 0; font-size: 14px; transition: color .2s ease; }
@@ -163,7 +163,7 @@ svg { display: block; }
 .product-page { background: #fbfbfd; }
 .product-nav { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(15,20,35,.08); background: rgba(251,251,253,.84); backdrop-filter: blur(18px); }
 .product-nav .nav-shell { min-height: 72px; }
-.product-nav .brand-mark { background: transparent; }
+.product-nav .brand-mark { background: #071226; }
 .desktop-nav > a:not(.nav-action) { color: #697084; }
 .desktop-nav > a:not(.nav-action):hover { color: var(--ink); background: rgba(15,20,35,.06); }
 .nav-action { color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }

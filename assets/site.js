@@ -10,48 +10,31 @@
     arrow: '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5"/></svg>',
   };
 
-  function nativeStoreUrl(platform, url) {
-    if (platform === "ios") {
+  function instagramStoreUrl(platform, url) {
+    const userAgent = navigator.userAgent || "";
+    if (!/Instagram/i.test(userAgent)) return url;
+    const isIOS = /iPad|iPhone|iPod/i.test(userAgent) || (/Macintosh/i.test(userAgent) && navigator.maxTouchPoints > 1);
+    const isAndroid = /Android/i.test(userAgent);
+    if (platform === "ios" && isIOS) {
       const appId = url.match(/id(\d+)/)?.[1];
-      return appId ? `itms-apps://itunes.apple.com/app/id${appId}` : "";
+      return appId ? `https://itunes.apple.com/app/id${appId}?mt=8` : url;
     }
-    if (platform === "android") {
+    if (platform === "android" && isAndroid) {
       const packageName = url.match(/[?&]id=([^&]+)/)?.[1];
       return packageName
         ? `intent://details?id=${packageName}#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=${encodeURIComponent(url)};end`
-        : "";
+        : url;
     }
-    return "";
+    return url;
   }
 
   function storeButton(platform, url, compact = false, directNavigation = false) {
     const isApple = platform === "ios";
     const label = isApple ? "Download on the App Store" : "Get it on Google Play";
     const artwork = isApple ? "/assets/store-badges/app-store.svg" : "/assets/store-badges/google-play.png";
-    const navigation = directNavigation ? ' target="_top"' : ' target="_blank" rel="noopener noreferrer"';
-    const nativeUrl = directNavigation ? nativeStoreUrl(platform, url) : "";
-    return `<a class="store-badge store-badge--${isApple ? "ios" : "android"}${compact ? " compact" : ""}${directNavigation ? " store-badge--direct" : ""}" href="${safe(url)}"${navigation} data-store-platform="${platform}"${nativeUrl ? ` data-store-native-url="${safe(nativeUrl)}"` : ""} aria-label="${label}"><img src="${artwork}" alt="${label}"></a>`;
-  }
-
-  function initDirectStoreNavigation(root, app) {
-    if (app.id !== "cleanup_ai_photo_cleaner") return;
-    const userAgent = navigator.userAgent || "";
-    const isInstagram = /Instagram/i.test(userAgent);
-    const isIOS = /iPad|iPhone|iPod/i.test(userAgent) || (/Macintosh/i.test(userAgent) && navigator.maxTouchPoints > 1);
-    const isAndroid = /Android/i.test(userAgent);
-    $$(".store-badge--direct", root).forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        const webDestination = link.getAttribute("href");
-        if (!webDestination) return;
-        const platform = link.dataset.storePlatform;
-        const canUseNativeStore = isInstagram && ((platform === "ios" && isIOS) || (platform === "android" && isAndroid));
-        const destination = canUseNativeStore ? link.dataset.storeNativeUrl || webDestination : webDestination;
-        link.blur();
-        window.location.href = destination;
-      });
-    });
+    const navigation = directNavigation ? "" : ' target="_blank" rel="noopener noreferrer"';
+    const destination = directNavigation ? instagramStoreUrl(platform, url) : url;
+    return `<a class="store-badge store-badge--${isApple ? "ios" : "android"}${compact ? " compact" : ""}${directNavigation ? " store-badge--direct" : ""}" href="${safe(destination)}"${navigation} data-store-platform="${platform}" aria-label="${label}"><img src="${artwork}" alt="${label}"></a>`;
   }
 
   function platformText(app) {
@@ -160,7 +143,6 @@
         <section class="download-section"><div class="product-shell"><div class="download-card reveal" style="--download-a:${app.colors[0]};--download-b:${app.colors[1]}"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon"><div><p class="card-label">Ready when you are</p><h2>${safe(app.tagline)}</h2><p>${safe(app.subtitle)}.</p></div><div class="store-row">${storeButtons}</div></div></div></section>
       </main>
       <footer class="site-footer product-footer"><div class="product-shell footer-grid"><div>${brandMarkup("/")}<a href="mailto:support@miracleapps.in">support@miracleapps.in</a></div><div><h2>Explore</h2><a href="/#apps">All apps</a><a href="/#principles">Our principles</a><a href="mailto:support@miracleapps.in">Support</a></div><div><h2>Legal</h2><a href="/privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy ↗</a><a href="/terms/" target="_blank" rel="noopener noreferrer">Terms and Conditions ↗</a></div></div><div class="product-shell footer-base"><span>© 2026 Miracle Apps</span></div></footer>`;
-    initDirectStoreNavigation(root, app);
   }
 
   function initMenu() {

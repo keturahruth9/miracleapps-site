@@ -10,15 +10,16 @@
     arrow: '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5"/></svg>',
   };
 
-  function instagramStoreUrl(platform, url) {
+  function mobileStoreUrl(platform, url) {
     const userAgent = navigator.userAgent || "";
-    if (!/Instagram/i.test(userAgent)) return url;
-    const isIOS = /iPad|iPhone|iPod/i.test(userAgent) || (/Macintosh/i.test(userAgent) && navigator.maxTouchPoints > 1);
-    const isAndroid = /Android/i.test(userAgent);
+    const platformHint = navigator.platform || "";
+    const isIOS = /iPad|iPhone|iPod/i.test(`${userAgent} ${platformHint}`) || (/Macintosh|MacIntel/i.test(`${userAgent} ${platformHint}`) && navigator.maxTouchPoints > 1);
     if (platform === "ios" && isIOS) {
       const appId = url.match(/id(\d+)/)?.[1];
-      return appId ? `https://itunes.apple.com/app/id${appId}?mt=8` : url;
+      return appId ? `itms-apps://itunes.apple.com/app/id${appId}` : url;
     }
+    if (!/Instagram|FBAN|FBAV|FB_IAB/i.test(userAgent)) return url;
+    const isAndroid = /Android/i.test(userAgent);
     if (platform === "android" && isAndroid) {
       const packageName = url.match(/[?&]id=([^&]+)/)?.[1];
       return packageName
@@ -33,7 +34,7 @@
     const label = isApple ? "Download on the App Store" : "Get it on Google Play";
     const artwork = isApple ? "/assets/store-badges/app-store.svg" : "/assets/store-badges/google-play.png";
     const navigation = directNavigation ? "" : ' target="_blank" rel="noopener noreferrer"';
-    const destination = directNavigation ? instagramStoreUrl(platform, url) : url;
+    const destination = directNavigation ? mobileStoreUrl(platform, url) : url;
     return `<a class="store-badge store-badge--${isApple ? "ios" : "android"}${compact ? " compact" : ""}${directNavigation ? " store-badge--direct" : ""}" href="${safe(destination)}"${navigation} data-store-platform="${platform}" aria-label="${label}"><img src="${artwork}" alt="${label}"></a>`;
   }
 

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#070b16">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="apple-itunes-app" content="app-id=6760357173">
+  <title>Open Cleanup AI on the App Store</title>
+  <link rel="icon" href="/cleanupai/appicon.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap');
+
+    :root { color-scheme: dark; --blue: #3c73ff; --cyan: #38d5ff; --ink: #f7f8fb; --muted: #a9b1c3; --line: rgba(255,255,255,.14); }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body { margin: 0; min-width: 320px; display: grid; place-items: center; overflow-x: hidden; color: var(--ink); font-family: 'DM Sans', sans-serif; background: #070b16; -webkit-font-smoothing: antialiased; }
+    body::before { content: ''; position: fixed; inset: 0; z-index: -2; background: radial-gradient(circle at 12% 12%, rgba(60,115,255,.28), transparent 35%), radial-gradient(circle at 88% 82%, rgba(56,213,255,.18), transparent 32%), #070b16; }
+    body::after { content: ''; position: fixed; inset: 0; z-index: -1; opacity: .45; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(to bottom, #000, transparent 92%); }
+    main { width: min(100% - 32px, 660px); padding: max(24px, env(safe-area-inset-top)) 0 max(24px, env(safe-area-inset-bottom)); }
+    .handoff-card { padding: clamp(28px, 6vw, 54px); border: 1px solid var(--line); border-radius: 34px; background: rgba(14,20,34,.9); box-shadow: 0 35px 100px rgba(0,0,0,.42); backdrop-filter: blur(18px); }
+    .identity { display: flex; align-items: center; gap: 15px; }
+    .identity img { width: 68px; height: 68px; display: block; object-fit: cover; border-radius: 19px; box-shadow: 0 16px 38px rgba(60,115,255,.27); }
+    .identity span { color: #8c9aaf; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .identity strong { display: block; margin-top: 5px; font-family: 'Manrope', sans-serif; font-size: 20px; }
+    h1 { margin: 34px 0 14px; max-width: 560px; font-family: 'Manrope', sans-serif; font-size: clamp(2.35rem, 8vw, 4.25rem); line-height: .98; letter-spacing: -.055em; }
+    .lead { margin: 0; max-width: 540px; color: var(--muted); font-size: 17px; line-height: 1.65; }
+    .instagram-copy { display: none; }
+    .steps { display: none; margin: 30px 0 0; padding: 0; list-style: none; gap: 10px; }
+    .steps li { padding: 15px 16px; display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: center; border: 1px solid var(--line); border-radius: 17px; background: rgba(255,255,255,.045); color: #dce1ec; line-height: 1.4; }
+    .steps b { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px; color: #07101e; background: linear-gradient(135deg, var(--blue), var(--cyan)); font-size: 14px; }
+    .actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .button { min-height: 52px; padding: 0 20px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 999px; font: inherit; font-size: 14px; font-weight: 800; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .button-primary { color: #06101b; background: linear-gradient(135deg, #6c8fff, var(--cyan)); }
+    .button-secondary { color: var(--ink); border: 1px solid var(--line); background: rgba(255,255,255,.06); }
+    .copy-status { min-height: 22px; margin: 14px 0 0; color: #75e7ff; font-size: 13px; font-weight: 700; }
+    .store-url { margin: 18px 0 0; overflow-wrap: anywhere; color: #7f899d; font-size: 12px; line-height: 1.55; }
+    .store-url a { color: #aeb8ca; }
+    .meta-note { margin: 28px 0 0; padding-top: 20px; color: #7f899d; border-top: 1px solid var(--line); font-size: 12px; line-height: 1.55; }
+    body.embedded-ios .opening-copy { display: none; }
+    body.embedded-ios .instagram-copy, body.embedded-ios .steps { display: grid; }
+    body.embedded-ios .instagram-copy { display: block; }
+
+    @media (max-width: 520px) {
+      main { width: min(100% - 24px, 660px); }
+      .handoff-card { padding: 26px 22px; border-radius: 26px; }
+      .identity img { width: 58px; height: 58px; border-radius: 16px; }
+      h1 { margin-top: 28px; }
+      .lead { font-size: 15px; }
+      .actions { display: grid; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="handoff-card" aria-labelledby="handoff-title">
+      <div class="identity">
+        <img src="/cleanupai/appicon.png" alt="Cleanup AI app icon">
+        <div><span>Miracle Apps</span><strong>Cleanup AI</strong></div>
+      </div>
+
+      <div class="opening-copy">
+        <h1 id="handoff-title">Opening the App Store…</h1>
+        <p class="lead">You’ll be taken to the official Cleanup AI listing. If it does not open automatically, use the button below.</p>
+      </div>
+
+      <div class="instagram-copy">
+        <h1 id="instagram-title">Open Cleanup AI in Safari.</h1>
+        <p class="lead">Instagram’s iPhone browser is currently blocking App Store links. Open this page in Safari, then the official App Store listing will launch normally.</p>
+      </div>
+
+      <ol class="steps" aria-labelledby="instagram-title">
+        <li><b>1</b><span>Tap the <strong>•••</strong> menu in Instagram.</span></li>
+        <li><b>2</b><span>Choose <strong>Open in external browser</strong> or <strong>Open in Safari</strong>.</span></li>
+        <li><b>3</b><span>The Cleanup AI App Store page will open automatically.</span></li>
+      </ol>
+
+      <div class="actions">
+        <a class="button button-primary" href="https://apps.apple.com/us/app/cleanup-ai-photo-cleaner/id6760357173">Try App Store again</a>
+        <button class="button button-secondary" id="copy-link" type="button">Copy App Store link</button>
+      </div>
+      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+      <p class="store-url">Official link: <a href="https://apps.apple.com/us/app/cleanup-ai-photo-cleaner/id6760357173">apps.apple.com/us/app/cleanup-ai-photo-cleaner/id6760357173</a></p>
+      <p class="meta-note">This page only helps your browser reach Apple’s official App Store listing. No account or personal information is required.</p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+
+      var appStoreUrl = "https://apps.apple.com/us/app/cleanup-ai-photo-cleaner/id6760357173";
+      var userAgent = navigator.userAgent || "";
+      var platform = navigator.platform || "";
+      var isIOS = /iPad|iPhone|iPod/i.test(userAgent + " " + platform) || (/Macintosh|MacIntel/i.test(platform) && navigator.maxTouchPoints > 1);
+      var isMetaBrowser = /Instagram|FBAN|FBAV|FB_IAB|FBIOS|MessengerForiOS/i.test(userAgent);
+      var isEmbeddedWebView = isIOS && /AppleWebKit/i.test(userAgent) && !/(Version\/[^ ]+.*Safari|CriOS|FxiOS|EdgiOS|OPiOS|DuckDuckGo)/i.test(userAgent);
+      var needsBrowserHandoff = isIOS && (isMetaBrowser || isEmbeddedWebView);
+
+      if (needsBrowserHandoff) {
+        document.body.classList.add("embedded-ios");
+        document.title = "Open Cleanup AI in Safari";
+      } else {
+        window.setTimeout(function () {
+          window.location.replace(appStoreUrl);
+        }, 120);
+      }
+
+      document.getElementById("copy-link").addEventListener("click", function () {
+        var status = document.getElementById("copy-status");
+        var copied = function () {
+          status.textContent = "Copied — paste the link into Safari.";
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(appStoreUrl).then(copied).catch(function () {
+            fallbackCopy(appStoreUrl, copied, status);
+          });
+        } else {
+          fallbackCopy(appStoreUrl, copied, status);
+        }
+      });
+
+      function fallbackCopy(value, onSuccess, status) {
+        var field = document.createElement("textarea");
+        field.value = value;
+        field.setAttribute("readonly", "");
+        field.style.position = "fixed";
+        field.style.opacity = "0";
+        document.body.appendChild(field);
+        field.select();
+        try {
+          document.execCommand("copy") ? onSuccess() : status.textContent = "Press and hold the official link above to copy it.";
+        } catch (error) {
+          status.textContent = "Press and hold the official link above to copy it.";
+        }
+        document.body.removeChild(field);
+      }
+    }());
+  </script>
+</body>
+</html>

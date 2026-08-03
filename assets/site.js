@@ -12,12 +12,6 @@
 
   function mobileStoreUrl(platform, url) {
     const userAgent = navigator.userAgent || "";
-    const platformHint = navigator.platform || "";
-    const isIOS = /iPad|iPhone|iPod/i.test(`${userAgent} ${platformHint}`) || (/Macintosh|MacIntel/i.test(`${userAgent} ${platformHint}`) && navigator.maxTouchPoints > 1);
-    if (platform === "ios" && isIOS) {
-      const appId = url.match(/id(\d+)/)?.[1];
-      return appId ? `itms-apps://itunes.apple.com/app/id${appId}` : url;
-    }
     if (!/Instagram|FBAN|FBAV|FB_IAB/i.test(userAgent)) return url;
     const isAndroid = /Android/i.test(userAgent);
     if (platform === "android" && isAndroid) {
@@ -120,7 +114,8 @@
 
     const storeButtons = Object.entries(app.stores).map(([platform, url]) => {
       const useDirectNavigation = app.id === "cleanup_ai_photo_cleaner";
-      return storeButton(platform, url, false, useDirectNavigation);
+      const destination = useDirectNavigation && platform === "ios" ? "/cleanupai/app-store/" : url;
+      return storeButton(platform, destination, false, useDirectNavigation);
     }).join("");
     const realScreenshots = Array.isArray(app.appStoreScreenshots) ? app.appStoreScreenshots : [];
     const heroScreenshot = realScreenshots[app.heroScreenshotIndex ?? 1] || realScreenshots[0];

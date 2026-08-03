@@ -10,11 +10,12 @@
     arrow: '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5"/></svg>',
   };
 
-  function storeButton(platform, url, compact = false) {
+  function storeButton(platform, url, compact = false, sameTab = false) {
     const isApple = platform === "ios";
     const label = isApple ? "Download on the App Store" : "Get it on Google Play";
     const artwork = isApple ? "/assets/store-badges/app-store.svg" : "/assets/store-badges/google-play.png";
-    return `<a class="store-badge store-badge--${isApple ? "ios" : "android"}${compact ? " compact" : ""}" href="${safe(url)}" target="_blank" rel="noopener noreferrer" aria-label="${label}"><img src="${artwork}" alt="${label}"></a>`;
+    const navigation = sameTab ? ' target="_self"' : ' target="_blank" rel="noopener noreferrer"';
+    return `<a class="store-badge store-badge--${isApple ? "ios" : "android"}${compact ? " compact" : ""}" href="${safe(url)}"${navigation} aria-label="${label}"><img src="${artwork}" alt="${label}"></a>`;
   }
 
   function platformText(app) {
@@ -97,7 +98,10 @@
     const themeColorMeta = $('meta[name="theme-color"]');
     if (themeColorMeta) themeColorMeta.setAttribute("content", app.colors[0]);
 
-    const storeButtons = Object.entries(app.stores).map(([platform, url]) => storeButton(platform, url)).join("");
+    const storeButtons = Object.entries(app.stores).map(([platform, url]) => {
+      const useSameTab = app.id === "cleanup_ai_photo_cleaner" && platform === "ios";
+      return storeButton(platform, url, false, useSameTab);
+    }).join("");
     const realScreenshots = Array.isArray(app.appStoreScreenshots) ? app.appStoreScreenshots : [];
     const heroScreenshot = realScreenshots[app.heroScreenshotIndex ?? 1] || realScreenshots[0];
     const heroPreview = realScreenshots.length

@@ -184,6 +184,8 @@ svg { display: block; }
 .store-badge:hover { transform: translateY(-2px); filter: drop-shadow(0 10px 14px rgba(13,17,28,.16)); }
 .store-badge:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .store-badge img { width: auto; max-width: none; display: block; }
+.store-badge--direct, .store-badge--direct:hover, .store-badge--direct:active { transform: none; filter: none; transition: none; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.store-badge--direct img { transform: none; transition: none; pointer-events: none; }
 .store-badge--ios img { height: 48px; }
 .store-badge--android { width: 158px; }
 .store-badge--android img { height: 70px; }

@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const apps = window.MIRACLE_APPS || [];
+  const apps = (window.MIRACLE_APPS || []).filter((app) => !app.hidden);
   const $ = (selector, scope = document) => scope.querySelector(selector);
   const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
   const safe = (value) => String(value ?? "").replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[character]));

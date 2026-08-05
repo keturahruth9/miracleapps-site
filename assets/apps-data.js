@@ -239,6 +239,7 @@
     },
     {
       id: "secret_vault_pro",
+      hidden: true,
       slug: "vault",
       group: "Everyday apps",
       name: "Secret Vault Pro",

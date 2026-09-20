@@ -46,6 +46,7 @@
   }
 
   function appRating(app) {
+    if (Number.isFinite(app.rating)) return app.rating.toFixed(1);
     const seed = Array.from(app.slug).reduce((total, character) => total + character.charCodeAt(0), 0);
     return (4.6 + (seed % 4) / 10).toFixed(1);
   }
@@ -80,8 +81,7 @@
     osGrid.innerHTML = apps.slice(0, 8).map(appMiniCard).join("");
     everydayGrid.innerHTML = apps.filter((app) => app.group === "Everyday apps").map(portfolioCard).join("");
     examGrid.innerHTML = apps.filter((app) => app.group === "Exam preparation").map(portfolioCard).join("");
-    const count = $("[data-app-count]");
-    if (count) count.textContent = apps.length;
+    $$("[data-app-count]").forEach((count) => { count.textContent = apps.length; });
     const footerApps = $("#footer-apps");
     if (footerApps) footerApps.innerHTML = apps.map((app) => `<a href="/${safe(app.slug)}/">${safe(app.shortName)}</a>`).join("");
   }

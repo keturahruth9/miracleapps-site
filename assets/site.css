@@ -210,8 +210,6 @@ button.store-badge { margin: 0; padding: 0; border: 0; background: none; cursor:
 .mac-dialog-options a { display: flex; flex-direction: column; gap: 3px; padding: 14px 18px; text-align: left; border: 1px solid var(--line); border-radius: 16px; background: #fafafc; font-size: 16px; font-weight: 700; line-height: 1.25; transition: border-color .15s ease, background .15s ease, transform .15s ease; }
 .mac-dialog-options a:hover, .mac-dialog-options a:focus-visible { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, #fff); outline: none; transform: translateY(-1px); }
 .mac-dialog-options a small { color: var(--muted); font-size: 13px; font-weight: 500; }
-.store-stack { display: grid; justify-items: start; }
-.store-note { margin: 12px 0 0; max-width: 520px; color: #71798b; font-size: 12.5px; line-height: 1.6; }
 .trust-row { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px 20px; color: #71798b; font-size: 11px; font-weight: 700; }
 .trust-row span { display: inline-flex; align-items: center; gap: 7px; }
 .trust-row span::before { content: '✓'; width: 18px; height: 18px; display: grid; place-items: center; color: #fff; border-radius: 50%; background: var(--accent); font-size: 10px; }
@@ -307,7 +305,6 @@ button.store-badge { margin: 0; padding: 0; border: 0; background: none; cursor:
 .download-card p:not(.card-label) { margin: 10px 0 0; opacity: .78; }
 .download-card .store-row { margin: 0; }
 .download-card .store-badge:hover { filter: none; }
-.download-card .store-note { color: rgba(255,255,255,.78); }
 .product-footer { padding-top: 68px; }
 
 /* Standalone legal and compatibility for existing per-app policies */
@@ -354,7 +351,7 @@ button.store-badge { margin: 0; padding: 0; border: 0; background: none; cursor:
   .preview-grid { overflow-x: auto; grid-template-columns: repeat(3, minmax(300px, 1fr)); padding-bottom: 8px; scroll-snap-type: x mandatory; }
   .preview-card { scroll-snap-align: start; }
   .download-card { grid-template-columns: 82px 1fr; }
-  .download-card .store-row, .download-card .store-stack { grid-column: 1 / -1; }
+  .download-card .store-row { grid-column: 1 / -1; }
   .footer-grid { grid-template-columns: 1.2fr .8fr .8fr; }
 }
 
@@ -437,7 +434,7 @@ button.store-badge { margin: 0; padding: 0; border: 0; background: none; cursor:
   .feature-item > span { width: 42px; height: 42px; }
   .download-card { grid-template-columns: 1fr; }
   .download-card > img { width: 78px; height: 78px; }
-  .download-card .store-row, .download-card .store-stack { grid-column: auto; }
+  .download-card .store-row { grid-column: auto; }
   .policy-section { padding: 24px; }
 }
 

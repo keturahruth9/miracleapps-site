@@ -181,6 +181,7 @@ svg { display: block; }
 .tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag-row span { padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.55); color: #5f6677; font-size: 11px; font-weight: 700; }
 .store-row { margin-top: 28px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.store-row--stacked { display: grid; grid-template-columns: repeat(2, max-content); justify-content: start; }
 .store-badge { height: 48px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; overflow: hidden; border-radius: 8px; transition: transform .2s ease, filter .2s ease; }
 .store-badge:hover { transform: translateY(-2px); filter: drop-shadow(0 10px 14px rgba(13,17,28,.16)); }
 .store-badge:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }

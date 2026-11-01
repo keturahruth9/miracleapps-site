@@ -30,19 +30,12 @@
   }
 
   function macDownloadButton(downloads, compact = false) {
-    const note = `${downloads.minimumMacOS || "macOS 13"} or later. Not sure which Mac you have? Apple menu › About This Mac shows the chip.`;
-    return `<details class="mac-download${compact ? " mac-download--compact" : ""}">
-      <summary class="store-badge store-badge--mac${compact ? " compact" : ""}" aria-label="Download for Mac"><img src="/assets/store-badges/mac.svg" alt="Download for Mac"></summary>
-      <div class="mac-download-menu" role="group" aria-label="Choose your Mac">
-        <a href="${safe(downloads.appleSilicon)}" rel="noopener"><strong>Apple Silicon</strong><small>M1 chip and later</small></a>
-        <a href="${safe(downloads.intel)}" rel="noopener"><strong>Intel</strong><small>Intel-based Macs</small></a>
-        <p>${safe(note)}</p>
-      </div>
-    </details>`;
+    const data = ` data-mac-arm64="${safe(downloads.appleSilicon)}" data-mac-intel="${safe(downloads.intel)}" data-mac-min="${safe(downloads.minimumMacOS || "macOS 13")}" data-mac-icon="${safe(downloads.icon || "")}"`;
+    return `<button type="button" class="store-badge store-badge--mac${compact ? " compact" : ""}" aria-label="Download for Mac" aria-haspopup="dialog"${data}><img src="/assets/store-badges/mac.svg" alt="Download for Mac"></button>`;
   }
 
-  function storeButton(platform, url, compact = false, directNavigation = false) {
-    if (platform === "mac") return macDownloadButton(url, compact);
+  function storeButton(app, platform, url, compact = false, directNavigation = false) {
+    if (platform === "mac") return macDownloadButton({ ...url, icon: app.icon }, compact);
     const isApple = platform === "ios";
     const label = isApple ? "Download on the App Store" : "Get it on Google Play";
     const artwork = isApple ? "/assets/store-badges/app-store.svg" : "/assets/store-badges/google-play.png";
@@ -75,7 +68,7 @@
   }
 
   function portfolioCard(app) {
-    const storeButtons = Object.entries(app.stores).map(([platform, url]) => storeButton(platform, url, true)).join("");
+    const storeButtons = Object.entries(app.stores).map(([platform, url]) => storeButton(app, platform, url, true)).join("");
     const rating = appRating(app);
     return `<article class="portfolio-card reveal" style="--card-accent:${app.colors[0]};--card-accent-2:${app.colors[1]}">
       <a class="portfolio-hitbox" href="/${safe(app.slug)}/" aria-label="View ${safe(app.name)} product page"></a>
@@ -135,10 +128,10 @@
 
     const storeButtons = Object.entries(app.stores).map(([platform, url]) => {
       const useDirectNavigation = app.id === "cleanup_ai_photo_cleaner";
-      return storeButton(platform, url, false, useDirectNavigation);
+      return storeButton(app, platform, url, false, useDirectNavigation);
     }).join("");
     const macNote = app.stores.mac
-      ? `<p class="store-note">Mac app needs ${safe(app.stores.mac.minimumMacOS || "macOS 13")} or later. Not sure which Mac you have? Apple menu › About This Mac shows the chip.</p>`
+      ? `<p class="store-note">Requires ${safe(app.stores.mac.minimumMacOS || "macOS 13")} or later.</p>`
       : "";
     const realScreenshots = Array.isArray(app.appStoreScreenshots) ? app.appStoreScreenshots : [];
     const heroScreenshot = realScreenshots[app.heroScreenshotIndex ?? 1] || realScreenshots[0];
@@ -201,12 +194,30 @@
   }
 
   function initMacDownloads() {
-    const choosers = $$("details.mac-download");
-    if (!choosers.length) return;
-    const closeAll = (except) => choosers.forEach((chooser) => { if (chooser !== except) chooser.removeAttribute("open"); });
-    choosers.forEach((chooser) => chooser.addEventListener("toggle", () => { if (chooser.open) closeAll(chooser); }));
-    document.addEventListener("click", (event) => { if (!event.target.closest("details.mac-download")) closeAll(); });
-    document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeAll(); });
+    const badges = $$("button.store-badge--mac");
+    if (!badges.length) return;
+    const dialog = document.createElement("dialog");
+    dialog.className = "mac-dialog";
+    dialog.setAttribute("aria-labelledby", "mac-dialog-title");
+    document.body.appendChild(dialog);
+    const open = (badge) => {
+      const { macArm64, macIntel, macMin, macIcon } = badge.dataset;
+      dialog.innerHTML = `<form method="dialog" class="mac-dialog-card">
+        <button type="submit" class="mac-dialog-close" aria-label="Close">&times;</button>
+        ${macIcon ? `<img class="mac-dialog-icon" src="${safe(macIcon)}" alt="">` : ""}
+        <p class="card-label">Download for Mac</p>
+        <h2 id="mac-dialog-title">Choose your Mac</h2>
+        <p class="mac-dialog-note">Requires ${safe(macMin)} or later.</p>
+        <div class="mac-dialog-options">
+          <a href="${safe(macArm64)}" rel="noopener"><strong>Apple Silicon</strong><small>M1 chip and later</small></a>
+          <a href="${safe(macIntel)}" rel="noopener"><strong>Intel</strong><small>Intel-based Macs</small></a>
+        </div>
+      </form>`;
+      $$("a", dialog).forEach((link) => link.addEventListener("click", () => dialog.close()));
+      dialog.showModal();
+    };
+    badges.forEach((badge) => badge.addEventListener("click", (event) => { event.preventDefault(); event.stopPropagation(); open(badge); }));
+    dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
   }
 
   function tidyLegacyLegalPages() {

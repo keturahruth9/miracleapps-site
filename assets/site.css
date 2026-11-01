@@ -196,16 +196,20 @@ svg { display: block; }
 .store-badge--android.compact img { height: 59px; }
 .store-badge--mac img { height: 48px; }
 .store-badge--mac.compact img { height: 40px; }
-.mac-download { position: relative; display: inline-flex; flex: 0 0 auto; }
-.mac-download > summary { list-style: none; cursor: pointer; }
-.mac-download > summary::-webkit-details-marker { display: none; }
-.mac-download[open] > summary { transform: translateY(-2px); filter: drop-shadow(0 10px 14px rgba(13,17,28,.16)); }
-.mac-download-menu { position: absolute; top: calc(100% + 8px); left: 0; z-index: 30; width: 268px; max-width: calc(100vw - 48px); padding: 8px; display: grid; gap: 2px; color: var(--ink); text-align: left; border: 1px solid var(--line); border-radius: 18px; background: #fff; box-shadow: 0 24px 60px rgba(14,18,34,.18); }
-.mac-download-menu a { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 12px; font-size: 14px; font-weight: 700; line-height: 1.3; transition: background .15s ease; }
-.mac-download-menu a:hover, .mac-download-menu a:focus-visible { background: color-mix(in srgb, var(--accent) 10%, #fff); outline: none; }
-.mac-download-menu a small { color: var(--muted); font-size: 12px; font-weight: 500; }
-.mac-download-menu p { margin: 6px 4px 4px; color: var(--muted); font-size: 11.5px; line-height: 1.5; }
-.mac-download--compact .mac-download-menu { top: auto; bottom: calc(100% + 8px); width: 224px; }
+button.store-badge { margin: 0; padding: 0; border: 0; background: none; cursor: pointer; font: inherit; color: inherit; }
+.mac-dialog { width: min(420px, calc(100% - 32px)); margin: auto; padding: 0; border: 0; border-radius: 28px; background: #fff; color: var(--ink); box-shadow: 0 40px 100px rgba(14,18,34,.28); }
+.mac-dialog::backdrop { background: rgba(7,11,22,.55); backdrop-filter: blur(6px); }
+.mac-dialog-card { position: relative; margin: 0; padding: 36px 32px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.mac-dialog-close { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 50%; background: #f1f2f6; color: var(--muted); font-size: 22px; line-height: 1; cursor: pointer; }
+.mac-dialog-close:hover { background: #e5e7ee; color: var(--ink); }
+.mac-dialog-icon { width: 64px; height: 64px; margin-bottom: 18px; border-radius: 18px; object-fit: cover; box-shadow: 0 12px 28px color-mix(in srgb, var(--accent) 24%, transparent); }
+.mac-dialog .card-label { margin: 0 0 8px; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.mac-dialog h2 { margin: 0; font-family: 'Manrope', sans-serif; font-size: 28px; line-height: 1.05; letter-spacing: -.045em; }
+.mac-dialog-note { margin: 10px 0 22px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.mac-dialog-options { width: 100%; display: grid; gap: 10px; }
+.mac-dialog-options a { display: flex; flex-direction: column; gap: 3px; padding: 14px 18px; text-align: left; border: 1px solid var(--line); border-radius: 16px; background: #fafafc; font-size: 16px; font-weight: 700; line-height: 1.25; transition: border-color .15s ease, background .15s ease, transform .15s ease; }
+.mac-dialog-options a:hover, .mac-dialog-options a:focus-visible { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, #fff); outline: none; transform: translateY(-1px); }
+.mac-dialog-options a small { color: var(--muted); font-size: 13px; font-weight: 500; }
 .store-stack { display: grid; justify-items: start; }
 .store-note { margin: 12px 0 0; max-width: 520px; color: #71798b; font-size: 12.5px; line-height: 1.6; }
 .trust-row { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px 20px; color: #71798b; font-size: 11px; font-weight: 700; }
@@ -304,9 +308,6 @@ svg { display: block; }
 .download-card .store-row { margin: 0; }
 .download-card .store-badge:hover { filter: none; }
 .download-card .store-note { color: rgba(255,255,255,.78); }
-.download-card:has(.mac-download[open]) { overflow: visible; }
-.download-card:has(.mac-download[open])::after { opacity: 0; }
-.download-card::after { transition: opacity .15s ease; }
 .product-footer { padding-top: 68px; }
 
 /* Standalone legal and compatibility for existing per-app policies */

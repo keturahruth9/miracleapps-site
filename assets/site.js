@@ -29,8 +29,8 @@
     return url;
   }
 
-  function macDownloadButton(url, compact = false) {
-    return `<a class="store-badge store-badge--mac${compact ? " compact" : ""}" href="${safe(url)}" rel="noopener" aria-label="Download for Mac"><img src="/assets/store-badges/mac.svg" alt="Download for Mac"></a>`;
+  function macDownloadButton(downloads, compact = false) {
+    return `<a class="store-badge store-badge--mac${compact ? " compact" : ""}" href="${safe(downloads.universal)}" rel="noopener" data-mac-universal="${safe(downloads.universal)}" data-mac-apple-silicon="${safe(downloads.appleSilicon)}" data-mac-intel="${safe(downloads.intel)}" aria-label="Download for Mac"><img src="/assets/store-badges/mac.svg" alt="Download for Mac"></a>`;
   }
 
   function storeButton(app, platform, url, compact = false, directNavigation = false) {
@@ -190,6 +190,51 @@
     });
   }
 
+  // The universal DMG works on every Mac, so it is the default. A smaller per-chip DMG is used
+  // only when the browser reveals the chip: Chromium through client hints, Firefox through the
+  // WebGL renderer name. Safari hides both, and non-Mac visitors get the universal file too.
+  function isMacBrowser() {
+    const platformHint = navigator.userAgentData && navigator.userAgentData.platform;
+    if (platformHint) return platformHint === "macOS";
+    return /^Mac/i.test(navigator.platform || "") && !(navigator.maxTouchPoints > 1);
+  }
+
+  function macChipFromWebGL() {
+    try {
+      const canvas = document.createElement("canvas");
+      const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+      const info = gl && gl.getExtension("WEBGL_debug_renderer_info");
+      const renderer = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : "";
+      if (/Apple M\d/i.test(renderer)) return "appleSilicon";
+      if (/Intel|AMD|Radeon|NVIDIA/i.test(renderer)) return "intel";
+    } catch (_) { /* WebGL unavailable: no signal */ }
+    return null;
+  }
+
+  function detectMacChip() {
+    if (!isMacBrowser()) return Promise.resolve(null);
+    const hints = navigator.userAgentData && typeof navigator.userAgentData.getHighEntropyValues === "function"
+      ? navigator.userAgentData.getHighEntropyValues(["architecture"])
+        .then((values) => (values.architecture === "arm" ? "appleSilicon" : values.architecture === "x86" ? "intel" : null))
+        .catch(() => null)
+      : Promise.resolve(null);
+    return hints.then((chip) => chip || macChipFromWebGL());
+  }
+
+  function initMacDownloads() {
+    const badges = $$("a.store-badge--mac");
+    if (!badges.length) return;
+    const chip = detectMacChip();
+    const urlFor = (badge, detected) => (detected === "appleSilicon"
+      ? badge.dataset.macAppleSilicon
+      : detected === "intel" ? badge.dataset.macIntel : badge.dataset.macUniversal);
+    chip.then((detected) => badges.forEach((badge) => { badge.href = urlFor(badge, detected); }));
+    badges.forEach((badge) => badge.addEventListener("click", (event) => {
+      event.preventDefault();
+      chip.then((detected) => window.location.assign(urlFor(badge, detected)));
+    }));
+  }
+
   function tidyLegacyLegalPages() {
     $$(".legal-page .policy-aside .policy-link").forEach((link) => {
       if (/back to/i.test(link.textContent)) link.remove();
@@ -201,4 +246,5 @@
   tidyLegacyLegalPages();
   initMenu();
   initReveal();
+  initMacDownloads();
 })();

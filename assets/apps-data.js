@@ -3,10 +3,18 @@
   const android = (url) => ({ android: url });
   const both = (iosUrl, androidUrl) => ({ ios: iosUrl, android: androidUrl });
 
-  // Grammarify for Mac is one universal installer with a fixed name. "latest" always redirects
-  // to the newest release, so this link never needs changing when a new version ships.
-  const mac = (url) => ({ mac: url });
-  const GRAMMARIFY_MAC_DMG = "https://github.com/saikumariosdev/grammarify-releases/releases/latest/download/Grammarify.dmg";
+  // Grammarify for Mac ships three installers with fixed, version-free names. "latest" always
+  // redirects to the newest release, so these links never need changing when a new version ships.
+  // The universal DMG works on every Mac; site.js swaps in the smaller per-chip DMG when the
+  // browser reveals the chip.
+  const MAC_DOWNLOADS = "https://github.com/saikumariosdev/grammarify-releases/releases/latest/download/";
+  const mac = (fileBase) => ({
+    mac: {
+      appleSilicon: `${MAC_DOWNLOADS}${fileBase}.dmg`,
+      intel: `${MAC_DOWNLOADS}${fileBase}-Intel.dmg`,
+      universal: `${MAC_DOWNLOADS}${fileBase}-Universal.dmg`,
+    },
+  });
 
   function examApp(config) {
     const abbreviation = config.abbreviation;
@@ -64,7 +72,7 @@
       description: "Make everyday messages, work emails, and social captions easier to write. Correct grammar and spelling, adjust your tone, translate text, and get help from AI writing assistants directly in compatible apps on iPhone, iPad, and Android. The Grammarify desktop app brings the same writing help to your Mac.",
       icon: "/grammarify/Grammarify_Appicon.png",
       colors: ["#7657ff", "#a344ef"],
-      stores: { ...both("https://apps.apple.com/in/app/ai-keyboard-grammarify/id6769994469", "https://play.google.com/store/apps/details?id=com.vectorinfo.grammarify"), ...mac(GRAMMARIFY_MAC_DMG) },
+      stores: { ...both("https://apps.apple.com/in/app/ai-keyboard-grammarify/id6769994469", "https://play.google.com/store/apps/details?id=com.vectorinfo.grammarify"), ...mac("Grammarify") },
       rating: 5.0,
       tags: ["Grammar correction", "Tone & rewrites", "AI assistants", "Translation"],
       features: [

@@ -3,22 +3,10 @@
   const android = (url) => ({ android: url });
   const both = (iosUrl, androidUrl) => ({ ios: iosUrl, android: androidUrl });
 
-  // Grammarify for Mac is a direct download from the public releases repo. The "latest"
-  // URL always redirects to the newest release, but the DMG file names carry the version,
-  // so bump MAC_RELEASE.version here every time a new desktop release is published.
-  const MAC_RELEASE = {
-    version: "1.0.0",
-    repo: "https://github.com/saikumariosdev/grammarify-releases",
-    minimumMacOS: "macOS 13",
-  };
-  const macDownloadUrl = (file) => `${MAC_RELEASE.repo}/releases/latest/download/${file}`;
-  const mac = (fileBase) => ({
-    mac: {
-      appleSilicon: macDownloadUrl(`${fileBase}-${MAC_RELEASE.version}-arm64.dmg`),
-      intel: macDownloadUrl(`${fileBase}-${MAC_RELEASE.version}.dmg`),
-      minimumMacOS: MAC_RELEASE.minimumMacOS,
-    },
-  });
+  // Grammarify for Mac is one universal installer with a fixed name. "latest" always redirects
+  // to the newest release, so this link never needs changing when a new version ships.
+  const mac = (url) => ({ mac: url });
+  const GRAMMARIFY_MAC_DMG = "https://github.com/saikumariosdev/grammarify-releases/releases/latest/download/Grammarify.dmg";
 
   function examApp(config) {
     const abbreviation = config.abbreviation;
@@ -76,7 +64,7 @@
       description: "Make everyday messages, work emails, and social captions easier to write. Correct grammar and spelling, adjust your tone, translate text, and get help from AI writing assistants directly in compatible apps on iPhone, iPad, and Android. The Grammarify desktop app brings the same writing help to your Mac.",
       icon: "/grammarify/Grammarify_Appicon.png",
       colors: ["#7657ff", "#a344ef"],
-      stores: { ...both("https://apps.apple.com/in/app/ai-keyboard-grammarify/id6769994469", "https://play.google.com/store/apps/details?id=com.vectorinfo.grammarify"), ...mac("Grammarify") },
+      stores: { ...both("https://apps.apple.com/in/app/ai-keyboard-grammarify/id6769994469", "https://play.google.com/store/apps/details?id=com.vectorinfo.grammarify"), ...mac(GRAMMARIFY_MAC_DMG) },
       rating: 5.0,
       tags: ["Grammar correction", "Tone & rewrites", "AI assistants", "Translation"],
       features: [

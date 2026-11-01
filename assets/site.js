@@ -29,8 +29,8 @@
     return url;
   }
 
-  function macDownloadButton(downloads, compact = false) {
-    return `<a class="store-badge store-badge--mac${compact ? " compact" : ""}" href="${safe(downloads.appleSilicon)}" rel="noopener" data-mac-arm64="${safe(downloads.appleSilicon)}" data-mac-intel="${safe(downloads.intel)}" aria-label="Download for Mac"><img src="/assets/store-badges/mac.svg" alt="Download for Mac"></a>`;
+  function macDownloadButton(url, compact = false) {
+    return `<a class="store-badge store-badge--mac${compact ? " compact" : ""}" href="${safe(url)}" rel="noopener" aria-label="Download for Mac"><img src="/assets/store-badges/mac.svg" alt="Download for Mac"></a>`;
   }
 
   function storeButton(app, platform, url, compact = false, directNavigation = false) {
@@ -190,40 +190,6 @@
     });
   }
 
-  // Browsers never expose the chip directly. Chromium reports the CPU architecture through
-  // client hints and Firefox names the GPU ("Apple M2") through WebGL; Safari hides both.
-  // When nothing is available we fall back to Apple Silicon, which every Mac sold since 2020 uses.
-  function macArchitectureFromWebGL() {
-    try {
-      const canvas = document.createElement("canvas");
-      const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-      const info = gl && gl.getExtension("WEBGL_debug_renderer_info");
-      const renderer = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : "";
-      if (/Apple M\d/i.test(renderer)) return "appleSilicon";
-      if (/Intel|AMD|Radeon|NVIDIA/i.test(renderer)) return "intel";
-    } catch (_) { /* WebGL unavailable: fall through */ }
-    return null;
-  }
-
-  function detectMacArchitecture() {
-    const hints = navigator.userAgentData && typeof navigator.userAgentData.getHighEntropyValues === "function"
-      ? navigator.userAgentData.getHighEntropyValues(["architecture"]).then((values) => (values.architecture === "arm" ? "appleSilicon" : values.architecture === "x86" ? "intel" : null)).catch(() => null)
-      : Promise.resolve(null);
-    return hints.then((result) => result || macArchitectureFromWebGL() || "appleSilicon");
-  }
-
-  function initMacDownloads() {
-    const badges = $$("a.store-badge--mac");
-    if (!badges.length) return;
-    const architecture = detectMacArchitecture();
-    const urlFor = (badge, arch) => (arch === "intel" ? badge.dataset.macIntel : badge.dataset.macArm64);
-    architecture.then((arch) => badges.forEach((badge) => { badge.href = urlFor(badge, arch); }));
-    badges.forEach((badge) => badge.addEventListener("click", (event) => {
-      event.preventDefault();
-      architecture.then((arch) => window.location.assign(urlFor(badge, arch)));
-    }));
-  }
-
   function tidyLegacyLegalPages() {
     $$(".legal-page .policy-aside .policy-link").forEach((link) => {
       if (/back to/i.test(link.textContent)) link.remove();
@@ -235,5 +201,4 @@
   tidyLegacyLegalPages();
   initMenu();
   initReveal();
-  initMacDownloads();
 })();

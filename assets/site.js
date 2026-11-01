@@ -29,7 +29,20 @@
     return url;
   }
 
+  function macDownloadButton(downloads, compact = false) {
+    const note = `${downloads.minimumMacOS || "macOS 13"} or later. Not sure which Mac you have? Apple menu › About This Mac shows the chip.`;
+    return `<details class="mac-download${compact ? " mac-download--compact" : ""}">
+      <summary class="store-badge store-badge--mac${compact ? " compact" : ""}" aria-label="Download for Mac"><img src="/assets/store-badges/mac.svg" alt="Download for Mac"></summary>
+      <div class="mac-download-menu" role="group" aria-label="Choose your Mac">
+        <a href="${safe(downloads.appleSilicon)}" rel="noopener"><strong>Apple Silicon</strong><small>M1 chip and later</small></a>
+        <a href="${safe(downloads.intel)}" rel="noopener"><strong>Intel</strong><small>Intel-based Macs</small></a>
+        <p>${safe(note)}</p>
+      </div>
+    </details>`;
+  }
+
   function storeButton(platform, url, compact = false, directNavigation = false) {
+    if (platform === "mac") return macDownloadButton(url, compact);
     const isApple = platform === "ios";
     const label = isApple ? "Download on the App Store" : "Get it on Google Play";
     const artwork = isApple ? "/assets/store-badges/app-store.svg" : "/assets/store-badges/google-play.png";
@@ -42,6 +55,8 @@
     const platforms = [];
     if (app.stores.ios) platforms.push("iOS");
     if (app.stores.android) platforms.push("Android");
+    if (app.stores.mac) platforms.push("macOS");
+    if (platforms.length > 2) return `${platforms.slice(0, -1).join(", ")} & ${platforms[platforms.length - 1]}`;
     return platforms.join(" & ");
   }
 
@@ -122,6 +137,9 @@
       const useDirectNavigation = app.id === "cleanup_ai_photo_cleaner";
       return storeButton(platform, url, false, useDirectNavigation);
     }).join("");
+    const macNote = app.stores.mac
+      ? `<p class="store-note">Mac app needs ${safe(app.stores.mac.minimumMacOS || "macOS 13")} or later. Not sure which Mac you have? Apple menu › About This Mac shows the chip.</p>`
+      : "";
     const realScreenshots = Array.isArray(app.appStoreScreenshots) ? app.appStoreScreenshots : [];
     const heroScreenshot = realScreenshots[app.heroScreenshotIndex ?? 1] || realScreenshots[0];
     const heroPreview = realScreenshots.length
@@ -135,13 +153,13 @@
       <a class="skip-link" href="#main">Skip to content</a>
       <main id="main">
         <header class="product-hero grid-surface"><div class="product-shell product-hero-grid">
-          <div class="product-intro reveal"><div class="app-identity"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon"><span>${safe(app.eyebrow)}</span></div><h1>${safe(app.name)}</h1><h2>${safe(app.tagline)}</h2><p>${safe(app.description)}</p><div class="tag-row">${app.tags.map((tag) => `<span>${safe(tag)}</span>`).join("")}</div><div class="store-row" id="download">${storeButtons}</div><div class="trust-row"><span>Purpose-built</span><span>Privacy-aware</span><span>${safe(platformText(app))}</span></div></div>
+          <div class="product-intro reveal"><div class="app-identity"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon"><span>${safe(app.eyebrow)}</span></div><h1>${safe(app.name)}</h1><h2>${safe(app.tagline)}</h2><p>${safe(app.description)}</p><div class="tag-row">${app.tags.map((tag) => `<span>${safe(tag)}</span>`).join("")}</div><div class="store-row" id="download">${storeButtons}</div>${macNote}<div class="trust-row"><span>Purpose-built</span><span>Privacy-aware</span><span>${safe(platformText(app))}</span></div></div>
           ${heroPreview}
         </div></header>
 
         <section class="product-section" id="previews"><div class="product-shell">${screenHeading}${screenGallery}</div></section>
 
-        <section class="download-section"><div class="product-shell"><div class="download-card reveal" style="--download-a:${app.colors[0]};--download-b:${app.colors[1]}"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon"><div><p class="card-label">Ready when you are</p><h2>${safe(app.tagline)}</h2><p>${safe(app.subtitle)}.</p></div><div class="store-row">${storeButtons}</div></div></div></section>
+        <section class="download-section"><div class="product-shell"><div class="download-card reveal" style="--download-a:${app.colors[0]};--download-b:${app.colors[1]}"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon"><div><p class="card-label">Ready when you are</p><h2>${safe(app.tagline)}</h2><p>${safe(app.subtitle)}.</p></div><div class="store-stack"><div class="store-row">${storeButtons}</div>${macNote}</div></div></div></section>
       </main>
       <footer class="site-footer product-footer"><div class="product-shell footer-grid"><div>${brandMarkup("/")}<a href="mailto:support@miracleapps.in">support@miracleapps.in</a></div><div><h2>Explore</h2><a href="/#apps">All apps</a><a href="/#principles">Our principles</a><a href="mailto:support@miracleapps.in">Support</a></div><div><h2>Legal</h2><a href="/${safe(app.slug)}/privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy ↗</a><a href="/${safe(app.slug)}/terms/" target="_blank" rel="noopener noreferrer">Terms and Conditions ↗</a></div></div><div class="product-shell footer-base"><span>© 2026 Miracle Apps</span></div></footer>`;
   }
@@ -182,6 +200,15 @@
     });
   }
 
+  function initMacDownloads() {
+    const choosers = $$("details.mac-download");
+    if (!choosers.length) return;
+    const closeAll = (except) => choosers.forEach((chooser) => { if (chooser !== except) chooser.removeAttribute("open"); });
+    choosers.forEach((chooser) => chooser.addEventListener("toggle", () => { if (chooser.open) closeAll(chooser); }));
+    document.addEventListener("click", (event) => { if (!event.target.closest("details.mac-download")) closeAll(); });
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeAll(); });
+  }
+
   function tidyLegacyLegalPages() {
     $$(".legal-page .policy-aside .policy-link").forEach((link) => {
       if (/back to/i.test(link.textContent)) link.remove();
@@ -193,4 +220,5 @@
   tidyLegacyLegalPages();
   initMenu();
   initReveal();
+  initMacDownloads();
 })();

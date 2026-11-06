@@ -3,7 +3,7 @@
   const android = (url) => ({ android: url });
   const both = (iosUrl, androidUrl) => ({ ios: iosUrl, android: androidUrl });
 
-  // Grammarify for Mac ships three installers with fixed, version-free names. "latest" always
+  // Grammar Flow for Mac ships three installers with fixed, version-free names. "latest" always
   // redirects to the newest release, so these links never need changing when a new version ships.
   // The universal DMG works on every Mac; site.js swaps in the smaller per-chip DMG when the
   // browser reveals the chip.
@@ -63,13 +63,13 @@
       id: "grammarify",
       slug: "grammarify",
       group: "Everyday apps",
-      name: "AI Keyboard - Grammarify",
-      shortName: "Grammarify",
+      name: "Grammar Flow: AI Voice Keyboard",
+      shortName: "Grammar Flow",
       subtitle: "Fix grammar, rewrite & translate as you type",
       category: "Productivity",
       eyebrow: "AI writing keyboard · iOS, Android & Mac",
       tagline: "Find the right words, right from your keyboard.",
-      description: "Make everyday messages, work emails, and social captions easier to write. Correct grammar and spelling, adjust your tone, translate text, and get help from AI writing assistants directly in compatible apps on iPhone, iPad, and Android. The Grammarify desktop app brings the same writing help to your Mac.",
+      description: "Make everyday messages, work emails, and social captions easier to write. Correct grammar and spelling, adjust your tone, translate text, and get help from AI writing assistants directly in compatible apps on iPhone, iPad, and Android. The Grammar Flow desktop app brings the same writing help to your Mac.",
       icon: "/grammarify/Grammarify_Appicon.png",
       colors: ["#7657ff", "#a344ef"],
       stores: { ...both("https://apps.apple.com/in/app/ai-keyboard-grammarify/id6769994469", "https://play.google.com/store/apps/details?id=com.vectorinfo.grammarify"), ...mac("Grammarify") },

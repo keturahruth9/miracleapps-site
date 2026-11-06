@@ -79,9 +79,10 @@ svg { display: block; }
 .os-app img { width: 46px; height: 46px; object-fit: cover; border-radius: 13px; }
 .os-app span { min-width: 0; }
 .os-app strong, .os-app small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.os-app strong { white-space: normal; line-height: 1.2; }
 .os-app strong { font-size: 13px; }
 .os-app small { margin-top: 3px; color: #959dab; font-size: 10px; }
-.os-app em { color: #9ea6b3; font-size: 9px; font-style: normal; white-space: nowrap; }
+.os-app em { color: #9ea6b3; font-size: 9px; font-style: normal; max-width: 72px; text-align: right; }
 .os-app svg { width: 15px; fill: none; stroke: #aeb4bf; stroke-width: 1.7; }
 .os-loop { position: relative; margin-top: 16px; padding: 20px; color: #10150d; border-radius: 20px; background: var(--lime); }
 .os-loop strong { display: block; margin-bottom: 8px; font-family: 'Manrope', sans-serif; font-size: 16px; }

@@ -1,1 +1,317 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Cleanup: Swipe Photo Cleaner — Miracle Apps</title><meta name="description" content="A smarter photo cleaner and storage saver for iOS and Android."><meta name="theme-color" content="#3c73ff"><link rel="icon" href="/cleanupai/appicon.png"><link rel="stylesheet" href="/assets/site.css?v=cleanup-native-app-store-5"></head><body class="product-page" data-product-id="cleanup_ai_photo_cleaner"><div id="product-root"></div><script src="/assets/apps-data.js?v=product-previews-1"></script><script src="/assets/site.js?v=app-only-legal-links-3"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Cleanup: Swipe Photo Cleaner — Miracle Apps</title>
+  <meta name="description" content="Swipe through your camera roll, clear duplicates and similar photos, compress large videos, and get your storage back. For iPhone and Android.">
+  <meta name="theme-color" content="#fff7f1">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cleanup: Swipe Photo Cleaner">
+  <meta property="og:description" content="Swipe right to keep, left to delete. A calmer way to clean up your photos and get your storage back.">
+  <meta property="og:url" content="https://www.miracleapps.in/cleanupai/">
+  <meta property="og:image" content="https://www.miracleapps.in/cleanupai/appicon.png">
+  <link rel="canonical" href="https://www.miracleapps.in/cleanupai/">
+  <link rel="icon" href="/cleanupai/appicon.png">
+  <link rel="apple-touch-icon" href="/cleanupai/appicon.png">
+  <style>
+    :root {
+      --bg: #fff7f1; --tint: #fdeadd; --band: #f7cdb2; --ink: #17120f; --muted: #4a3f39;
+      --accent: #5232c8; --line: #ead6c8; --card: #fff;
+      --font: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 18px/1.6 var(--font); -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    h1, h2, h3, p { margin: 0; }
+    .shell { width: min(1120px, 100% - 48px); margin-inline: auto; }
+
+    /* Header */
+    .top { position: sticky; top: 0; z-index: 10; height: 68px; background: rgba(255,247,241,.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid transparent; }
+    .top .shell { height: 100%; display: flex; align-items: center; gap: 24px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 750; letter-spacing: -.03em; }
+    .logo img { width: 36px; height: 36px; border-radius: 10px; }
+    .top nav { margin-inline: auto; display: flex; gap: 28px; font-size: 15px; font-weight: 600; }
+    .top nav a:hover, .foot a:hover { color: var(--accent); }
+
+    /* Store badges */
+    .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .badge { height: 48px; display: inline-flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 8px; transition: transform .2s ease; }
+    .badge:hover { transform: translateY(-2px); }
+    .badge img { width: auto; max-width: none; height: 48px; }
+    .badge.android { width: 158px; }
+    .badge.android img { height: 70px; }
+    .top .badge { height: 40px; }
+    .top .badge img { height: 40px; }
+    .top .badge.android { width: 132px; }
+    .top .badge.android img { height: 59px; }
+
+    /* Hero */
+    .hero { padding: 72px 0 96px; text-align: center; background: linear-gradient(var(--bg), #f9d7bf 70%, var(--tint)); }
+    .hero h1 { font-size: clamp(54px, 9vw, 80px); line-height: 1; font-weight: 750; letter-spacing: -.03em; }
+    .hero .tagline { margin-top: 18px; font-size: clamp(30px, 5.4vw, 48px); line-height: 1.12; font-weight: 750; letter-spacing: -.03em; }
+    .hero .lead { max-width: 620px; margin: 22px auto 30px; font-size: 20px; color: var(--muted); }
+    .duo { margin: 64px auto 0; max-width: 760px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 28px; align-items: center; }
+    .duo figure { margin: 0; }
+    .duo figcaption { margin-bottom: 16px; font-size: 18px; font-weight: 750; }
+    .duo figure:last-child figcaption { color: var(--accent); }
+    .duo .arrow { margin-top: 44px; font-size: 32px; color: var(--muted); }
+    .shot { border-radius: 36px; box-shadow: 0 30px 70px -30px rgba(120,70,40,.45); }
+    .stats { margin-top: 72px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .stats strong { display: block; font-size: clamp(34px, 5vw, 48px); line-height: 1.1; font-weight: 800; letter-spacing: -.03em; }
+    .stats span { font-size: 16px; color: var(--muted); }
+
+    /* Sections */
+    section { padding: 112px 0; }
+    .tinted { background: var(--tint); }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .split.flip > .media { order: -1; }
+    .eyebrow { margin-bottom: 18px; font-size: 13px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+    h2 { font-size: clamp(34px, 5vw, 50px); line-height: 1.08; font-weight: 800; letter-spacing: -.035em; }
+    .copy p { margin-top: 22px; color: var(--muted); max-width: 480px; }
+    .more { margin-top: 28px; display: inline-flex; gap: 10px; font-weight: 750; color: var(--accent); }
+    .more:hover span { transform: translateX(4px); }
+    .more span { transition: transform .2s ease; }
+    .media { position: relative; display: flex; justify-content: center; }
+    .media .shot { width: min(340px, 100%); }
+    .media.panel { padding: 48px 32px 0; border-radius: 32px; background: #f1bea0; overflow: hidden; }
+    .media.panel .shot { border-radius: 36px 36px 0 0; box-shadow: none; }
+    .tag { position: absolute; top: 12%; padding: 6px 14px; border-radius: 999px; background: var(--card); font-size: 16px; font-weight: 750; box-shadow: 0 10px 24px -12px rgba(23,18,15,.4); }
+    .tag.left { left: 0; color: #d92d3a; transform: rotate(-6deg); }
+    .tag.right { right: 0; color: #12924f; transform: rotate(6deg); }
+
+    .steps { margin: 34px 0 0; padding: 0; list-style: none; display: grid; gap: 26px; counter-reset: step; }
+    .steps li { display: grid; grid-template-columns: 44px 1fr; counter-increment: step; }
+    .steps li::before { content: "0" counter(step); font-weight: 750; color: var(--accent); }
+    .steps h3 { font-size: 20px; font-weight: 750; }
+    .steps p { margin-top: 4px; font-size: 16px; }
+
+    .trio { margin-top: 96px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .trio article { padding-top: 28px; border-top: 1px solid var(--line); }
+    .trio h3 { font-size: 28px; line-height: 1.15; font-weight: 750; letter-spacing: -.02em; }
+    .trio p { margin-top: 16px; font-size: 16px; color: var(--muted); }
+    .copy .eyebrow, .trio .eyebrow { margin-top: 0; font-size: 13px; color: var(--accent); }
+    .center { text-align: center; }
+    .center .more { margin-top: 56px; }
+
+    /* FAQ */
+    .faq { max-width: 760px; margin: 56px auto 0; display: grid; gap: 14px; text-align: left; }
+    .faq details { padding: 22px 26px; border: 1px solid var(--line); border-radius: 22px; background: var(--card); }
+    .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px; font-size: 20px; font-weight: 750; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--accent); font-size: 24px; line-height: 1; }
+    .faq details[open] summary::after { content: "–"; }
+    .faq p { margin-top: 12px; font-size: 16px; color: var(--muted); }
+
+    /* Final + footer */
+    .final { padding: 96px 0; background: var(--band); text-align: center; }
+    .final p { margin: 16px 0 28px; color: var(--muted); }
+    .foot { padding: 56px 0; background: var(--tint); font-size: 15px; }
+    .foot .shell { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+    .foot nav { display: flex; flex-wrap: wrap; gap: 24px; }
+    .foot small { flex-basis: 100%; font-size: 13px; color: var(--muted); }
+
+    /* Scroll reveal: only hides content once the script has confirmed it can show it again */
+    .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .js .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .js .reveal { opacity: 1; transform: none; transition: none; } }
+
+    @media (max-width: 860px) {
+      body { font-size: 17px; }
+      .top nav, .top .badges { display: none; }
+      .top .shell { justify-content: center; }
+      .hero { padding: 48px 0 72px; }
+      .hero .lead { font-size: 18px; }
+      .duo { gap: 12px; margin-top: 48px; }
+      .duo figcaption { font-size: 14px; }
+      .duo .arrow { font-size: 22px; }
+      .shot { border-radius: 22px; }
+      .stats { margin-top: 56px; gap: 12px; }
+      .stats span { font-size: 13px; }
+      section { padding: 72px 0; }
+      .split { grid-template-columns: 1fr; gap: 44px; }
+      .split.flip > .media { order: 0; }
+      .trio { grid-template-columns: 1fr; gap: 32px; margin-top: 64px; }
+      .trio h3 { font-size: 24px; }
+      .tag { display: none; }
+      .faq summary { font-size: 18px; }
+      .foot .shell { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="shell">
+      <a class="logo" href="/cleanupai/"><img src="/cleanupai/appicon.png" alt="">cleanup</a>
+      <nav aria-label="Page">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#coverage">Tools</a>
+        <a href="#faq">Help</a>
+      </nav>
+      <div class="badges">
+        <a class="badge ios" data-store="ios" href="https://apps.apple.com/app/id6760357173" aria-label="Download on the App Store"><img src="/assets/store-badges/app-store.svg" alt="Download on the App Store"></a>
+        <a class="badge android" data-store="android" href="https://play.google.com/store/apps/details?id=com.freespace.cleanup" aria-label="Get it on Google Play"><img src="/assets/store-badges/google-play.png" alt="Get it on Google Play"></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="shell">
+        <h1>cleanup</h1>
+        <p class="tagline">Swipe away clutter. Keep what you love.</p>
+        <p class="lead">Go through your camera roll month by month. Swipe right on the photos you want, left on the ones you don't, and get your storage back.</p>
+        <div class="badges" id="download">
+          <a class="badge ios" data-store="ios" href="https://apps.apple.com/app/id6760357173" aria-label="Download on the App Store"><img src="/assets/store-badges/app-store.svg" alt="Download on the App Store"></a>
+          <a class="badge android" data-store="android" href="https://play.google.com/store/apps/details?id=com.freespace.cleanup" aria-label="Get it on Google Play"><img src="/assets/store-badges/google-play.png" alt="Get it on Google Play"></a>
+        </div>
+        <div class="duo">
+          <figure><figcaption>Pick what to clean</figcaption><img class="shot" src="/cleanupai/appstore-screenshots/01.webp" width="600" height="1299" alt="Cleanup tools: swipe to delete, find duplicates, find similar photos, compress videos, merge contacts and secure storage"></figure>
+          <span class="arrow" aria-hidden="true">→</span>
+          <figure><figcaption>Swipe to decide →</figcaption><img class="shot" src="/cleanupai/appstore-screenshots/04.webp" width="600" height="1299" alt="Swiping through photos from one month, with Delete and Keep buttons"></figure>
+        </div>
+        <div class="stats">
+          <div><strong>6</strong><span>Cleanup tools in one app</span></div>
+          <div><strong>1 swipe</strong><span>Per decision</span></div>
+          <div><strong>0</strong><span>Photos deleted without your OK</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="features">
+      <div class="shell split">
+        <div class="copy reveal">
+          <p class="eyebrow">Swipe to clean</p>
+          <h2>Keep it or clear it.<br>One swipe.</h2>
+          <p>Hold on to the photos that matter. Let go of the screenshots, blurry shots and videos you no longer need. A big camera roll becomes a series of quick, easy calls.</p>
+          <a class="more" href="#how">See how it works <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="media reveal">
+          <span class="tag left">← Delete</span>
+          <img class="shot" src="/cleanupai/appstore-screenshots/04.webp" width="600" height="1299" loading="lazy" alt="A photo being swiped right to keep">
+          <span class="tag right">Keep →</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="tinted" id="how">
+      <div class="shell split flip">
+        <div class="copy reveal">
+          <p class="eyebrow">Month by month</p>
+          <h2>Small sessions, big space back</h2>
+          <p>Thousands of photos feel like too much to face. Take them a month at a time and watch your free space grow.</p>
+          <ol class="steps">
+            <li><div><h3>Choose a month</h3><p>See how many files it holds and how much space you could free.</p></div></li>
+            <li><div><h3>Keep or delete</h3><p>Right to keep, left to delete. Undo if you change your mind.</p></div></li>
+            <li><div><h3>Check, then confirm</h3><p>Check what you marked before anything is removed.</p></div></li>
+          </ol>
+        </div>
+        <div class="media panel reveal"><img class="shot" src="/cleanupai/appstore-screenshots/02.webp" width="600" height="1299" loading="lazy" alt="Storage before and after a cleanup"></div>
+      </div>
+    </section>
+
+    <section id="coverage">
+      <div class="shell">
+        <div class="split">
+          <div class="copy reveal">
+            <p class="eyebrow">Compress videos</p>
+            <h2>Keep the video.<br>Lose the weight.</h2>
+            <p>Videos take up more room than anything else on your phone. Shrink the big ones, pick the quality you want, and see the new size before you start.</p>
+            <a class="more" href="#download">Get Cleanup <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="media panel reveal" style="background:#eadff5"><img class="shot" src="/cleanupai/appstore-screenshots/05.webp" width="600" height="1299" loading="lazy" alt="Compressing a video with a before and after size"></div>
+        </div>
+        <div class="trio">
+          <article class="reveal"><p class="eyebrow">Duplicates &amp; similar photos</p><h3>Ten takes. Keep the best one.</h3><p>Identical and look-alike photos are grouped together so you can choose the ones worth keeping.</p></article>
+          <article class="reveal"><p class="eyebrow">Merge contacts</p><h3>One person. One contact.</h3><p>Find repeated contacts, check the merged version, and tidy your address book in one go.</p></article>
+          <article class="reveal"><p class="eyebrow">Secret space</p><h3>Private photos stay private.</h3><p>Move personal photos and videos into a passcode-locked space inside the app.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tinted">
+      <div class="shell split flip">
+        <div class="copy reveal">
+          <p class="eyebrow">Your call</p>
+          <h2>You approve every deletion</h2>
+          <p>Swiping left only marks a photo. You review the full selection first, and you can change your mind before anything is removed. Miracle Apps does not sell your personal photos or files.</p>
+          <a class="more" href="#faq">Common questions <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="media panel reveal" style="background:#cce9dd"><img class="shot" src="/cleanupai/appstore-screenshots/03.webp" width="600" height="1299" loading="lazy" alt="Reviewing duplicate contacts before merging them"></div>
+      </div>
+    </section>
+
+    <section class="center" id="faq">
+      <div class="shell">
+        <h2 class="reveal">Good to know before you start</h2>
+        <div class="faq">
+          <details class="reveal"><summary>Will the app delete photos automatically?</summary><p>No. You review and confirm what should be removed.</p></details>
+          <details class="reveal"><summary>Can I compare similar photos first?</summary><p>Yes. The review flow is designed to help you choose the version you want to keep.</p></details>
+          <details class="reveal"><summary>Where do deleted photos go?</summary><p>Deletion follows the photo-library behavior provided by your device, including Recently Deleted where supported.</p></details>
+          <details class="reveal"><summary>Does it work for large videos?</summary><p>Yes. The app surfaces storage-heavy videos so you can review or compress them.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <div class="final">
+      <div class="shell">
+        <h2>Start with one swipe</h2>
+        <p>A few swipes now. A lighter phone tonight.</p>
+        <div class="badges">
+          <a class="badge ios" data-store="ios" href="https://apps.apple.com/app/id6760357173" aria-label="Download on the App Store"><img src="/assets/store-badges/app-store.svg" alt="Download on the App Store"></a>
+          <a class="badge android" data-store="android" href="https://play.google.com/store/apps/details?id=com.freespace.cleanup" aria-label="Get it on Google Play"><img src="/assets/store-badges/google-play.png" alt="Get it on Google Play"></a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="shell">
+      <a class="logo" href="/cleanupai/"><img src="/cleanupai/appicon.png" alt="">cleanup</a>
+      <nav aria-label="Footer">
+        <a href="/">Miracle Apps</a>
+        <a href="/cleanupai/privacy/">Privacy</a>
+        <a href="/cleanupai/terms/">Terms</a>
+        <a href="mailto:support@miracleapps.in?subject=Cleanup%20Support">Support</a>
+      </nav>
+      <small>© 2026 Miracle Apps.</small>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      // Same store-link behaviour as assets/site.js: open the native store app from iOS and from
+      // Instagram/Facebook in-app browsers on Android, where web store links often dead-end.
+      var ua = navigator.userAgent || "", hint = navigator.platform || "";
+      var isIOS = /iPad|iPhone|iPod/i.test(ua + " " + hint) || (/Macintosh|MacIntel/i.test(ua + " " + hint) && navigator.maxTouchPoints > 1);
+      var inApp = /Instagram|FBAN|FBAV|FB_IAB/i.test(ua);
+      document.querySelectorAll("[data-store]").forEach(function (link) {
+        var url = link.href;
+        if (link.dataset.store === "ios" && isIOS) {
+          link.href = "itms-apps://itunes.apple.com/app/id" + url.match(/id(\d+)/)[1];
+        } else if (link.dataset.store === "android" && inApp && /Android/i.test(ua)) {
+          link.href = "intent://details?id=" + url.match(/[?&]id=([^&]+)/)[1] + "#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=" + encodeURIComponent(url) + ";end";
+        } else {
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+        }
+      });
+
+      if (!("IntersectionObserver" in window)) return;
+      document.documentElement.classList.add("js");
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.08 });
+      document.querySelectorAll(".reveal").forEach(function (item) { observer.observe(item); });
+    })();
+  </script>
+</body>
+</html>

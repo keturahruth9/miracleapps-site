@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>All TV Remotes: Universal — Miracle Apps</title>
+  <meta name="description" content="Turn your phone into a smart TV remote. Control LG, Samsung, Android TV, Roku, Fire TV and more over Wi-Fi, with voice search, a keyboard and a touchpad. No account, no ads.">
+  <meta name="theme-color" content="#f1eafd">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Miracle Apps">
+  <meta property="og:title" content="All TV Remotes: Universal">
+  <meta property="og:description" content="Your phone is the remote. Control your smart TV over Wi-Fi, type with your phone keyboard and search by voice.">
+  <meta property="og:url" content="https://www.miracleapps.in/tvremote/">
+  <meta property="og:image" content="https://www.miracleapps.in/tvremote/appicon.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://www.miracleapps.in/tvremote/">
+  <link rel="icon" href="/tvremote/appicon-180.png">
+  <link rel="apple-touch-icon" href="/tvremote/appicon-180.png">
+  <link rel="stylesheet" href="/tvremote/styles.css?v=11">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "All TV Remotes: Universal",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Turn your phone into a smart TV remote. Control LG, Samsung, Android TV, Roku, Fire TV and more over Wi-Fi, with voice search, a keyboard and a touchpad.",
+    "image": "https://www.miracleapps.in/tvremote/appicon.png",
+    "url": "https://www.miracleapps.in/tvremote/",
+    "publisher": { "@type": "Organization", "name": "Miracle Apps", "url": "https://www.miracleapps.in/" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <div class="shell top-row">
+      <a class="logo" href="/tvremote/"><img src="/tvremote/appicon-180.png" width="36" height="36" alt="">TV Remote</a>
+      <nav aria-label="Page">
+        <a href="/tvremote/features">Features</a>
+        <a href="/tvremote/tvs">Supported TVs</a>
+        <a href="/tvremote/connect">How to connect</a>
+        <a href="/tvremote/help">Help</a>
+      </nav>
+      <a class="get" href="/tvremote/download">Get the app</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="shell">
+        <h1>Your phone is the remote</h1>
+        <p class="lead">All TV Remotes: Universal controls your smart TV over your home Wi-Fi. Nothing to plug in, no account, no ads.</p>
+        <div class="badges" id="download">
+          <a class="badge ios" data-store="ios" href="https://apps.apple.com/app/id6833934872" aria-label="Download on the App Store"><img src="/assets/store-badges/app-store.svg" width="120" height="40" alt="Download on the App Store"></a>
+          <a class="badge android" data-store="android" href="https://play.google.com/store/apps/details?id=com.miracleapps.tvremote" aria-label="Get it on Google Play"><img src="/assets/store-badges/google-play.png" width="646" height="250" alt="Get it on Google Play"></a>
+        </div>
+
+        <!-- The demo: a working remote and the TV it controls. Arrow keys work once it has focus. -->
+        <div class="stage" id="demo" tabindex="0" aria-label="Try the remote. Press the buttons, or click here and use your arrow keys, Enter and Escape.">
+          <div class="tv" data-on="false" data-view="home">
+            <div class="tv-glow" aria-hidden="true"></div>
+            <div class="tv-body">
+              <div class="tv-screen">
+                <div class="tv-picture">
+                  <div class="tv-view tv-home">
+                    <p class="tv-top"><span>Living room TV</span><span>8:30 PM</span></p>
+                    <ul class="tiles">
+                      <li style="--tile:#ff6b6b">Films</li>
+                      <li style="--tile:#b47cff">Series</li>
+                      <li style="--tile:#3ddc97">Music</li>
+                      <li style="--tile:#ffb020">Sport</li>
+                      <li style="--tile:#4c8df6">News</li>
+                      <li style="--tile:#ff6fb5">Kids</li>
+                    </ul>
+                  </div>
+                  <div class="tv-view tv-app">
+                    <p class="tv-app-name"></p>
+                    <p class="tv-app-state"></p>
+                    <div class="tv-bar"><i class="tv-progress"></i></div>
+                  </div>
+                  <div class="tv-view tv-search">
+                    <p class="tv-searchbar"><span class="tv-query"></span><i class="caret"></i></p>
+                    <ul class="tv-results">
+                      <li>Quick weeknight dinners</li>
+                      <li>Street food tour</li>
+                      <li>Baking basics</li>
+                    </ul>
+                  </div>
+                  <div class="tv-hud"><span class="tv-hud-label"></span><div class="tv-bar"><i class="tv-volume"></i></div></div>
+                </div>
+              </div>
+              <i class="tv-led" aria-hidden="true"></i>
+            </div>
+            <div class="tv-stand" aria-hidden="true"><i></i></div>
+          </div>
+
+          <!-- Laid out like the app's Remote screen -->
+          <div class="phone">
+            <span class="signal" aria-hidden="true"></span>
+            <div class="phone-top">
+              <button class="key round power" type="button" data-key="power" aria-label="Power"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v9M6.3 7.2a8 8 0 1 0 11.4 0"/></svg></button>
+              <span class="phone-tv"><i></i>Living room TV<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+              <button class="key round" type="button" data-key="source" aria-label="Input source"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 8l4 4-4 4M14 12H4M12 4h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/></svg></button>
+            </div>
+            <div class="seg">
+              <button type="button" data-mode="dpad" aria-pressed="true">D-Pad</button>
+              <button type="button" data-mode="swipe" aria-pressed="false">Swipe</button>
+              <button type="button" data-mode="numpad" aria-pressed="false">123</button>
+            </div>
+            <div class="deck">
+              <div class="rocker">
+                <button class="key" type="button" data-key="volUp" aria-label="Volume up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+                <button class="key small" type="button" data-key="mute" aria-label="Mute"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4zM16 9.5l5 5M21 9.5l-5 5"/></svg></button>
+                <button class="key" type="button" data-key="volDown" aria-label="Volume down"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+              </div>
+              <div class="dpad" data-pad="dpad">
+                <button class="key arrow up" type="button" data-key="up" aria-label="Up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+                <button class="key arrow right" type="button" data-key="right" aria-label="Right"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+                <button class="key arrow down" type="button" data-key="down" aria-label="Down"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <button class="key arrow left" type="button" data-key="left" aria-label="Left"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+                <button class="key ok" type="button" data-key="ok">OK</button>
+              </div>
+              <div class="swipe" data-pad="swipe" hidden>Swipe to move.<br>Tap for OK.</div>
+              <div class="numpad" data-pad="numpad" hidden><button class="key" type="button" data-key="num1">1</button><button class="key" type="button" data-key="num2">2</button><button class="key" type="button" data-key="num3">3</button><button class="key" type="button" data-key="num4">4</button><button class="key" type="button" data-key="num5">5</button><button class="key" type="button" data-key="num6">6</button><button class="key" type="button" data-key="num7">7</button><button class="key" type="button" data-key="num8">8</button><button class="key" type="button" data-key="num9">9</button><span></span><button class="key" type="button" data-key="num0">0</button><span></span></div>
+              <div class="rocker">
+                <button class="key" type="button" data-key="chUp" aria-label="Channel up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
+                <span class="rocker-label">CH</span>
+                <button class="key" type="button" data-key="chDown" aria-label="Channel down"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+              </div>
+            </div>
+            <div class="row nav">
+              <button class="key" type="button" data-key="back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back</button>
+              <button class="key" type="button" data-key="home"><svg class="accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z"/></svg>Home</button>
+              <button class="key" type="button" data-key="menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menu</button>
+              <button class="key" type="button" data-key="type"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="5" r="1.7"/><circle cx="12" cy="5" r="1.7"/><circle cx="18" cy="5" r="1.7"/><circle cx="6" cy="11" r="1.7"/><circle cx="12" cy="11" r="1.7"/><circle cx="18" cy="11" r="1.7"/><circle cx="6" cy="17" r="1.7"/><circle cx="12" cy="17" r="1.7"/><circle cx="18" cy="17" r="1.7"/><circle cx="12" cy="22" r="1.5"/></svg>Type</button>
+            </div>
+            <div class="row playback">
+              <button class="key" type="button" data-key="rewind" aria-label="Rewind"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 6v12l-8-6zM21 6v12l-8-6z"/></svg></button>
+              <button class="key" type="button" data-key="play" aria-label="Play"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l11-7z"/></svg></button>
+              <button class="key" type="button" data-key="pause" aria-label="Pause"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.4v14H7zM13.6 5H17v14h-3.4z"/></svg></button>
+              <button class="key" type="button" data-key="stop" aria-label="Stop"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg></button>
+              <button class="key" type="button" data-key="forward" aria-label="Fast forward"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6v12l8-6zM13 6v12l8-6z"/></svg></button>
+            </div>
+            <div class="row colors">
+              <button class="key" type="button" data-key="red" aria-label="Red" style="--bar:#ff453a"><i></i></button>
+              <button class="key" type="button" data-key="green" aria-label="Green" style="--bar:#30d158"><i></i></button>
+              <button class="key" type="button" data-key="yellow" aria-label="Yellow" style="--bar:#ffd60a"><i></i></button>
+              <button class="key" type="button" data-key="blue" aria-label="Blue" style="--bar:#0a84ff"><i></i></button>
+            </div>
+            <button class="key round mic" type="button" data-key="mic" aria-label="Search by voice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg></button>
+          </div>
+          <p class="sr" id="tv-status" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="tvs" id="tvs">
+        <h2>Works with these TVs</h2>
+        <div class="marquee">
+          <ul class="scan">
+            <li><img src="/tvremote/brands/lg.png" width="300" height="200" loading="lazy" alt="LG webOS"></li>
+            <li><img src="/tvremote/brands/samsung.png" width="300" height="200" loading="lazy" alt="Samsung"></li>
+            <li><svg class="droid" viewBox="0 0 96 56" role="img" aria-label="Android TV and Google TV"><path d="M33 25l-6-10M63 25l6-10"/><path class="head" d="M20 51a28 28 0 0 1 56 0z"/><circle cx="36" cy="39" r="3"/><circle cx="60" cy="39" r="3"/></svg></li>
+            <li><img src="/tvremote/brands/roku.png" width="300" height="200" loading="lazy" alt="Roku"></li>
+            <li><img src="/tvremote/brands/firetv.png" width="300" height="200" loading="lazy" alt="Fire TV"></li>
+            <li><img src="/tvremote/brands/sony.png" width="300" height="200" loading="lazy" alt="Sony Bravia"></li>
+            <li><img src="/tvremote/brands/philips.png" width="300" height="200" loading="lazy" alt="Philips"></li>
+            <li><img src="/tvremote/brands/panasonic.png" width="300" height="200" loading="lazy" alt="Panasonic"></li>
+            <li><img src="/tvremote/brands/vizio.png" width="300" height="200" loading="lazy" alt="Vizio"></li>
+            <li><img src="/tvremote/brands/xiaomi.png" width="300" height="200" loading="lazy" alt="Mi TV"></li>
+            <li><strong class="wordmark">Sky Q</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="shell split">
+        <div class="copy reveal">
+          <h2>One remote for all your TVs</h2>
+          <div class="pair">
+            <div><h3>Works with your TV brand</h3><p>LG, Samsung, Sony, Roku, Fire TV, Android TV and more. One app controls them all.</p><ul class="points"><li>No more looking for the remote</li><li>Works over your home Wi-Fi</li><li>Use it for every TV in your home</li></ul></div>
+            <div><h3>Open your apps in one tap</h3><p>Your TV apps show up on your phone. Tap one and it opens on the TV.</p><ul class="points"><li>Netflix, YouTube, Prime Video and more</li><li>Faster than scrolling on the TV</li></ul></div>
+          </div>
+        </div>
+        <div class="media reveal">
+          <img src="/tvremote/appstore-screenshots/01.webp" width="600" height="1300" loading="lazy" alt="The remote in a hand, with the TV brands it works with">
+          <img src="/tvremote/appstore-screenshots/06.webp" width="600" height="1300" loading="lazy" alt="App shortcuts shown as big buttons on the phone">
+        </div>
+      </div>
+    </section>
+
+    <section class="tinted">
+      <div class="shell split flip">
+        <div class="copy reveal">
+          <h2>Search without the slow TV keyboard</h2>
+          <div class="pair">
+            <div><h3>Say it</h3><p>Tap the mic and say what you want to watch.</p><ul class="points"><li>Your words appear on the TV</li><li>Works in your phone's language</li></ul></div>
+            <div><h3>Type it</h3><p>Type on your phone, the way you always do.</p><ul class="points"><li>Much faster than the TV keyboard</li><li>Great for long names and passwords</li></ul></div>
+          </div>
+        </div>
+        <div class="media reveal">
+          <img src="/tvremote/appstore-screenshots/03.webp" width="600" height="1300" loading="lazy" alt="Voice typing: spoken words appear in the TV search box">
+          <img src="/tvremote/appstore-screenshots/04.webp" width="600" height="1300" loading="lazy" alt="Phone keyboard typing into a search field on the TV">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="split">
+          <div class="copy reveal">
+            <h2>Move around the easy way</h2>
+            <div class="pair">
+              <div><h3>Swipe on the touchpad</h3><p>Slide your finger to move. Tap to select.</p><ul class="points"><li>Feels like a laptop touchpad</li><li>Easy with one hand</li></ul></div>
+              <div><h3>Point like a mouse</h3><p>Point your phone at the TV and the cursor follows.</p><ul class="points"><li>Great for websites and apps on the TV</li><li>Works on TVs with a cursor, like LG</li></ul></div>
+            </div>
+          </div>
+          <div class="media reveal">
+            <img src="/tvremote/appstore-screenshots/05.webp" width="600" height="1300" loading="lazy" alt="A finger swiping on the touchpad in the app">
+            <img src="/tvremote/appstore-screenshots/02.webp" width="600" height="1300" loading="lazy" alt="Air mouse: pointing the phone moves the cursor on the TV">
+          </div>
+        </div>
+        <div class="trio">
+          <article class="reveal"><h3>Everything your remote does</h3><p>Volume, channels, play and pause are all there, and easy to reach.</p></article>
+          <article class="reveal"><h3>Every TV in your home</h3><p>Save your TVs, give each a name, and switch between them. The app reconnects to the last one when you open it.</p></article>
+          <article class="reveal"><h3>Speaks your language</h3><p>Use the app in 70 languages, pick from 12 colour themes, and try the demo TV before you connect.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="connect" class="tinted centered">
+      <div class="shell">
+        <h2>Connected in under a minute</h2>
+        <ol class="steps">
+          <li class="reveal"><h3>Join the same Wi-Fi</h3><p>Turn on your TV and make sure it is on the same Wi-Fi network as your phone.</p></li>
+          <li class="reveal"><h3>Pick your TV</h3><p>Open the app. It finds the TVs on your network. You can also add one by its IP address.</p></li>
+          <li class="reveal"><h3>Say yes on the TV</h3><p>If your TV asks, accept the connection or enter the code it shows. You only do this once.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="centered">
+      <div class="shell band">
+        <h2>The remote that is already in your hand</h2>
+        <p>No batteries to replace and nothing to lose between the cushions. Open the app and it reconnects to your TV on its own, so the remote is ready before you sit down.</p>
+      </div>
+    </section>
+
+    <section id="help" class="tinted centered">
+      <div class="shell">
+        <h2>Questions people ask</h2>
+        <div class="faq">
+          <details><summary>Which TVs does it work with?</summary><p>LG webOS, Samsung, Android TV and Google TV, Roku, Fire TV, Sony Bravia, Philips, Panasonic, Vizio, Mi TV and Sky Q. TCL and Hisense TVs work when they run Google TV, Roku or Fire TV. Your TV needs to be on Wi-Fi: older TVs with an infrared-only remote are not supported.</p></details>
+          <details><summary>Do I need the original remote to set it up?</summary><p>Usually not. Your TV has to be switched on and already connected to Wi-Fi. Some TVs show a prompt or a code the first time, which you can accept with the buttons on the TV itself.</p></details>
+          <details><summary>Why can't the app find my TV?</summary><p>Check that the phone and TV are on the same Wi-Fi network and that the TV is on. Guest networks often block devices from seeing each other. You can also add the TV by its IP address, which you will find in the TV's network settings.</p></details>
+          <details><summary>Can it turn my TV on?</summary><p>It can turn most TVs off. Turning one on depends on the TV: many switch off their Wi-Fi in standby, so they cannot hear the app until they are on.</p></details>
+          <details><summary>Does voice search work in every app?</summary><p>Your words are sent to the text field that is selected on the TV. Some TV apps only accept typing from their own remote. On LG TVs, searching YouTube by voice and keyboard is supported.</p></details>
+          <details><summary>Does it work on a tablet?</summary><p>Yes. The remote grows to fill an iPad or Android tablet.</p></details>
+          <details><summary>Is it free?</summary><p>The app is free to download and has no ads.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing centered">
+      <div class="shell">
+        <img class="closing-icon" src="/tvremote/appicon.png" width="88" height="88" alt="All TV Remotes: Universal app icon" loading="lazy">
+        <h2>Stop looking under the sofa</h2>
+        <p>Get the remote that is always in your pocket.</p>
+        <div class="badges">
+          <a class="badge ios" data-store="ios" href="https://apps.apple.com/app/id6833934872" aria-label="Download on the App Store"><img src="/assets/store-badges/app-store.svg" width="120" height="40" alt="Download on the App Store"></a>
+          <a class="badge android" data-store="android" href="https://play.google.com/store/apps/details?id=com.miracleapps.tvremote" aria-label="Get it on Google Play"><img src="/assets/store-badges/google-play.png" width="646" height="250" alt="Get it on Google Play"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="shell foot-row">
+      <a class="maker" href="/"><img src="/miracle_logo.png?v=transparent-1" width="28" height="28" alt="">Miracle Apps</a>
+      <nav aria-label="Footer">
+        <a href="/#apps">All apps</a>
+        <a href="/tvremote/privacy/">Privacy</a>
+        <a href="/tvremote/terms/">Terms</a>
+        <a href="mailto:support@miracleapps.in">support@miracleapps.in</a>
+      </nav>
+      <span class="copyright">© 2026 Miracle Apps</span>
+    </div>
+  </footer>
+
+  <script src="/tvremote/app.js?v=6"></script>
+</body>
+</html>

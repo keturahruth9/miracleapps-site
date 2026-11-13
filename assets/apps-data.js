@@ -95,6 +95,21 @@
       ],
     },
     {
+      // /tvremote/ is a hand-built page, so only the fields the home page reads are listed here.
+      id: "all_tv_remotes_universal",
+      slug: "tvremote",
+      group: "Everyday apps",
+      name: "All TV Remotes: Universal",
+      shortName: "TV Remote",
+      subtitle: "Smart TV remote control over Wi-Fi",
+      category: "Utilities",
+      icon: "/tvremote/appicon.png",
+      colors: ["#b47cff", "#1e0e37"],
+      stores: both("https://apps.apple.com/app/id6833934872", "https://play.google.com/store/apps/details?id=com.miracleapps.tvremote"),
+      // No store rating yet: the card shows "New" instead of a number.
+      isNew: true,
+    },
+    {
       id: "fm_radio",
       slug: "fmradio",
       group: "Everyday apps",

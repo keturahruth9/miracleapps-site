@@ -80,6 +80,16 @@ function examApp(config) {
 
 const apps = [
   {
+    slug: "tvremote",
+    name: "All TV Remotes: Universal",
+    shortName: "TV Remote",
+    color: "#7a3fe0",
+    color2: "#b47cff",
+    icon: "/tvremote/appicon.png",
+    privacy: [],
+    terms: [],
+  },
+  {
     slug: "qr-code-reader",
     name: "QR Code Reader",
     shortName: "QR Reader",
@@ -266,6 +276,30 @@ chit.terms = [
   section("Intellectual property", "The app interface, original design, branding, icon, and website materials belong to Miracle Apps or its licensors."),
   section("Limitation of responsibility", "To the maximum extent permitted by law, Miracle Apps is not responsible for financial loss, disputes, missed payments, incorrect entries, reliance on an estimate, lost records, or actions taken by a chit organizer or member."),
   ...termsClosing(chit),
+];
+
+const tvRemote = apps.find((app) => app.slug === "tvremote");
+tvRemote.privacy = [
+  section("Overview", "All TV Remotes: Universal turns your phone or tablet into a remote control for smart TVs on your home Wi-Fi network. This policy explains what the app stores, what it sends to your TV, and how microphone and local-network access are used."),
+  section("Data the app does not collect", "Miracle Apps does not collect personal data from All TV Remotes: Universal. The app has no account, no analytics and no advertising. We do not sell personal information."),
+  section("Information stored on your device", "The TVs you connect to (name, network address and the pairing key your TV issues) and your settings, such as language and colour theme, are saved on your device so the app can reconnect. This information is not sent to Miracle Apps."),
+  section("What the app sends to your TV", "Remote-control commands, text you type and app-launch requests go directly from your device to your TV over your local Wi-Fi network. They are not routed through Miracle Apps servers."),
+  section("Local network access", "The app asks for local-network access to find TVs on your Wi-Fi and to talk to the TV you choose. It does not scan for or contact other kinds of devices."),
+  section("Microphone and voice typing", "If you use voice typing, the app asks for microphone and speech-recognition access when you tap the microphone. Your speech is converted to text by the speech service on your device, provided by Apple or Google under their own privacy policies, and only the resulting text is sent to your TV. The microphone is used only after you tap the microphone button, until you stop."),
+  section("Ratings and store links", "The app may ask you to rate it using the rating prompt provided by the App Store or Google Play. Any rating or review you submit is handled by Apple or Google."),
+  section("Your choices and deletion", "You can forget a TV at any time in the app, which deletes its saved pairing key. You can turn off microphone, speech-recognition and local-network access in your device settings. Deleting the app removes everything it stored."),
+  ...privacyClosing(tvRemote),
+];
+tvRemote.terms = [
+  section("Acceptance of these terms", "By downloading or using All TV Remotes: Universal, you agree to these Terms and Conditions. If you do not agree, do not use the app."),
+  section("What the app does", "The app sends remote-control commands to compatible smart TVs over a local Wi-Fi network. It needs a TV that is switched on and connected to the same network as your device. TVs that only accept an infrared remote are not supported."),
+  section("Compatibility", "Support depends on your TV's brand, model, software version and settings. Some features, such as the on-screen pointer, the installed-apps list, typing and voice search, are available only on certain TVs or in certain TV apps. TV makers can change their software in ways that affect the app."),
+  section("Use only TVs you are allowed to control", "Use the app only with TVs you own or have permission to control. Do not use it to disturb, access or control another person's device without their consent."),
+  section("Not affiliated with TV makers", "All TV Remotes: Universal is an independent app. It is not affiliated with, sponsored by or endorsed by LG, Samsung, Google, Roku, Amazon, Sony, Philips, Panasonic, Vizio, Xiaomi, TCL, Hisense, Sky or any other TV or streaming brand. Brand names are trademarks of their respective owners."),
+  section("Availability and changes", "Features, supported TVs, languages and platform support may change as the app is maintained and updated. We do not guarantee that the app will work with every TV or network."),
+  section("Intellectual property", "The app interface, original design, branding, icon and website materials belong to Miracle Apps or its licensors."),
+  section("Limitation of responsibility", "To the maximum extent permitted by law, Miracle Apps is not responsible for a missed command, a lost connection, changes made to your TV's settings, content shown on your TV, or any loss arising from use of the app."),
+  ...termsClosing(tvRemote),
 ];
 
 function renderSections(sections) {

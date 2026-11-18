@@ -3,18 +3,11 @@
   const android = (url) => ({ android: url });
   const both = (iosUrl, androidUrl) => ({ ios: iosUrl, android: androidUrl });
 
-  // Grammar Flow for Mac ships three installers with fixed, version-free names. "latest" always
-  // redirects to the newest release, so these links never need changing when a new version ships.
-  // The universal DMG works on every Mac; site.js swaps in the smaller per-chip DMG when the
-  // browser reveals the chip.
+  // Grammar Flow for Mac ships one installer, for Apple silicon, with a fixed, version-free name.
+  // "latest" always redirects to the newest release, so this link never needs changing when a
+  // new version ships.
   const MAC_DOWNLOADS = "https://github.com/saikumariosdev/grammarflow-releases/releases/latest/download/";
-  const mac = (fileBase) => ({
-    mac: {
-      appleSilicon: `${MAC_DOWNLOADS}${fileBase}.dmg`,
-      intel: `${MAC_DOWNLOADS}${fileBase}-Intel.dmg`,
-      universal: `${MAC_DOWNLOADS}${fileBase}-Universal.dmg`,
-    },
-  });
+  const mac = (fileBase) => ({ mac: `${MAC_DOWNLOADS}${fileBase}.dmg` });
 
   function examApp(config) {
     const abbreviation = config.abbreviation;

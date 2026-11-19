@@ -58,6 +58,7 @@
       group: "Everyday apps",
       name: "Grammar Flow: AI Voice Keyboard",
       shortName: "Grammar Flow",
+      website: "https://grammarflow.si/",
       subtitle: "Fix grammar, rewrite & translate as you type",
       category: "Productivity",
       eyebrow: "AI writing keyboard · iOS, Android & Mac",

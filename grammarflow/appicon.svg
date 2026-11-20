@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>Grammar Flow</title>
+  <defs>
+    <filter id="lift" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#14081C" flood-opacity=".40"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="230" fill="#6A2FA0"/>
+  <!-- Same shapes as Android ic_launcher_glyph.xml: the 1024 design scaled 1.2 about its centre. -->
+  <g fill="none" stroke-linecap="round" filter="url(#lift)" transform="translate(512 512) scale(1.2) translate(-512 -512)">
+    <path d="M688.8 335.2A250 250 0 1 0 762 512" stroke="#fff" stroke-width="92"/>
+    <path d="M440 477v70M540 417v190M640 457v110" stroke="#FFC46B" stroke-width="56"/>
+  </g>
+</svg>

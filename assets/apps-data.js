@@ -53,40 +53,19 @@
 
   window.MIRACLE_APPS = [
     {
+      // /grammarflow/ is a hand-built page, so only the fields the home page reads are listed here.
       id: "grammarflow",
       slug: "grammarflow",
       group: "Everyday apps",
       name: "Grammar Flow: AI Voice Keyboard",
       shortName: "Grammar Flow",
       website: "https://grammarflow.si/",
-      subtitle: "Fix grammar, rewrite & translate as you type",
+      subtitle: "Speak or type, and get clean, finished writing",
       category: "Productivity",
-      eyebrow: "AI writing keyboard · iOS, Android & Mac",
-      tagline: "Find the right words, right from your keyboard.",
-      description: "Make everyday messages, work emails, and social captions easier to write. Correct grammar and spelling, adjust your tone, translate text, and get help from AI writing assistants directly in compatible apps on iPhone, iPad, and Android. The Grammar Flow desktop app brings the same writing help to your Mac.",
-      icon: "/grammarflow/GrammarFlow_Appicon.png",
-      colors: ["#7657ff", "#a344ef"],
+      icon: "/grammarflow/appicon.png",
+      colors: ["#6A2FA0", "#8A55BF"],
       stores: { ...both("https://apps.apple.com/in/app/ai-keyboard-grammarify/id6769994469", "https://play.google.com/store/apps/details?id=com.vectorinfo.grammarify"), ...mac("GrammarFlow") },
       rating: 5.0,
-      tags: ["Grammar correction", "Tone & rewrites", "AI assistants", "Translation"],
-      features: [
-        ["Grammar and spelling", "Review corrections to grammar, spelling, and punctuation before replacing your text."],
-        ["Tone and rewrites", "Explore clearer wording and choose a tone that fits your message."],
-        ["AI writing assistants", "Get help with replies, summaries, captions, and other everyday writing tasks."],
-        ["Keyboard translation", "Translate text into your selected language while writing in compatible apps."],
-        ["Custom assistants", "Save instructions for the writing tasks you repeat."],
-        ["Personal keyboard themes", "Choose gradient themes, light or dark appearances, and typing preferences."],
-      ],
-      screenLabels: ["AI writing keyboard", "Change your tone", "Ask AI"],
-      previewHeading: "A little help with everything you write.",
-      previewDescription: "From a quick reply to a longer draft, correct your text, find the right tone, and translate without leaving the conversation.",
-      appStoreScreenshots: [
-        { src: "/grammarflow/appstore-screenshots/01.webp", label: "Your AI writing keyboard" },
-        { src: "/grammarflow/appstore-screenshots/02.webp", label: "Rewrite in the right tone" },
-        { src: "/grammarflow/appstore-screenshots/03.webp", label: "Get help from AI assistants" },
-        { src: "/grammarflow/appstore-screenshots/04.webp", label: "Translate from your keyboard" },
-        { src: "/grammarflow/appstore-screenshots/05.webp", label: "Write in your favorite apps" },
-      ],
     },
     {
       // /tvremote/ is a hand-built page, so only the fields the home page reads are listed here.

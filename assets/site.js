@@ -53,9 +53,7 @@
   }
 
   function appRating(app) {
-    if (Number.isFinite(app.rating)) return app.rating.toFixed(1);
-    const seed = Array.from(app.slug).reduce((total, character) => total + character.charCodeAt(0), 0);
-    return (4.6 + (seed % 4) / 10).toFixed(1);
+    return Number.isFinite(app.rating) ? app.rating.toFixed(1) : null;
   }
 
   function brandMarkup(href = "/") {
@@ -68,10 +66,11 @@
 
   function portfolioCard(app) {
     const storeButtons = Object.entries(app.stores).map(([platform, url]) => storeButton(app, platform, url, true)).join("");
-    const rating = app.isNew ? "New" : appRating(app);
+    const rating = appRating(app);
+    const isNew = app.isNew || rating === null;
     return `<article class="portfolio-card reveal" style="--card-accent:${app.colors[0]};--card-accent-2:${app.colors[1]}">
       <a class="portfolio-hitbox" href="/${safe(app.slug)}/" aria-label="View ${safe(app.name)} product page"></a>
-      <div class="portfolio-top"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon" loading="lazy"><div class="portfolio-rating" aria-label="${app.isNew ? "New app" : `Rated ${rating} out of 5`}">${rating}</div></div>
+      <div class="portfolio-top"><img src="${safe(app.icon)}" alt="${safe(app.name)} icon" loading="lazy"><div class="portfolio-rating" aria-label="${isNew ? "New app" : `Rated ${rating} out of 5`}">${isNew ? "New" : rating}</div></div>
       <p class="card-label">${safe(app.category)}</p>
       <h3>${safe(app.name)}</h3>
       <p>${safe(app.subtitle)}</p>
@@ -82,12 +81,10 @@
   function renderHome() {
     const osGrid = $("#os-apps");
     const everydayGrid = $("#everyday-apps");
-    const examGrid = $("#exam-apps");
-    if (!osGrid || !everydayGrid || !examGrid) return;
+    if (!osGrid || !everydayGrid) return;
 
     osGrid.innerHTML = apps.slice(0, 8).map(appMiniCard).join("");
     everydayGrid.innerHTML = apps.filter((app) => app.group === "Everyday apps").map(portfolioCard).join("");
-    examGrid.innerHTML = apps.filter((app) => app.group === "Exam preparation").map(portfolioCard).join("");
     $$("[data-app-count]").forEach((count) => { count.textContent = apps.length; });
     const footerApps = $("#footer-apps");
     if (footerApps) footerApps.innerHTML = apps.map((app) => `<a href="/${safe(app.slug)}/">${safe(app.shortName)}</a>`).join("");

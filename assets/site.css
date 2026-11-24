@@ -95,7 +95,6 @@ svg { display: block; }
 .home-section { position: relative; padding: 116px 0; }
 .home-section.catalog-section { padding-top: 58px; }
 .home-section.catalog-section.everyday-section { padding-bottom: 46px; }
-.home-section.catalog-section.exam-section { padding-top: 23px; }
 .home-section.alt { background: var(--cream); color: #11130e; }
 .home-section-head { max-width: 850px; margin-bottom: 48px; }
 .home-section-head.label-only { width: 100%; max-width: 1142px; margin: 0 auto 12px; }
@@ -142,7 +141,7 @@ svg { display: block; }
 .studio-point span { width: 44px; height: 44px; display: grid; place-items: center; color: #fff; border-radius: 14px; background: #111522; font-weight: 800; }
 .studio-point h3 { margin: 0 0 6px; font-size: 16px; }
 .studio-point p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
-.stat-strip { margin-top: 62px; display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: 24px; overflow: hidden; background: #fff; }
+.stat-strip { margin-top: 62px; display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 24px; overflow: hidden; background: #fff; }
 .stat { padding: 26px; border-right: 1px solid var(--line); }
 .stat:last-child { border-right: 0; }
 .stat strong { display: block; font-family: 'Manrope', sans-serif; font-size: 38px; letter-spacing: -.05em; }
@@ -365,13 +364,9 @@ svg { display: block; }
   .home-section { padding: 82px 0; }
   .home-section.catalog-section { padding-top: 41px; }
   .home-section.catalog-section.everyday-section { padding-bottom: 33px; }
-  .home-section.catalog-section.exam-section { padding-top: 16px; }
   .home-section-head.row { grid-template-columns: 1fr; gap: 0; }
   .home-section-head.label-only { max-width: none; }
   .portfolio-grid, .principle-grid, .benefit-grid, .feature-list, .studio-panel { grid-template-columns: 1fr; }
-  .stat-strip { grid-template-columns: 1fr 1fr; }
-  .stat:nth-child(2) { border-right: 0; }
-  .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .contact-card { padding: 34px 25px; grid-template-columns: 1fr; align-items: start; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid > div:first-child { grid-column: 1 / -1; }

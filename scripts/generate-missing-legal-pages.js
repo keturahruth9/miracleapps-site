@@ -48,36 +48,6 @@ function termsClosing(app) {
   ];
 }
 
-function examApp(config) {
-  const app = { ...config };
-  app.privacy = [
-    section("Overview", `${app.name} is an independent study and practice app for people preparing for the ${app.examName}. This policy explains how study information, purchases, reminders, and support messages are handled.`),
-    section("Data the app does not collect", `Miracle Apps does not collect or share personal data from your use of ${app.name}. The current store disclosures identify the app as collecting no data. We do not sell personal information or require an account for normal study use.`),
-    section("Study data stored on your device", `Practice answers, quiz results, readiness indicators, saved and missed questions, study streaks, exam preferences, and study-plan progress may be stored locally on your device so the app can preserve your learning history.`),
-    section("Notifications and widgets", "If you enable study reminders, notifications or widgets, the app uses the permissions and scheduling features provided by your device. You can change or disable them at any time in the app or system settings."),
-    section("Purchases and premium access", "Apple or Google processes in-app purchases, subscriptions, restorations, billing, cancellations, and refunds. Miracle Apps does not receive your full payment-card details. The platform may provide purchase status so the app can unlock premium access."),
-    section("Device and platform services", "The app relies on operating-system storage, notification, purchase, and backup services. Apple and Google process information under their own privacy policies when you use those platform features."),
-    section("Your choices and deletion", "You can reset study progress where that option is available, disable notifications in system settings, and remove locally stored app data by deleting the app. Reinstalling or restoring a device backup may restore data according to your platform settings."),
-    section("Support messages", `If you email ${supportEmail}, we receive the address and information you choose to include so we can respond. Support correspondence is separate from normal in-app study activity and is retained only as reasonably needed to resolve the request and maintain support records.`),
-    section("Security", "We use the safeguards available through the mobile platform and keep collection to a minimum. No storage or transmission method can be guaranteed completely secure, so keep your device and store account protected."),
-    ...privacyClosing(app),
-  ];
-  app.terms = [
-    section("Acceptance of these terms", `By downloading or using ${app.name}, you agree to these Terms and Conditions. If you do not agree, do not use the app.`),
-    section("Personal study use", `You may use the app for your own ${app.examName} study, practice, and review. You may not copy, scrape, extract, resell, publish, reverse engineer, or misuse the question bank, explanations, design, or app services.`),
-    section("Independent preparation resource", `${app.name} is an independent study aid. It is not affiliated with, endorsed by, sponsored by, or approved by ${app.organization}. Certification names and related trademarks belong to their respective owners and are used only to identify the exam being studied.`),
-    section("No guaranteed result", "Practice scores, readiness indicators, study plans, reminders, explanations, and mock exams are educational tools. They do not guarantee an exam score, first-attempt pass, certification, employment, promotion, or professional outcome."),
-    section("Content accuracy and syllabus changes", "We work to keep study content useful, but exam outlines, terminology, rules, fees, and testing policies may change. Confirm current requirements with the official certification organization before registering for or taking an exam."),
-    section("Your study decisions", "You are responsible for deciding how to prepare, when to schedule the exam, and whether to rely on a practice result. The app does not provide legal, financial, cybersecurity, accounting, or other professional advice."),
-    section("Premium access and billing", "Some questions, explanations, tests, analytics, or study tools may require an in-app purchase or subscription. Apple or Google handles payment, renewal, cancellation, and refund requests under the terms shown at purchase."),
-    section("App availability", "Features, question counts, study modes, platform availability, and content may change as we improve the app or respond to exam-outline and operating-system updates. We do not promise uninterrupted or error-free availability."),
-    section("Intellectual property", "The app’s original question content, explanations, interface, artwork, branding, and website materials belong to Miracle Apps or its licensors. Third-party certification names and marks remain the property of their respective owners."),
-    section("Limitation of responsibility", "To the maximum extent permitted by law, Miracle Apps is not responsible for exam fees, missed appointments, certification decisions, lost study progress, indirect losses, or outcomes based on use of the app."),
-    ...termsClosing(app),
-  ];
-  return app;
-}
-
 const apps = [
   {
     slug: "tvremote",
@@ -115,60 +85,10 @@ const apps = [
     shortName: "AdMob Tracker",
     color: "#ffb000",
     color2: "#ff5c35",
-    icon: "https://play-lh.googleusercontent.com/585rBJRT2E9Rpbb2U05_hXiMDNGi97LIRdnd6UyKWFeXNPCCtHpApgkJQLiaI6joMq9PnhTcUKu2Yvb4lOvi",
+    icon: "/admob-revenue-tracker/appicon.png",
     privacy: [],
     terms: [],
   },
-  {
-    slug: "chitcalculator",
-    name: "ChitCalculator",
-    shortName: "ChitCalculator",
-    color: "#18a878",
-    color2: "#5bd09d",
-    icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d9/95/e5/d995e549-d1f4-0797-c84e-0f134af2a3f0/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    privacy: [],
-    terms: [],
-  },
-  examApp({
-    slug: "cfp-exam",
-    name: "CFP Exam — Financial Planner",
-    shortName: "CFP Prep",
-    examName: "Certified Financial Planner exam",
-    organization: "CFP Board",
-    color: "#1265d6",
-    color2: "#4cc9f0",
-    icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1f/d6/59/1fd659f9-45d6-c621-e992-7064665c9b44/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/512x512bb.jpg",
-  }),
-  examApp({
-    slug: "cissp-exam",
-    name: "CISSP Exam Preparation",
-    shortName: "CISSP Prep",
-    examName: "Certified Information Systems Security Professional exam",
-    organization: "ISC2",
-    color: "#0f5d8f",
-    color2: "#33d1b7",
-    icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/b5/9a/c5/b59ac524-42c9-8d32-d57d-bdb282cab054/AppIcon-0-0-1x_U007emarketing-0-11-0-sRGB-85-220.png/512x512bb.jpg",
-  }),
-  examApp({
-    slug: "cma-part1",
-    name: "CMA Part 1 Exam Preparation",
-    shortName: "CMA Part 1",
-    examName: "Certified Management Accountant Part 1 exam",
-    organization: "the Institute of Management Accountants (IMA)",
-    color: "#3562d9",
-    color2: "#f6b73c",
-    icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2b/d1/e8/2bd1e87e-0c73-fba0-b662-5bf41ed0b708/AppIcon-0-0-1x_U007epad-0-11-0-sRGB-85-220.png/512x512bb.jpg",
-  }),
-  examApp({
-    slug: "ctp-exam",
-    name: "CTP Exam Preparation",
-    shortName: "CTP Prep",
-    examName: "Certified Treasury Professional exam",
-    organization: "the Association for Financial Professionals (AFP)",
-    color: "#1d7d73",
-    color2: "#5ed0ae",
-    icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/54/2a/34/542a343d-c24b-d995-68bf-0e68f973b73a/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/512x512bb.jpg",
-  }),
 ];
 
 const qr = apps.find((app) => app.slug === "qr-code-reader");
@@ -250,32 +170,6 @@ admob.terms = [
   section("Intellectual property", "The app interface, original reporting presentation, branding, and website materials belong to Miracle Apps or its licensors. Google service names, data, and marks remain subject to Google’s rights and terms."),
   section("Limitation of responsibility", "To the maximum extent permitted by law, Miracle Apps is not responsible for reporting delays, API changes, account actions, missed revenue, tax filings, business decisions, or losses based on displayed or exported data."),
   ...termsClosing(admob),
-];
-
-const chit = apps.find((app) => app.slug === "chitcalculator");
-chit.privacy = [
-  section("Overview", "ChitCalculator helps you calculate chit amounts, organize chit cycles, track members and payments, and share selected details. This policy explains how financial-planning entries and sharing actions are handled."),
-  section("Data the app does not collect", "Miracle Apps does not collect personal data from ChitCalculator. The current App Store disclosure identifies the app as collecting no data. The app does not connect to your bank account or ask for online-banking credentials."),
-  section("Information stored on your device", "Chit names, member names, dates, month counts, bid amounts, contribution figures, payment status, and calculation history may be stored locally on your device so you can manage ongoing chits."),
-  section("Calculations", "Amounts you enter are processed to provide the calculation or schedule you request. Ordinary calculations do not need an internet connection and are not sent to Miracle Apps."),
-  section("Sharing through other apps", "When you choose to send chit details through WhatsApp, Messages, email, or another share destination, the selected content is passed to that service. The receiving app processes it under its own privacy policy, and you are responsible for choosing the recipients."),
-  section("Advertising", "The app may display ads. Advertising providers may process device identifiers, ad interactions, consent choices, or technical information under their own policies and your device settings."),
-  section("Your choices, backup, and deletion", "You can edit or delete chit and member entries where the app provides those controls. Deleting the app removes local data unless it is restored through a device backup. Keep a separate secure record of information you cannot afford to lose."),
-  section("Security", "Your chit information depends on the security of your device and any backup or sharing destination you use. Protect your device with a passcode and review recipients before sharing sensitive financial information."),
-  ...privacyClosing(chit),
-];
-chit.terms = [
-  section("Acceptance of these terms", "By downloading or using ChitCalculator, you agree to these Terms and Conditions. If you do not agree, do not use the app."),
-  section("Calculation and organization tool", "ChitCalculator provides arithmetic, schedules, member organization, payment tracking, and sharing tools. It does not operate a chit fund, hold money, process payments, collect installments, or act as a bank or financial institution."),
-  section("Your information and permissions", "You are responsible for the accuracy and lawful use of chit, member, contribution, bid, date, and payment-status information you enter. Obtain permission before storing or sharing another person’s details."),
-  section("Verify every calculation", "Results depend on the amounts, duration, bid, rules, rounding, and other inputs you provide. Confirm final contributions, payouts, commissions, interest, taxes, and obligations with the chit organizer and a qualified adviser."),
-  section("No financial or legal advice", "The app provides general calculation and record-keeping assistance. It does not recommend a chit, evaluate risk, guarantee a return, or provide financial, investment, tax, accounting, or legal advice."),
-  section("Sharing responsibilities", "When you share a result or payment status, verify the content and recipient. Miracle Apps is not responsible for a message sent to the wrong person or for how a recipient uses shared information."),
-  section("Local records and backups", "You are responsible for maintaining accurate primary records and secure backups. App data may be lost through deletion, device failure, software updates, or backup settings."),
-  section("Advertising and availability", "The app may display ads. Features, formulas, formats, platform support, and availability may change as the app is maintained and updated."),
-  section("Intellectual property", "The app interface, original design, branding, icon, and website materials belong to Miracle Apps or its licensors."),
-  section("Limitation of responsibility", "To the maximum extent permitted by law, Miracle Apps is not responsible for financial loss, disputes, missed payments, incorrect entries, reliance on an estimate, lost records, or actions taken by a chit organizer or member."),
-  ...termsClosing(chit),
 ];
 
 const tvRemote = apps.find((app) => app.slug === "tvremote");
